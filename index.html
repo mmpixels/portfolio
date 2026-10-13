@@ -8,8 +8,9 @@
 <meta property="og:title" content="Manasvi Modi, UX / Product Designer">
 <meta property="og:description" content="Manasvi Modi, UX and product designer. Case studies in ecommerce, B2B and SaaS product design.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://manasvimodi.vercel.app/assets/og.jpg">
+<meta property="og:image" content="https://www.manasvimodi.work/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.manasvimodi.work/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/site.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,11 +62,35 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
 .tint-sky::before{background:radial-gradient(70% 80% at 25% 20%,#E9F1F6 0%,rgba(233,241,246,0) 70%),linear-gradient(160deg,#DCE7EF 0%,#CFDDE8 100%)}
 .tint-sage::before{background:radial-gradient(70% 80% at 75% 20%,#EEF0E4 0%,rgba(238,240,228,0) 70%),linear-gradient(160deg,#E2E7D6 0%,#D2DAC2 100%)}
 .tint-blush::before{background:radial-gradient(70% 80% at 25% 20%,#F7EFEC 0%,rgba(247,239,236,0) 70%),linear-gradient(160deg,#EFE5E1 0%,#E4D6D1 100%)}
+.tint-olive::before{background:radial-gradient(70% 80% at 75% 20%,#F1F0E2 0%,rgba(241,240,226,0) 70%),linear-gradient(160deg,#E4E3CD 0%,#D6D5B6 100%)}
+.whead.side{margin-top:clamp(120px,13vw,200px)}
 .shotwrap{position:absolute;inset:0;will-change:transform}
+.duo img{position:absolute;display:block;height:auto;border-radius:8px;background:#fff;transition:transform .9s cubic-bezier(.22,.61,.24,1),box-shadow .9s cubic-bezier(.22,.61,.24,1)}
+.duo .d1{left:6%;top:9%;width:66%;box-shadow:0 30px 60px -26px rgba(31,42,34,.38),0 2px 8px rgba(31,42,34,.08)}
+.duo .d2{right:5%;bottom:9%;width:52%;border-radius:10px;box-shadow:0 36px 70px -24px rgba(31,42,34,.45),0 2px 10px rgba(31,42,34,.1)}
+.media:hover .duo .d1,.media:focus-visible .duo .d1{transform:translateY(-6px)}
+.media:hover .duo .d2,.media:focus-visible .duo .d2{transform:translateY(-14px);box-shadow:0 46px 80px -26px rgba(31,42,34,.5),0 2px 10px rgba(31,42,34,.1)}
+.still .media:hover .duo img{transform:none}
+.lay > *{position:absolute;display:block;transition:transform .9s cubic-bezier(.22,.61,.24,1)}
+.lay img{height:auto}
+.lay .desk{border-radius:8px;box-shadow:0 30px 60px -26px rgba(31,42,34,.4),0 2px 8px rgba(31,42,34,.08)}
+.lay .phone{width:auto;border-radius:16px;border:4px solid #fff;background:#fff;box-shadow:0 36px 70px -24px rgba(31,42,34,.45),0 2px 10px rgba(31,42,34,.1)}
+.lay .card{border-radius:8px;background:#fff;box-shadow:0 36px 70px -24px rgba(31,42,34,.45),0 2px 10px rgba(31,42,34,.1)}
+.dup .desk{left:4%;top:9%;width:60%}
+.dup .ph1{left:49%;top:14%;height:70%}
+.dup .ph2{left:72%;top:26%;height:62%}
+.ren .desk{left:4%;top:8%;width:64%}
+.ren .full{right:4%;bottom:8%;width:45%}
+.sg .desk{left:4%;top:8%;width:70%}
+.sg .modal{right:4%;bottom:7%;width:46%;border-radius:12px;box-shadow:0 36px 70px -24px rgba(31,42,34,.45),0 2px 10px rgba(31,42,34,.1)}
+.media:hover .lay > *,.media:focus-visible .lay > *{transform:translateY(-6px)}
+.media:hover .lay > :nth-child(2),.media:focus-visible .lay > :nth-child(2){transform:translateY(-11px)}
+.media:hover .lay > :nth-child(3),.media:focus-visible .lay > :nth-child(3){transform:translateY(-16px)}
+.still .media:hover .lay > *{transform:none}
 .shot{position:absolute;left:7%;top:50%;width:86%;height:auto;translate:0 -50%;border-radius:6px;display:block;transform-origin:center;
   box-shadow:0 28px 56px -22px rgba(31,42,34,.38),0 2px 8px rgba(31,42,34,.08);
-  transition:transform 1.8s cubic-bezier(.22,.61,.24,1),border-radius 1.8s cubic-bezier(.22,.61,.24,1),box-shadow 1.8s cubic-bezier(.22,.61,.24,1)}
-.media:hover .shot,.media:focus-visible .shot{transform:translate(var(--tx),var(--ty)) scale(var(--s));border-radius:0;box-shadow:0 28px 56px -22px rgba(31,42,34,0),0 2px 8px rgba(31,42,34,0)}
+  transition:transform .9s cubic-bezier(.22,.61,.24,1),box-shadow .9s cubic-bezier(.22,.61,.24,1)}
+.media:hover .shot,.media:focus-visible .shot{transform:translateY(-10px) scale(1.02);box-shadow:0 40px 72px -26px rgba(31,42,34,.42),0 2px 8px rgba(31,42,34,.08)}
 .copy{display:flex;flex-direction:column;align-items:flex-start}
 .idx{font-size:clamp(12.7px,1.04vw,15px);color:rgba(31,42,34,.7);margin-bottom:clamp(18px,2vw,28px)}
 .ctitle.head{margin:0;font-size:clamp(30px,3.1vw,46px);line-height:1.1;letter-spacing:-0.005em;color:#141A16;white-space:normal;max-width:13em}
@@ -259,7 +284,7 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
     </header>
       <article class="case" data-reveal="1">
         <a class="media tint-sky" href="work/entripy/index.html" aria-label="Making Bulk Ordering Simpler for B2B Users, view case study">
-          <span class="shotwrap" data-k="para"><img class="shot" style="--s: 1.732; --tx: 20.78%; --ty: -4.90%" src="assets/media/home-entripy.webp" alt="Entripy bulk ordering screen showing a size and quantity picker for a Gildan t-shirt" loading="lazy"></span>
+          <span class="shotwrap duo" data-k="para"><img class="d1" src="assets/media/entripy-order.webp" alt="Entripy order form for a Gildan t-shirt with tiered pricing and size inputs" loading="lazy"><img class="d2" src="assets/media/entripy-steps.webp" alt="Order form split into three steps: choose colors and sizes, customize, personalize" loading="lazy"></span>
         </a>
         <div class="copy">
           <span class="idx mono">01</span>
@@ -272,7 +297,7 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
 
       <article class="case flip" data-reveal="1">
         <a class="media tint-sage" href="work/duplin/index.html" aria-label="Improving the Online Experience for a Modern Winery, view case study">
-          <span class="shotwrap" data-k="para"><img class="shot" style="--s: 1.247; --tx: 0.00%; --ty: 3.53%" src="assets/media/home-duplin.webp" alt="Duplin Winery site showing top-rated wines and the three visit locations" loading="lazy"></span>
+          <span class="shotwrap lay dup" data-k="para"><img class="desk" src="assets/media/home-duplin.webp" alt="Duplin Winery site showing top-rated wines and the three visit locations" loading="lazy"><img class="phone ph1" src="assets/media/duplin-bundle.webp" alt="Wine Club bundle builder on mobile, with a progress bar toward the discount" loading="lazy"><img class="phone ph2" src="assets/media/duplin-events.webp" alt="Dinner theater event page on mobile, with table type and date selection" loading="lazy"></span>
         </a>
         <div class="copy">
           <span class="idx mono">02</span>
@@ -285,7 +310,7 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
 
       <article class="case" data-reveal="1">
         <a class="media tint-blush" href="work/rennai/index.html" aria-label="When Luxury Beauty Doesn’t Feel Premium, view case study">
-          <span class="shotwrap" data-k="para"><img class="shot" style="--s: 1.685; --tx: 0.00%; --ty: -4.77%" src="assets/media/home-rennai.webp" alt="Rennai homepage with a close-up portrait and the headline Refined Beauty, Thoughtfully Curated" loading="lazy"></span>
+          <span class="shotwrap lay ren" data-k="para"><img class="desk" src="assets/media/home-rennai.webp" alt="Rennai homepage with a close-up portrait and the headline Refined Beauty, Thoughtfully Curated" loading="lazy"><img class="card full" src="assets/media/rennai-full.webp" alt="Rennai product carousel, The Essentials, above a Victoria Beckham Beauty banner" loading="lazy"></span>
         </a>
         <div class="copy">
           <span class="idx mono">03</span>
@@ -293,6 +318,23 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
           <p class="cdesc body">A cleaner, more refined shopping experience designed to feel truly premium</p>
           <ul class="ctags mono"><li>Beauty Ecommerce</li><li>Service Flows</li><li>Multi-Brand Platform</li><li>Product Discovery</li></ul>
           <a class="cta mono" href="work/rennai/index.html">View case study <svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10.5"></path><path d="M9.2 4.2 13 8l-3.8 3.8"></path></svg></a>
+        </div>
+      </article>
+
+      <header class="whead side" data-reveal="1">
+        <h2 class="head">Side Project</h2>
+        <span class="mono wcount">Self-initiated</span>
+      </header>
+      <article class="case flip" data-reveal="1">
+        <a class="media tint-olive" href="work/scopeguard/index.html" aria-label="ScopeGuard, a paper trail for scope changes, view case study">
+          <span class="shotwrap lay sg" data-k="para"><img class="desk" src="assets/media/scopeguard-dash.webp" alt="ScopeGuard dashboard with recent project updates and change requests waiting on the client" loading="lazy"><img class="modal" src="assets/media/scopeguard-addfeature.webp" alt="ScopeGuard Add Feature form with six status options and Figma fields" loading="lazy"></span>
+        </a>
+        <div class="copy">
+          <span class="idx mono">2026</span>
+          <h3 class="ctitle head">ScopeGuard: A Paper Trail for Scope Changes</h3>
+          <p class="cdesc body">A scope tracking tool for agency teams that I designed and built as a working app with AI</p>
+          <ul class="ctags mono"><li>Product Design</li><li>SaaS</li><li>Workflow Design</li><li>Built with Claude Code</li></ul>
+          <a class="cta mono" href="work/scopeguard/index.html">View case study <svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10.5"></path><path d="M9.2 4.2 13 8l-3.8 3.8"></path></svg></a>
         </div>
       </article>
   </div>

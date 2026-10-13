@@ -30,7 +30,7 @@ python3 -m http.server 8000
 1. Push this folder to a GitHub repo.
 2. In Vercel: Add New, Project, import the repo.
 3. Framework preset: Other. Leave build command and output directory empty.
-4. Deploy. In Settings, Domains, set the project name so the address is manasvimodi.vercel.app (or whatever is free).
+4. Deploy. The site lives at www.manasvimodi.work (domain from GoDaddy, DNS pointed at Vercel). manasvimodi.vercel.app keeps working too.
 
 Every push to the main branch redeploys automatically.
 
@@ -45,4 +45,4 @@ Each page keeps its own styles in its `<style>` tag and its behaviour in the
 `class Component` script at the bottom. Text is plain HTML, so copy edits are
 just text edits.
 
-If your Vercel address ends up different from manasvimodi.vercel.app, search the pages for `manasvimodi.vercel.app` and replace it, so link previews show the right image.
+If the domain ever changes, search the pages for `www.manasvimodi.work` and replace it, so link previews and canonical links point to the right address.

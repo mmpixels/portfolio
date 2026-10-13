@@ -8,8 +8,9 @@
 <meta property="og:title" content="Redesigning B2B Bulk Ordering · Manasvi Modi">
 <meta property="og:description" content="Manasvi Modi, UX and product designer. Case studies in ecommerce, B2B and SaaS product design.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://manasvimodi.vercel.app/assets/og.jpg">
+<meta property="og:image" content="https://www.manasvimodi.work/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.manasvimodi.work/work/entripy/">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../assets/css/site.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -216,11 +217,29 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
   .sec + .sec{margin-top:80px}
   .sky{height:460px}
 }
+
+/* header returns when scrolling up */
+.stick{position:fixed;left:0;right:0;top:0;z-index:40;background:rgba(244,243,236,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid rgba(31,42,34,.1);transform:translateY(-101%);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.stick.on{transform:none}
+.stick .nav{padding-top:12px;padding-bottom:12px}
+.stick .nav .links a{padding:8px 0}
+.guide{transition:top .45s cubic-bezier(.2,.7,.2,1)}
+.cs.navon .guide{top:96px}
+@media (prefers-reduced-motion:reduce){.stick{transition:none}}
 </style>
 </head>
 <body>
 <div data-dc-root data-dc-cloak>
 <div class="cs">
+  <div class="stick" inert=""><div class="wrap"><nav class="nav" aria-label="Primary, sticky">
+        <a href="../../index.html" class="brand head">Manasvi Modi</a>
+        <div class="links mono small">
+          <a href="../../index.html#work">Work</a>
+          <a href="../../about/index.html">About</a>
+          <a href="../../resume.pdf" data-resume="">Resume<svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.5v8"></path><path d="M4.8 7.6 8 10.8l3.2-3.2"></path><path d="M3 13.5h10"></path></svg></a>
+          <a href="mailto:manasvimodi.mm@gmail.com?subject=UX%20and%20Product%20Opportunity">Contact</a>
+        </div>
+      </nav></div></div>
   <header class="top">
     <div class="sky" aria-hidden="true"></div>
     <div class="wrap">
@@ -489,6 +508,23 @@ class Component extends DCLogic {
     this.state = { lbSrc: '', lbAlt: '' };
   }
   componentDidMount() {
+    const stick = document.querySelector('.stick');
+    const cs = document.querySelector('.cs');
+    if (stick && cs) {
+      let lastY = window.scrollY;
+      const show = (v) => {
+        stick.classList.toggle('on', v);
+        cs.classList.toggle('navon', v);
+        if (v) stick.removeAttribute('inert'); else stick.setAttribute('inert', '');
+      };
+      this._onScroll = () => {
+        const y = window.scrollY;
+        if (y < 240) { show(false); lastY = y; return; }
+        if (y < lastY - 4) { show(true); lastY = y; }
+        else if (y > lastY + 4) { show(false); lastY = y; }
+      };
+      window.addEventListener('scroll', this._onScroll, { passive: true });
+    }
     document.querySelectorAll('video').forEach((v) => {
       v.muted = true;
       const p = v.play && v.play();
@@ -513,6 +549,7 @@ class Component extends DCLogic {
     this._io = io; this._so = so;
   }
   componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
     if (this._io) this._io.disconnect();
     if (this._so) this._so.disconnect();
   }
