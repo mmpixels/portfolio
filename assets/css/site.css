@@ -1,0 +1,8 @@
+/* Shared rules for every page. Page-specific styles live in each page's <style>. */
+
+/* Hide holes until the template runtime has filled them in */
+[data-dc-cloak]{visibility:hidden}
+
+/* Resume links stay hidden until resume.pdf is added to the site root.
+   To show them: add resume.pdf next to index.html, then delete this rule. */
+a[data-resume]{display:none !important}

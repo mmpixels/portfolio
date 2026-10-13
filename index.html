@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manasvi Modi, UX / Product Designer</title>
+<meta name="description" content="Manasvi Modi, UX and product designer. Case studies in ecommerce, B2B and SaaS product design.">
+<meta property="og:title" content="Manasvi Modi, UX / Product Designer">
+<meta property="og:description" content="Manasvi Modi, UX and product designer. Case studies in ecommerce, B2B and SaaS product design.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://manasvimodi.vercel.app/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Encode+Sans:wdth,wght@75..125,100..900&amp;family=Inconsolata:wght@400;500&amp;family=News+Cycle:wght@400;700&amp;display=swap">
+<style>
+body{margin:0;background:#F4F3EC}
+a{color:#1F2A22}a:hover{color:#3E5F33}
+
+.hero{position:relative;overflow:hidden;overflow:clip;min-height:min(100vh,920px);color:#1F2A22;font-family:"News Cycle","Arial Narrow",sans-serif;background:#CBDFEA}
+.bg{position:absolute;inset:0;overflow:hidden;overflow:clip;pointer-events:none;animation:settle 2.6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes settle{from{opacity:0;transform:scale(1.05)}to{opacity:1;transform:none}}
+.px{position:absolute;inset:0;transition:translate 1.6s cubic-bezier(.2,.7,.2,1)}
+.L{position:absolute;top:0;left:-6%;width:112%;height:100%;overflow:visible;will-change:transform}
+
+/* ambient motion is driven by the component script (see below), frame by frame */
+
+/* canvases: clouds drift slowly; the cursor acts as a light breeze that nudges clouds and sends a soft swell over the grass */
+.sky-cv,.meadow-cv{display:block}
+/* hello bubble on the intro paragraph */
+.hello{position:absolute;left:-1.1em;top:-2.55em;z-index:1;padding:5px 13px 6px;font-size:clamp(12px,0.95vw,14px);letter-spacing:0.15em;color:#2C3A2F;
+  background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.75);border-radius:14px 14px 14px 4px;box-shadow:0 4px 14px rgba(44,58,47,.08);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);white-space:nowrap;
+  animation:pop .7s cubic-bezier(.3,1.3,.5,1) 1.6s both, bob 5s ease-in-out 2.4s infinite}
+.hello .caret{display:inline-block;width:1.5px;height:1.05em;margin:0 -2px 0 1px;background:currentColor;vertical-align:-0.18em;border-radius:1px;animation:blink 1.05s steps(1) infinite}
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.6)}to{opacity:1;transform:none}}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -3px}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+
+/* rolling credits: four rows visible, the list slides up one row at a time */
+.credits{height:10.4em;font-size:clamp(12.7px,1.04vw,15px);overflow:hidden}
+.credits li{height:2.6em;line-height:2.6em;text-align:right;white-space:nowrap}
+
+
+/* ---------- work ---------- */
+.work{position:relative;background:#F4F3EC;color:#1F2A22;font-family:"News Cycle","Arial Narrow",sans-serif;padding:clamp(96px,11vw,170px) 0 clamp(96px,10vw,160px)}
+.fadeout{position:absolute;left:0;right:0;bottom:0;height:clamp(110px,14vw,200px);z-index:1;pointer-events:none;background:linear-gradient(to bottom,rgba(244,243,236,0) 0%,rgba(244,243,236,.55) 55%,#F4F3EC 100%)}
+.wrap{position:relative;max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+.whead{display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding-bottom:clamp(18px,1.8vw,26px);border-bottom:1px solid rgba(31,42,34,.16);margin-bottom:clamp(64px,8vw,120px)}
+.whead h2.head{margin:0;font-size:clamp(36px,4.2vw,64px);line-height:1.05;letter-spacing:-0.01em;color:#141A16;white-space:normal}
+.wcount{font-size:clamp(12.7px,1.04vw,15px);color:rgba(31,42,34,.7)}
+.case{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,88px);align-items:center}
+.case + .case{margin-top:clamp(88px,10vw,160px)}
+.case.flip{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.case.flip .media{order:2}
+.media{position:relative;display:block;aspect-ratio:16/11;border-radius:6px;overflow:hidden;text-decoration:none;isolation:isolate}
+.media::before{content:"";position:absolute;inset:0;z-index:-1;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.media:hover::before{transform:scale(1.035)}
+.tint-sky::before{background:radial-gradient(70% 80% at 25% 20%,#E9F1F6 0%,rgba(233,241,246,0) 70%),linear-gradient(160deg,#DCE7EF 0%,#CFDDE8 100%)}
+.tint-sage::before{background:radial-gradient(70% 80% at 75% 20%,#EEF0E4 0%,rgba(238,240,228,0) 70%),linear-gradient(160deg,#E2E7D6 0%,#D2DAC2 100%)}
+.tint-blush::before{background:radial-gradient(70% 80% at 25% 20%,#F7EFEC 0%,rgba(247,239,236,0) 70%),linear-gradient(160deg,#EFE5E1 0%,#E4D6D1 100%)}
+.shotwrap{position:absolute;inset:0;will-change:transform}
+.shot{position:absolute;left:7%;top:50%;width:86%;height:auto;translate:0 -50%;border-radius:6px;display:block;transform-origin:center;
+  box-shadow:0 28px 56px -22px rgba(31,42,34,.38),0 2px 8px rgba(31,42,34,.08);
+  transition:transform 1.8s cubic-bezier(.22,.61,.24,1),border-radius 1.8s cubic-bezier(.22,.61,.24,1),box-shadow 1.8s cubic-bezier(.22,.61,.24,1)}
+.media:hover .shot,.media:focus-visible .shot{transform:translate(var(--tx),var(--ty)) scale(var(--s));border-radius:0;box-shadow:0 28px 56px -22px rgba(31,42,34,0),0 2px 8px rgba(31,42,34,0)}
+.copy{display:flex;flex-direction:column;align-items:flex-start}
+.idx{font-size:clamp(12.7px,1.04vw,15px);color:rgba(31,42,34,.7);margin-bottom:clamp(18px,2vw,28px)}
+.ctitle.head{margin:0;font-size:clamp(30px,3.1vw,46px);line-height:1.1;letter-spacing:-0.005em;color:#141A16;white-space:normal;max-width:13em}
+.cdesc{margin:clamp(16px,1.6vw,22px) 0 0;font-size:clamp(15px,1.213vw,18.5px);line-height:1.65;max-width:24em}
+.ctags{list-style:none;margin:clamp(22px,2.2vw,30px) 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:clamp(11.5px,0.92vw,13.5px);color:rgba(31,42,34,.72)}
+.cta{position:relative;margin-top:clamp(28px,3vw,40px);display:inline-flex;align-items:center;gap:.5em;padding:10px 0;font-size:clamp(12.7px,1.04vw,15px);text-decoration:none;color:#1F2A22}
+.cta::after{content:"";position:absolute;left:0;bottom:4px;height:1px;width:100%;background:currentColor;transform:scaleX(.18);transform-origin:left;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.cta svg{transition:translate .55s cubic-bezier(.2,.7,.2,1)}
+.cta:hover::after,.cta:focus-visible::after{transform:scaleX(1)}
+.cta:hover svg,.cta:focus-visible svg{translate:4px 0}
+.case .media:hover ~ .copy .cta::after{transform:scaleX(1)}
+[data-reveal].pre{opacity:0;transform:translateY(28px)}
+[data-reveal]{transition:opacity 1.1s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1)}
+@media (max-width:860px){.case,.case.flip{grid-template-columns:minmax(0,1fr)}.case.flip .media{order:0}}
+@media (prefers-reduced-motion:reduce){[data-reveal].pre{opacity:1;transform:none}}
+
+
+/* ---------- footer ---------- */
+.foot{background:#F4F3EC;color:#1F2A22;padding:0 0 clamp(36px,4vw,56px)}
+.frow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px 40px;border-top:1px solid rgba(31,42,34,.16);padding-top:clamp(40px,4.4vw,64px)}
+.fsig{display:flex;flex-direction:column;gap:6px}
+.mono-mark{font-size:clamp(48px,4.6vw,68px);line-height:.9;text-decoration:none;color:#141A16;letter-spacing:-0.01em}
+.fname{font-size:clamp(11.5px,0.92vw,13.5px);color:rgba(31,42,34,.72)}
+.flinks{display:flex;flex-wrap:wrap;gap:8px clamp(28px,4.4vw,72px);font-size:clamp(12.7px,1.04vw,15px)}
+.flinks a,.fmail{position:relative;text-decoration:none;color:#1F2A22;padding:10px 0}
+.flinks a::after,.fmail::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.flinks a:hover::after,.fmail:hover::after,.flinks a:focus-visible::after,.fmail:focus-visible::after{transform:scaleX(1)}
+.fmail{display:inline-flex;align-items:center;gap:.45em;font-size:clamp(15px,1.213vw,18.5px)}
+@media (max-width:860px){.frow{flex-direction:column;align-items:flex-start}}
+
+/* entrance: type rises in after the scene settles */
+.rise{animation:rise 1.3s cubic-bezier(.2,.7,.2,1) both}
+.r0{animation-delay:.5s}.r1{animation-delay:.75s}.r2{animation-delay:.9s}.r3{animation-delay:1.05s}.r4{animation-delay:1.3s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+.head{font-family:"Encode Sans","Arial Narrow",sans-serif;font-weight:300;font-stretch:84%;white-space:nowrap}
+@media (max-width:900px){.head{white-space:normal}.hbr{display:none}}
+.mono{font-family:Inconsolata,ui-monospace,monospace;letter-spacing:0.15em}
+.body{font-family:"News Cycle","Arial Narrow",sans-serif}
+.vw{writing-mode:vertical-rl;text-decoration:none;position:relative;transition:translate .55s cubic-bezier(.2,.7,.2,1)}
+.vw::before{content:"";position:absolute;left:0;right:0;top:0;bottom:-44px}
+.vw::after{content:"";position:absolute;left:50%;top:calc(100% + 4px);width:1px;height:36px;margin-left:-0.5px;background:currentColor;transform:scaleY(0);transform-origin:top;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.vw:hover,.vw:focus-visible{translate:0 -40px}
+.vw:hover::after,.vw:focus-visible::after{transform:scaleY(1)}
+@media (max-width:700px){.credits li{text-align:left !important}.hello{left:-0.2em;top:-2.55em}.navlinks{gap:18px !important}.row{flex-direction:column !important;align-items:flex-start !important;margin-top:48px !important}.tags{align-items:flex-start !important;margin-top:8px !important}}
+
+.still .bg,.still .rise,.still .hello{animation:none}
+.still .media:hover .shot{transform:none}
+.still .hello .caret{display:none}
+.still .px{translate:none !important}
+@media (prefers-reduced-motion:reduce){.bg,.rise,.hello{animation:none}}
+/* phone: everything centred and pulled up, no full-screen hero */
+@media (max-width:700px){
+  .hero{min-height:0}
+  .heroblock{margin-top:44px !important;align-items:center;text-align:center}
+  .heroblock .eyebrow{margin-left:0 !important}
+  .heroblock h1{font-size:44px !important}
+  .row{align-items:center !important;margin-top:56px !important}
+  .row > div:first-child{display:flex;flex-direction:column;align-items:center}
+  .hello{left:0 !important;right:0;top:-2.6em !important;margin:0 auto;width:fit-content}
+  .intro{width:auto !important;max-width:21em !important;text-align:center}
+  .credits{margin-top:28px !important;margin-bottom:0 !important}
+  .credits li{text-align:center !important}
+  .tags{align-items:center !important}
+  .vw{margin-top:36px !important}
+}
+</style>
+</head>
+<body>
+<div data-dc-root data-dc-cloak>
+<section id="top" class="hero {{motionClass}}" onMouseMove="{{onMove}}" onMouseLeave="{{onLeave}}">
+  <div class="bg" aria-hidden="true">
+    <div class="px" style="translate: {{pSky}}">
+      <svg class="L" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="skyBase" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#8CB8DC"></stop>
+            <stop offset="0.14" stop-color="#98C1E3"></stop>
+            <stop offset="0.28" stop-color="#AFD0EA"></stop>
+            <stop offset="0.42" stop-color="#CBDFEA"></stop>
+            <stop offset="0.54" stop-color="#E3EAE5"></stop>
+            <stop offset="0.64" stop-color="#EDEEDD"></stop>
+            <stop offset="0.72" stop-color="#E0E1C8"></stop>
+            <stop offset="0.82" stop-color="#C3CCA7"></stop>
+            <stop offset="0.92" stop-color="#A8B68D"></stop>
+            <stop offset="1" stop-color="#99AB7F"></stop>
+          </linearGradient>
+          <linearGradient id="hz" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F1EFDA" stop-opacity="0.15"></stop><stop offset="0.45" stop-color="#F6F2DE" stop-opacity="0.75"></stop><stop offset="1" stop-color="#FAF5E4" stop-opacity="0.6"></stop></linearGradient>
+          <filter id="sb120" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="120"></feGaussianBlur></filter>
+          <filter id="sb70" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="70"></feGaussianBlur></filter>
+          <filter id="sb40" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="40"></feGaussianBlur></filter>
+          <filter id="sb24" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="24"></feGaussianBlur></filter>
+          <filter id="sb18" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="18"></feGaussianBlur></filter>
+          <filter id="cb" x="-80%" y="-200%" width="260%" height="500%"><feGaussianBlur stdDeviation="24"></feGaussianBlur></filter>
+          <filter id="gs" x="-80%" y="-300%" width="260%" height="700%"><feGaussianBlur stdDeviation="16"></feGaussianBlur></filter>
+          <filter id="gb" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="34"></feGaussianBlur></filter>
+          <g id="cloudShape">
+            <ellipse cx="0" cy="0" rx="170" ry="40" fill="#FFFFFF" filter="url(#cb)"></ellipse>
+            <ellipse cx="70" cy="-28" rx="110" ry="48" fill="#FFFFFF" filter="url(#cb)"></ellipse>
+            <ellipse cx="-90" cy="-12" rx="90" ry="36" fill="#FFFFFF" filter="url(#cb)"></ellipse>
+            <ellipse cx="160" cy="6" rx="120" ry="28" fill="#FFFFFF" filter="url(#cb)"></ellipse>
+          </g>
+          <filter id="tb" x="-60%" y="-120%" width="220%" height="340%"><feGaussianBlur stdDeviation="55"></feGaussianBlur></filter>
+        </defs>
+        <rect width="1600" height="1000" fill="url(#skyBase)"></rect>
+        <ellipse cx="180" cy="40" rx="520" ry="260" transform="rotate(-28 180 40)" fill="#7EACD5" opacity="0.75" filter="url(#sb120)"></ellipse>
+        <ellipse cx="60" cy="380" rx="260" ry="140" fill="#A1C3DE" opacity="0.6" filter="url(#sb70)"></ellipse>
+        <ellipse cx="1080" cy="170" rx="420" ry="170" transform="rotate(-10 1080 170)" fill="#BFDCF0" opacity="0.75" filter="url(#sb70)"></ellipse>
+        <ellipse cx="1500" cy="60" rx="300" ry="150" fill="#BCD9EF" opacity="0.6" filter="url(#sb70)"></ellipse>
+        <ellipse cx="820" cy="260" rx="260" ry="90" transform="rotate(-14 820 260)" fill="#C9E0EE" opacity="0.5" filter="url(#sb40)"></ellipse>
+        <ellipse cx="1620" cy="300" rx="260" ry="200" fill="#E5EFF1" opacity="0.85" filter="url(#sb70)"></ellipse>
+      </svg>
+      <canvas class="L sky-cv" data-cv="sky" aria-hidden="true"></canvas>
+    </div>
+
+    <div class="px" style="translate: {{pLight}}">
+      <svg class="L light" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+        <ellipse cx="1300" cy="470" rx="660" ry="120" transform="rotate(-19 1300 470)" fill="#F6F3E7" opacity="0.9" filter="url(#sb40)"></ellipse>
+        <ellipse cx="1430" cy="400" rx="400" ry="50" transform="rotate(-21 1430 400)" fill="#FEFDF5" opacity="0.95" filter="url(#sb24)"></ellipse>
+        <path d="M-100 650 C 300 690 800 720 1100 700 C 1300 688 1450 640 1700 600 L1700 700 C 1450 735 1300 765 1100 775 C 800 790 300 765 -100 735Z" fill="url(#hz)" filter="url(#sb40)"></path>
+      </svg>
+    </div>
+
+    <div class="px" style="translate: {{pFar}}">
+      <svg class="L far" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+        <path d="M950 770 C 1150 730 1350 690 1500 665 C 1580 652 1640 648 1700 648 L1700 1000 L1000 1000Z" fill="#C3D5C3" opacity="0.85" filter="url(#sb40)"></path>
+        <path d="M-100 670 C 100 680 300 720 520 775 C 640 805 720 840 760 880 L-100 880Z" fill="#CBD0A5" opacity="0.9" filter="url(#sb24)"></path>
+      </svg>
+    </div>
+
+    <div class="px" style="translate: {{pMid}}">
+      <svg class="L mid" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+        <ellipse cx="1360" cy="640" rx="420" ry="55" transform="rotate(-10 1360 640)" fill="#B5CCC0" opacity="0.75" filter="url(#sb40)"></ellipse>
+        <ellipse cx="820" cy="790" rx="470" ry="48" fill="#CBD6BF" opacity="0.6" filter="url(#sb40)"></ellipse>
+        <path d="M-100 750 C 80 760 260 785 430 840 C 520 870 560 900 600 1000 L-100 1000Z" fill="#B1BD8C" opacity="0.9" filter="url(#sb18)"></path>
+        <path d="M440 930 C 540 862 680 826 840 822 C 1000 818 1100 850 1180 905 L1200 960 L440 960Z" fill="#A9B99F" opacity="0.45" filter="url(#sb40)"></path>
+        <path d="M1080 840 C 1220 800 1380 770 1540 760 C 1600 756 1650 758 1700 762 L1700 1000 L1060 1000Z" fill="#A2B692" opacity="0.9" filter="url(#sb18)"></path>
+      </svg>
+    </div>
+
+    <div class="px" style="translate: {{pNear}}">
+      <svg class="L near" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+        <ellipse cx="420" cy="995" rx="340" ry="55" fill="#BEC286" opacity="0.6" filter="url(#sb24)"></ellipse>
+        <ellipse cx="40" cy="1040" rx="380" ry="140" fill="#758956" opacity="0.95" filter="url(#sb40)"></ellipse>
+        <ellipse cx="1480" cy="1040" rx="480" ry="130" fill="#8DA57B" opacity="0.88" filter="url(#sb40)"></ellipse>
+        <ellipse cx="800" cy="900" rx="430" ry="120" fill="#E8E8D2" opacity="0.45" filter="url(#sb70)"></ellipse>
+      </svg>
+      <canvas class="L meadow-cv" data-cv="meadow" aria-hidden="true"></canvas>
+    </div>
+  </div>
+
+  <div class="fadeout" aria-hidden="true"></div>
+
+  <div style="position: relative; z-index: 2; min-height: inherit; box-sizing: border-box; display: flex; flex-direction: column; padding: 32px clamp(20px, 5vw, 72px) 32px">
+    <nav class="rise r0" aria-label="Primary" style="width: 100%; max-width: 1240px; margin: 0 auto; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+      <a href="#top" class="head" style="font-size: clamp(20px, 1.6vw, 24px); text-decoration: none; letter-spacing: 0.01em; white-space: nowrap">Manasvi Modi</a>
+      <div class="mono navlinks" style="display: flex; gap: clamp(20px, 2.6vw, 40px); font-size: clamp(12.7px, 1.04vw, 15px)">
+        <a href="#work" style="text-decoration: none; padding: 12px 0">Work</a>
+        <a href="about/index.html" style="text-decoration: none; padding: 12px 0">About</a>
+        <a href="resume.pdf" data-resume="" class="resume" style="text-decoration: none; padding: 12px 0; display: inline-flex; align-items: center; gap: 0.3em">Resume<svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.5v8"></path><path d="M4.8 7.6 8 10.8l3.2-3.2"></path><path d="M3 13.5h10"></path></svg></a>
+        <a href="mailto:manasvimodi.mm@gmail.com?subject=UX%20and%20Product%20Opportunity" style="text-decoration: none; padding: 12px 0">Contact</a>
+      </div>
+    </nav>
+    <div class="heroblock" style="width: fit-content; max-width: 100%; align-self: center; display: flex; flex-direction: column; margin-top: clamp(56px, 14vh, 150px); position: relative">
+      <p class="mono rise r1 eyebrow" style="margin: 0 0 clamp(12px, 1.35vw, 20px) 0.4em; font-size: clamp(12.6px, 1.1vw, 16.2px); color: #1F2A22">UX / Product Designer</p>
+      <h1 class="head rise r2" style="margin: 0; font-size: clamp(44px, 6.27vw, 101px); line-height: 1.05; letter-spacing: -0.01em; color: #141A16; text-wrap: balance">Making sense through design.</h1>
+      <div class="row rise r3" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-top: clamp(44px, 3.24vw, 50.4px)">
+        <div style="position: relative">
+          <span class="hello mono" aria-hidden="true" style="left: -1px; top: -2.75em"><span>{{helloShown}}</span><span class="caret"></span><span style="visibility: hidden">{{helloRest}}</span></span>
+          <p class="body intro" style="margin: 0; max-width: 12.5em; font-size: clamp(15px, 1.213vw, 18.5px); line-height: 1.65; color: #1F2A22; width: 227px">I am Manasvi and I work across design, product, and engineering to turn requirements into intuitive digital experiences. I believe good design is about asking the right questions and finding patterns in complexity.</p>
+        </div>
+        <div class="credits tags" aria-label="How I work" style="margin-bottom: -0.47em">
+          <ul class="mono" style="list-style: none; margin: 0; padding: 0; font-size: clamp(12.7px, 1.04vw, 15px); color: #1F2A22; transform: translate3d(0, -{{credY}}, 0); transition: {{credT}}">
+            <sc-for list="{{credits}}" as="w" hint-placeholder-count="12">
+              <li>{{w.label}}</li>
+            </sc-for>
+          </ul>
+        </div>
+      </div>
+</div>
+    <div style="flex: 1"></div>
+    <a href="#work" class="mono vw rise r4" style="align-self: center; font-size: clamp(12.7px, 1.04vw, 15px); padding: 8px 12px; margin-top: 32px; color: #1F2A22">View work</a>
+  </div>
+</section>
+
+<section id="work" class="work" aria-labelledby="work-title">
+  <div class="wrap">
+    <header class="whead" data-reveal="1">
+      <h2 id="work-title" class="head">Projects &amp; Case Studies</h2>
+      <span class="mono wcount">03</span>
+    </header>
+      <article class="case" data-reveal="1">
+        <a class="media tint-sky" href="work/entripy/index.html" aria-label="Making Bulk Ordering Simpler for B2B Users, view case study">
+          <span class="shotwrap" data-k="para"><img class="shot" style="--s: 1.732; --tx: 20.78%; --ty: -4.90%" src="assets/media/home-entripy.webp" alt="Entripy bulk ordering screen showing a size and quantity picker for a Gildan t-shirt" loading="lazy"></span>
+        </a>
+        <div class="copy">
+          <span class="idx mono">01</span>
+          <h3 class="ctitle head">Making Bulk Ordering Simpler for B2B Users</h3>
+          <p class="cdesc body">A clearer, more intuitive workflow for teams ordering custom apparel</p>
+          <ul class="ctags mono"><li>UX Design</li><li>User Flows</li><li>UI Design</li><li>Problem-Solving</li><li>B2B</li></ul>
+          <a class="cta mono" href="work/entripy/index.html">View case study <svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10.5"></path><path d="M9.2 4.2 13 8l-3.8 3.8"></path></svg></a>
+        </div>
+      </article>
+
+      <article class="case flip" data-reveal="1">
+        <a class="media tint-sage" href="work/duplin/index.html" aria-label="Improving the Online Experience for a Modern Winery, view case study">
+          <span class="shotwrap" data-k="para"><img class="shot" style="--s: 1.247; --tx: 0.00%; --ty: 3.53%" src="assets/media/home-duplin.webp" alt="Duplin Winery site showing top-rated wines and the three visit locations" loading="lazy"></span>
+        </a>
+        <div class="copy">
+          <span class="idx mono">02</span>
+          <h3 class="ctitle head">Improving the Online Experience for a Modern Winery</h3>
+          <p class="cdesc body">Connecting discovery, visits, and post-visit engagement across digital touchpoints</p>
+          <ul class="ctags mono"><li>Experience Design</li><li>Winery Platform</li><li>UX Design</li><li>Ecommerce</li><li>On-Site to Online Flow</li></ul>
+          <a class="cta mono" href="work/duplin/index.html">View case study <svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10.5"></path><path d="M9.2 4.2 13 8l-3.8 3.8"></path></svg></a>
+        </div>
+      </article>
+
+      <article class="case" data-reveal="1">
+        <a class="media tint-blush" href="work/rennai/index.html" aria-label="When Luxury Beauty Doesn’t Feel Premium, view case study">
+          <span class="shotwrap" data-k="para"><img class="shot" style="--s: 1.685; --tx: 0.00%; --ty: -4.77%" src="assets/media/home-rennai.webp" alt="Rennai homepage with a close-up portrait and the headline Refined Beauty, Thoughtfully Curated" loading="lazy"></span>
+        </a>
+        <div class="copy">
+          <span class="idx mono">03</span>
+          <h3 class="ctitle head">When Luxury Beauty Doesn’t Feel Premium</h3>
+          <p class="cdesc body">A cleaner, more refined shopping experience designed to feel truly premium</p>
+          <ul class="ctags mono"><li>Beauty Ecommerce</li><li>Service Flows</li><li>Multi-Brand Platform</li><li>Product Discovery</li></ul>
+          <a class="cta mono" href="work/rennai/index.html">View case study <svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10.5"></path><path d="M9.2 4.2 13 8l-3.8 3.8"></path></svg></a>
+        </div>
+      </article>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="frow">
+      <div class="fsig">
+        <a href="#top" class="mono-mark head" aria-label="Back to top">mm</a>
+        <span class="mono fname">Manasvi Modi 2026</span>
+      </div>
+      <nav class="flinks mono" aria-label="Footer">
+        <a href="#top">Home</a>
+        <a href="about/index.html">About</a>
+        <a href="resume.pdf" data-resume="">Resume</a>
+        <a href="https://www.linkedin.com/in/manasvi-modi-5937931a4/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+      <a class="fmail body" href="mailto:manasvimodi.mm@gmail.com"><svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="2.6"></circle><path d="M10.6 8v1.1a1.7 1.7 0 0 0 3.4 0V8a6 6 0 1 0-2.4 4.8"></path></svg>manasvimodi.mm@gmail.com</a>
+    </div>
+  </div>
+</footer>
+</div>
+<script src="assets/js/dc-lite.js"></script>
+<script>
+const HELLO = 'hello';
+const WORDS = ['Design thinking', 'Product workflows', 'Systems thinking', 'Interaction design', 'User experience', 'Problem solving', 'Product thinking'];
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { mx: 0, my: 0, ci: 0, cAnim: true, hn: 0 };
+    this._raf = null;
+    this._next = null;
+  }
+  componentDidMount() {
+    if (typeof IntersectionObserver !== 'undefined') {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.remove('pre'); io.unobserve(en.target); } });
+      }, { threshold: 0.15 });
+      this._io = io;
+      document.querySelectorAll('[data-reveal]').forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top > window.innerHeight) { el.classList.add('pre'); io.observe(el); }
+      });
+    }
+    const typeStep = () => {
+      if ((this.props.motion ?? true) === false) { this.setState({ hn: HELLO.length }); this._type = setTimeout(typeStep, 1000); return; }
+      const st = this._tw || (this._tw = { dir: 1 });
+      let n = this.state.hn + st.dir;
+      let wait = st.dir > 0 ? 150 + Math.random() * 90 : 75;
+      if (n >= HELLO.length) { n = HELLO.length; st.dir = -1; wait = 6500; }
+      else if (n <= 0) { n = 0; st.dir = 1; wait = 900; }
+      this.setState({ hn: n });
+      this._type = setTimeout(typeStep, wait);
+    };
+    this._type = setTimeout(typeStep, 1900);
+    this._credit = setInterval(() => {
+      if ((this.props.motion ?? true) === false) return;
+      const next = this.state.ci + 1;
+      this.setState({ ci: next, cAnim: true });
+      if (next >= WORDS.length) {
+        this._creditReset = setTimeout(() => this.setState({ ci: 0, cAnim: false }), 900);
+      }
+    }, 2400);
+    const t0 = performance.now();
+    const TAU = Math.PI * 2;
+
+    // ---------- soft sprites, built once with radial gradients (no blur filters, cheap to draw) ----------
+    const blob = (ctx, x, y, rx, ry, a) => {
+      ctx.save(); ctx.translate(x, y); ctx.scale(rx / ry, 1);
+      const g = ctx.createRadialGradient(0, 0, 0, 0, 0, ry);
+      g.addColorStop(0, 'rgba(255,255,255,' + a + ')');
+      g.addColorStop(0.45, 'rgba(255,255,255,' + (a * 0.62) + ')');
+      g.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(0, 0, ry, 0, TAU); ctx.fill(); ctx.restore();
+    };
+    const makeCloud = (seed) => {
+      let r = seed;
+      const rnd = () => { r = (r * 9301 + 49297) % 233280; return r / 233280; };
+      const c = document.createElement('canvas'); c.width = 760; c.height = 260;
+      const x = c.getContext('2d');
+      const n = 7 + Math.floor(rnd() * 4);
+      for (let i = 0; i < n; i++) {
+        const cx = 140 + rnd() * 480, cy = 150 - Math.sin((cx - 140) / 480 * Math.PI) * (30 + rnd() * 40) + rnd() * 20;
+        blob(x, cx, cy, 90 + rnd() * 120, 34 + rnd() * 40, 0.55 + rnd() * 0.3);
+      }
+      blob(x, 380, 170, 330, 46, 0.35);
+      return c;
+    };
+    const makeVeil = () => {
+      const c = document.createElement('canvas'); c.width = 1400; c.height = 120;
+      blob(c.getContext('2d'), 700, 60, 690, 34, 0.5);
+      return c;
+    };
+    const SPR = [makeCloud(11), makeCloud(47), makeCloud(83), makeCloud(131)];
+    const VEIL = makeVeil();
+    // y: fraction of hero height; s: scale; a: opacity; v: drift speed in widths per minute (slow, constant)
+    const CLOUDS = [
+      { k: 0, y: 0.04, s: 1.2, a: 0.85, v: 0.22, x: 0.08 },
+      { k: 1, y: 0.19, s: 0.9, a: 0.72, v: 0.165, x: 0.55 },
+      { k: 2, y: 0.32, s: 1.05, a: 0.6, v: 0.132, x: 0.22 },
+      { k: 3, y: 0.10, s: 0.75, a: 0.62, v: 0.187, x: 0.86 },
+      { k: 1, y: 0.40, s: 1.25, a: 0.48, v: 0.11, x: 0.7 },
+      { k: 2, y: -0.02, s: 0.95, a: 0.66, v: 0.209, x: 0.4 },
+      { k: 0, y: 0.26, s: 0.6, a: 0.55, v: 0.154, x: 0.97 }
+    ];
+    const VEILS = [
+      { y: 0.27, s: 1.0, a: 0.32, v: 0.066, x: 0.1, rot: -0.12 },
+      { y: 0.13, s: 0.8, a: 0.26, v: 0.055, x: 0.6, rot: -0.18 },
+      { y: 0.38, s: 0.9, a: 0.22, v: 0.077, x: 0.85, rot: -0.08 }
+    ];
+    const fit = (cv) => {
+      // everything here is soft, so it renders at half resolution and the browser scales it up
+      const w = (cv.clientWidth * 0.5) | 0, h = (cv.clientHeight * 0.5) | 0;
+      if (w && h && (cv.width !== w || cv.height !== h)) { cv.width = w; cv.height = h; }
+      return [cv.width, cv.height];
+    };
+    const smooth = (v) => v * v * (3 - 2 * v);
+
+    const drawSky = (cv, t) => {
+      const ctx = cv.getContext('2d'); const [W, H] = fit(cv); if (!W) return;
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.clearRect(0, 0, W, H);
+      const unit = Math.min(0.7, W / 1500);
+      // a thin, even haze over the upper sky: it is what the cursor cuts through when no cloud is near
+      const hz = ctx.createLinearGradient(0, 0, 0, H * 0.62);
+      hz.addColorStop(0, 'rgba(255,255,255,0.16)'); hz.addColorStop(0.7, 'rgba(255,255,255,0.1)'); hz.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = hz; ctx.fillRect(0, 0, W, H * 0.62);
+      for (const v of VEILS) {
+        const w = VEIL.width * v.s * unit * 1.2, h = VEIL.height * v.s * unit;
+        const span = W + w;
+        const x = ((v.x * span + t * v.v / 60 * W) % span) - w;
+        ctx.save(); ctx.globalAlpha = v.a;
+        ctx.translate(x + w / 2, v.y * H); ctx.rotate(v.rot);
+        ctx.drawImage(VEIL, -w / 2, -h / 2, w, h); ctx.restore();
+      }
+      for (const c of CLOUDS) {
+        const spr = SPR[c.k];
+        const breathe = 1 + 0.025 * Math.sin(TAU * (t / 40 + c.x));
+        const w = spr.width * c.s * unit * breathe, h = spr.height * c.s * unit;
+        const span = W + w;
+        const x = ((c.x * span + t * c.v / 60 * W) % span) - w;
+        const y = c.y * H + Math.sin(TAU * (t / 55 + c.x)) * 4 * unit;
+        // the cursor is a breeze: clouds it passes near drift a little in its direction, then settle
+        const wx = ((x + w / 2) / W), wy = ((y + h / 2) / H);
+        const B = this._breeze;
+        if (B && B.e > 0.001) {
+          const d2 = ((wx - B.x) / 0.22) ** 2 + ((wy - B.y) / 0.18) ** 2;
+          const f = Math.exp(-d2) * B.e;
+          c.vx = (c.vx || 0) + B.vx * f * 0.04 * this._dt;
+          c.vy = (c.vy || 0) + B.vy * f * 0.016 * this._dt;
+        }
+        // time-based easing: the push fades in about a second, the cloud eases back over a few seconds
+        const dk = this._dt * 60;
+        c.vx = (c.vx || 0) * Math.pow(0.95, dk); c.vy = (c.vy || 0) * Math.pow(0.95, dk);
+        c.ox = ((c.ox || 0) + c.vx * dk) * Math.pow(0.992, dk); c.oy = ((c.oy || 0) + c.vy * dk) * Math.pow(0.988, dk);
+        ctx.globalAlpha = c.a;
+        ctx.drawImage(spr, x + c.ox * W, y + c.oy * H, w, h);
+      }
+      ctx.globalAlpha = 1;
+    };
+
+    // a broad, slow swell of light rolls across the meadow, followed by a soft shadow, like wind over grass
+    const drawMeadow = (cv, t) => {
+      const ctx = cv.getContext('2d'); const [W, H] = fit(cv); if (!W) return;
+      ctx.clearRect(0, 0, W, H);
+      const period = 22;
+      for (let n = 0; n < 2; n++) {
+        const p = ((t / period) + n * 0.5) % 1;
+        const cx = -0.35 * W + p * 1.7 * W;
+        const fade = Math.sin(Math.PI * p);
+        const band = (dx, dy, rx, ry, col, a) => {
+          ctx.save(); ctx.translate(cx + dx * W, H * dy); ctx.rotate(-0.05); ctx.scale(rx / ry, 1);
+          const g = ctx.createRadialGradient(0, 0, 0, 0, 0, ry);
+          g.addColorStop(0, 'rgba(' + col + ',' + a * fade + ')');
+          g.addColorStop(0.5, 'rgba(' + col + ',' + a * 0.45 * fade + ')');
+          g.addColorStop(1, 'rgba(' + col + ',0)');
+          ctx.fillStyle = g; ctx.beginPath(); ctx.arc(0, 0, ry, 0, TAU); ctx.fill(); ctx.restore();
+        };
+        band(0, 0.86, 0.32 * W, 0.075 * H, '214,220,150', 0.5);
+        band(-0.02, 0.95, 0.42 * W, 0.08 * H, '214,220,150', 0.38);
+        band(-0.16, 0.9, 0.3 * W, 0.08 * H, '96,122,70', 0.2);
+      }
+      // gusts: when the cursor moves, a soft swell of light runs over the grass below it, in the same direction
+      const G = this._gusts || (this._gusts = []);
+      for (let i = G.length - 1; i >= 0; i--) {
+        const g = G[i]; const age = (t - g.t0) / g.life;
+        if (age >= 1) { G.splice(i, 1); continue; }
+        const a = Math.sin(Math.PI * age) * g.a;
+        const gx = (g.x + g.dir * age * 0.22) * W;
+        ctx.save(); ctx.translate(gx, H * g.y); ctx.rotate(-0.05); ctx.scale((0.16 * W) / (0.05 * H), 1);
+        const gr = ctx.createRadialGradient(0, 0, 0, 0, 0, 0.05 * H);
+        gr.addColorStop(0, 'rgba(222,228,160,' + a + ')');
+        gr.addColorStop(0.5, 'rgba(222,228,160,' + a * 0.45 + ')');
+        gr.addColorStop(1, 'rgba(222,228,160,0)');
+        ctx.fillStyle = gr; ctx.beginPath(); ctx.arc(0, 0, 0.05 * H, 0, TAU); ctx.fill(); ctx.restore();
+      }
+    };
+
+    const tick = (now) => {
+      this._loop = requestAnimationFrame(tick);
+      if ((this.props.motion ?? true) === false) return;
+      if (!this._els || !this._els.length || !this._els[0].isConnected) {
+        this._els = Array.from(document.querySelectorAll('[data-k]'));
+      }
+      if (!this._sky || !this._sky.isConnected) this._sky = document.querySelector('[data-cv="sky"]');
+      if (!this._mead || !this._mead.isConnected) this._mead = document.querySelector('[data-cv="meadow"]');
+      const t = (now - t0) / 1000;
+      this._now = t;
+      this._dt = Math.min(0.05, Math.max(0.001, (now - (this._lastNow || now)) / 1000)) || 0.016;
+      this._lastNow = now;
+      if (this._breeze) { this._breeze.e *= Math.pow(0.92, this._dt * 60); }
+      if (this._sky) drawSky(this._sky, t);
+      if (this._mead) drawMeadow(this._mead, t);
+      for (const el of this._els) {
+        if (el.dataset.k !== 'para') continue;
+        const r = el.parentElement.getBoundingClientRect();
+        const vh = window.innerHeight || 800;
+        if (r.bottom < -200 || r.top > vh + 200) continue;
+        const target = Math.max(-1, Math.min(1, (r.top + r.height / 2 - vh / 2) / vh)) * -42;
+        el._py = el._py == null ? target : el._py + (target - el._py) * 0.08;
+        el.style.transform = 'translate3d(0,' + el._py.toFixed(2) + 'px,0)';
+      }
+    };
+    this._loop = requestAnimationFrame(tick);
+  }
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    clearTimeout(this._type);
+    clearInterval(this._credit);
+    clearTimeout(this._creditReset);
+    if (this._loop) cancelAnimationFrame(this._loop);
+    if (this._raf) cancelAnimationFrame(this._raf);
+  }
+  renderVals() {
+    const motion = this.props.motion ?? true;
+    const mx = motion ? this.state.mx : 0;
+    const my = motion ? this.state.my : 0;
+    const t = (k) => (mx * k).toFixed(2) + 'px ' + (my * k * 0.5).toFixed(2) + 'px';
+    return {
+      motionClass: motion ? '' : 'still',
+      helloShown: HELLO.slice(0, motion ? this.state.hn : HELLO.length),
+      helloRest: HELLO.slice(motion ? this.state.hn : HELLO.length),
+      credits: WORDS.concat(WORDS.slice(0, 4)).map((label, k) => ({ label, key: k })),
+      credY: (this.state.ci * 2.6) + 'em',
+      credT: this.state.cAnim ? 'transform 0.8s cubic-bezier(.65,0,.35,1)' : 'none',
+      pSky: t(-6),
+      pLight: t(-9),
+      pFar: t(-12),
+      pMid: t(-16),
+      pNear: t(-22),
+      onMove: (e) => {
+        if (!motion) return;
+        const r = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - r.left, y = e.clientY - r.top;
+        const nx = x / r.width, ny = y / r.height, now = this._now || 0;
+        const pv = this._pv || { x: nx, y: ny, t: now };
+        const dt = Math.max(0.016, now - pv.t);
+        const vx = Math.max(-3, Math.min(3, (nx - pv.x) / dt)), vy = Math.max(-3, Math.min(3, (ny - pv.y) / dt));
+        this._pv = { x: nx, y: ny, t: now };
+        const sp = Math.hypot(vx, vy);
+        this._breeze = { x: nx, y: ny, vx, vy, e: Math.min(1, ((this._breeze && this._breeze.e) || 0) + sp * 0.25) };
+        const G = this._gusts || (this._gusts = []);
+        if (sp > 0.25 && now - (this._lastGust || 0) > 0.35 && G.length < 6) {
+          this._lastGust = now;
+          G.push({ x: nx, y: 0.8 + Math.random() * 0.12, dir: vx >= 0 ? 1 : -1, t0: now, life: 2.6, a: Math.min(0.42, 0.18 + sp * 0.08) });
+        }
+        this._next = {
+          mx: Math.max(-0.5, Math.min(0.5, x / r.width - 0.5)),
+          my: Math.max(-0.5, Math.min(0.5, y / r.height - 0.5))
+        };
+        if (!this._raf) {
+          this._raf = requestAnimationFrame(() => {
+            this._raf = null;
+            if (this._next) this.setState(this._next);
+          });
+        }
+      },
+      onLeave: () => this.setState({ mx: 0, my: 0 })
+    };
+  }
+}
+DC.mount(Component);
+</script>
+</body>
+</html>

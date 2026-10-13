@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · Manasvi Modi</title>
+<meta name="description" content="Manasvi Modi, UX and product designer. Case studies in ecommerce, B2B and SaaS product design.">
+<meta property="og:title" content="About · Manasvi Modi">
+<meta property="og:description" content="Manasvi Modi, UX and product designer. Case studies in ecommerce, B2B and SaaS product design.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://manasvimodi.vercel.app/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Encode+Sans:wdth,wght@75..125,100..900&amp;family=Inconsolata:wght@400;500&amp;family=News+Cycle:wght@400;700&amp;display=swap">
+<style>
+body{margin:0;background:#F4F3EC}
+a{color:#1F2A22}a:hover{color:#3E5F33}
+
+/* ---------- system ---------- */
+.cs{background:#F4F3EC;color:#1F2A22;font-family:"News Cycle","Arial Narrow",sans-serif;overflow:hidden;overflow:clip}
+.wrap{position:relative;max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+.head{font-family:"Encode Sans","Arial Narrow",sans-serif;font-weight:300;font-stretch:84%;color:#141A16}
+.mono{font-family:Inconsolata,ui-monospace,monospace;letter-spacing:0.15em}
+.muted{color:rgba(31,42,34,.68)}
+.rule{border:0;border-top:1px solid rgba(31,42,34,.16);margin:0}
+.lead{font-size:clamp(17px,1.35vw,20.5px);line-height:1.65}
+.txt{font-size:clamp(15px,1.213vw,18.5px);line-height:1.7}
+.small{font-size:clamp(12.7px,1.04vw,15px)}
+.tiny{font-size:clamp(11.5px,0.92vw,13.5px)}
+
+/* ---------- header ---------- */
+.nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:32px}
+.nav .brand{font-size:clamp(20px,1.6vw,24px);text-decoration:none;letter-spacing:.01em}
+.nav .links{display:flex;flex-wrap:wrap;gap:clamp(20px,2.6vw,40px)}
+.nav .links a{text-decoration:none;padding:12px 0;display:inline-flex;align-items:center;gap:.3em}
+
+/* footer */
+.frow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px 40px;border-top:1px solid rgba(31,42,34,.16);padding:clamp(40px,4.4vw,64px) 0 clamp(36px,4vw,56px)}
+.fsig{display:flex;flex-direction:column;gap:6px}
+.mark{font-size:clamp(48px,4.6vw,68px);line-height:.9;text-decoration:none}
+.flinks{display:flex;flex-wrap:wrap;gap:8px clamp(28px,4.4vw,72px)}
+.flinks a,.fmail{text-decoration:none;padding:10px 0}
+.fmail{display:inline-flex;align-items:center;gap:.45em}
+
+
+.top{position:relative}
+.sky{position:absolute;left:0;right:0;top:0;height:clamp(560px,56vw,780px);pointer-events:none;
+  background:radial-gradient(60% 70% at 12% 0%,rgba(140,184,220,.6),rgba(140,184,220,0) 70%),
+    radial-gradient(50% 60% at 88% 8%,rgba(191,220,240,.8),rgba(191,220,240,0) 70%),
+    radial-gradient(60% 40% at 80% 70%,rgba(214,226,196,.6),rgba(214,226,196,0) 70%),
+    linear-gradient(180deg,#C4DAEA 0%,#DCE7EC 30%,#ECEFE8 60%,#F4F3EC 100%)}
+
+/* about layout: three staggered columns */
+.about{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,1fr) minmax(0,3.4fr) minmax(0,1fr) minmax(0,2.6fr);padding:clamp(72px,9vw,136px) 0 clamp(96px,10vw,160px);align-items:start}
+.c1{grid-column:1}
+.c2{grid-column:3;margin-top:clamp(150px,15vw,230px)}
+.c3{grid-column:5;text-align:right;display:flex;flex-direction:column;align-items:flex-end;margin-top:clamp(28px,3vw,44px)}
+.eyebrow{display:block;font-size:clamp(12.7px,1.04vw,15px);color:#1F2A22;padding-left:.35em}
+.h1{margin:clamp(10px,1vw,16px) 0 0;font-size:clamp(60px,7vw,108px);line-height:.95;letter-spacing:-0.015em}
+.body{font-size:clamp(16px,1.3vw,19px);line-height:1.62;color:#1F2A22;max-width:20em}
+.c1 .body{margin-top:clamp(28px,2.8vw,40px)}
+.body p{margin:0}
+.body p + p{margin-top:1em}
+.h4{margin:0;font-size:clamp(23px,2vw,30px);line-height:1.15;max-width:9em}
+.c2 .body{margin-top:clamp(18px,1.8vw,26px);max-width:17em}
+.portrait{width:clamp(150px,13vw,200px);aspect-ratio:1;border-radius:50%;margin-top:clamp(28px,3vw,44px);overflow:hidden;position:relative;
+  background:radial-gradient(70% 60% at 30% 25%,#E6EFF5 0%,rgba(230,239,245,0) 70%),linear-gradient(170deg,#BCD4E6 0%,#DCE6E2 50%,#C9D8B6 100%);
+  box-shadow:inset 0 0 0 1px rgba(31,42,34,.06)}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+/* optical overshoot: a circle flush to the edge reads as inset, so it sits slightly past it */
+.portrait{margin-right:calc(clamp(150px,13vw,200px) * -0.05)}
+.portrait .slide{position:absolute;inset:0;transition:opacity .8s cubic-bezier(.65,0,.35,1)}
+.portrait .slide img{transform:scale(1.08);transition:transform 2.4s cubic-bezier(.22,.61,.24,1)}
+.portrait .slide.on img{transform:scale(1)}
+.likes li{color:rgba(31,42,34,.5);transition:color .8s cubic-bezier(.65,0,.35,1)}
+.likes li.on{color:#1F2A22}
+.likes ul.jump li{transition:none}
+.portrait span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:clamp(34px,3vw,46px);color:rgba(31,42,34,.55)}
+.likes{margin:clamp(32px,3.4vw,48px) 0 -0.8em;height:10.4em;overflow:visible;clip-path:inset(0 -60vw 0 -60vw);font-size:clamp(12.7px,1.04vw,15px);color:#1F2A22}
+.likes ul{list-style:none;margin:0;padding:0;will-change:transform}
+.likes li{height:2.6em;line-height:2.6em;white-space:nowrap}
+.c3 .note{margin-top:clamp(28px,3vw,40px);max-width:15em;font-size:clamp(15px,1.15vw,17px);line-height:1.6;color:rgba(31,42,34,.72)}
+.connect{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px 32px;padding:clamp(36px,4vw,56px) 0 clamp(64px,7vw,104px)}
+.connect p{margin:0;font-size:clamp(26px,2.6vw,40px);line-height:1.15;max-width:18em}
+.cta{display:inline-flex;align-items:center;gap:.5em;text-decoration:none;padding:10px 0;font-size:clamp(12.7px,1.04vw,15px)}
+.cta svg{transition:translate .5s cubic-bezier(.2,.7,.2,1)}
+.cta:hover svg{translate:4px 0}
+[data-reveal].pre{opacity:0;transform:translateY(24px)}
+[data-reveal]{transition:opacity 1.1s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1)}
+@media (max-width:900px){
+  .about{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px 32px}
+  .c1{grid-column:1/-1}
+  .c2{grid-column:1;margin-top:0}
+  .c3{grid-column:2;margin-top:0}
+}
+@media (max-width:600px){
+  .about{grid-template-columns:minmax(0,1fr)}
+  .c2,.c3{grid-column:1}
+  .c3{text-align:left;align-items:flex-start}
+  .body,.c2 .body{max-width:none}
+}
+@media (prefers-reduced-motion:reduce){[data-reveal].pre{opacity:1;transform:none}}
+
+/* narrower text columns; column 2 bottom-aligned to column 1 */
+.c1 .body{max-width:17em}
+.c2{margin-top:0;align-self:end}
+.c2 .h4{max-width:none}
+.c2 .body{max-width:15em}
+.c3{align-self:end;margin-top:0;padding-bottom:2px}
+@media (max-width:900px){.c2,.c3{align-self:start}.c1 .body,.c2 .body{max-width:22em}}
+/* tablet: beyond-work sits beside About me; where-next runs below */
+@media (min-width:601px) and (max-width:900px){
+  .about{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:64px 40px;padding-top:56px}
+  .c1{grid-column:1;grid-row:1}
+  .c3{grid-column:2;grid-row:1;align-self:end}
+  .c2{grid-column:1 / -1;grid-row:2}
+  .c2 .body{max-width:30em}
+}
+/* phone: heading on one line, photo and rolling list side by side */
+@media (max-width:600px){
+  .about{padding-top:40px;padding-bottom:64px;gap:56px 0}
+  .c3{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:20px;align-items:center;text-align:left}
+  .c3 .h4{grid-column:1 / -1;max-width:none !important}
+  .portrait{width:120px;margin:24px 0 0}
+  .likes{margin:24px 0 0;align-self:center}
+  .connect{padding-top:8px}
+}
+</style>
+</head>
+<body>
+<div data-dc-root data-dc-cloak>
+<div class="cs">
+  <header class="top">
+    <div class="sky" aria-hidden="true"></div>
+    <div class="wrap">
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html" class="brand head">Manasvi Modi</a>
+        <div class="links mono small">
+          <a href="../index.html#work">Work</a>
+          <a href="../about/index.html">About</a>
+          <a href="../resume.pdf" data-resume="">Resume<svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.5v8"></path><path d="M4.8 7.6 8 10.8l3.2-3.2"></path><path d="M3 13.5h10"></path></svg></a>
+          <a href="mailto:manasvimodi.mm@gmail.com?subject=UX%20and%20Product%20Opportunity">Contact</a>
+        </div>
+      </nav>
+
+      <section class="about" aria-labelledby="about-title">
+        <div class="c1">
+          <span class="eyebrow mono">UX / Product Designer</span>
+          <h1 id="about-title" class="h1 head">About me</h1>
+          <div class="body">
+            <p>I'm Manasvi, a UX Designer who's always curious about the why behind things. I like noticing the little details, questioning what's taken for granted, and understanding what makes something work the way it does.</p>
+            <p>What draws me to design is the opportunity to make sense of things, to take something complicated and find a simpler, more thoughtful way forward. I believe good design comes from understanding what really matters, knowing what to leave out, and making experiences feel natural rather than overcomplicated. For me, it's as much about asking the right questions as it is about finding the answers.</p>
+          </div>
+        </div>
+        <div class="c2" data-reveal="1">
+          <h2 class="h4 head">Where I'd like to go next</h2>
+          <div class="body">
+            <p>I'm looking to grow into more product-focused design roles where I can take ownership of meaningful problems, explore ideas, and see them through from concept to execution.</p>
+            <p>I'd love to work with curious teams that value thoughtful collaboration and design for both the people using and building a product.</p>
+          </div>
+        </div>
+        <div class="c3" data-reveal="1">
+          <h2 class="h4 head" style="max-width: 6.4em">What I am beyond work</h2>
+          <div class="portrait" role="img" aria-label="{{photoAlt}}">
+            <sc-for list="{{photos}}" as="p" hint-placeholder-count="4">
+              <div class="slide {{p.cls}}" style="opacity: {{p.op}}">
+                <sc-if value="{{p.has}}" hint-placeholder-val="{{ false }}"><img data-dc-src="{{p.src}}" alt=""></sc-if>
+                <sc-if value="{{p.none}}" hint-placeholder-val="{{ true }}"><span class="head">mm</span></sc-if>
+              </div>
+            </sc-for>
+          </div>
+          <div class="likes mono" role="list" aria-label="Beyond work">
+            <ul class="{{credCls}}" style="transform: translate3d(0, -{{credY}}, 0); transition: {{credT}}">
+              <sc-for list="{{credits}}" as="w" hint-placeholder-count="8">
+                <li class="{{w.cls}}">{{w.label}}</li>
+              </sc-for>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </header>
+  <div class="wrap">
+    <div class="connect" data-reveal="1">
+      <p class="head">Good work starts with a good conversation. Let's connect.</p>
+      <a class="cta mono" href="mailto:manasvimodi.mm@gmail.com?subject=UX%20and%20Product%20Opportunity">Say hello<svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10.5"></path><path d="M9.2 4.2 13 8l-3.8 3.8"></path></svg></a>
+    </div>
+  </div>
+  <footer>
+    <div class="wrap">
+      <div class="frow">
+        <div class="fsig">
+          <a href="../index.html" class="mark head" aria-label="Home">mm</a>
+          <span class="mono tiny muted">Manasvi Modi 2026</span>
+        </div>
+        <nav class="flinks mono small" aria-label="Footer">
+          <a href="../index.html">Home</a>
+          <a href="../about/index.html">About</a>
+          <a href="../resume.pdf" data-resume="">Resume</a>
+          <a href="https://www.linkedin.com/in/manasvi-modi-5937931a4/" target="_blank" rel="noopener">LinkedIn</a>
+        </nav>
+        <a class="fmail txt" href="mailto:manasvimodi.mm@gmail.com"><svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="2.6"></circle><path d="M10.6 8v1.1a1.7 1.7 0 0 0 3.4 0V8a6 6 0 1 0-2.4 4.8"></path></svg>manasvimodi.mm@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</div>
+<script src="../assets/js/dc-lite.js"></script>
+<script>
+// The reel: each word is paired with a photo. The word at the top of the list is the one shown in the circle.
+const REEL = [
+  { label: 'Manasvi, that\'s me', src: '../assets/media/about-01-me-c.webp', alt: 'Manasvi smiling, in a pink outfit' },
+  { label: 'Legible type, please', src: '../assets/media/about-02-type-b.webp', alt: 'A book page: remember that a typeface that is not legible is not truly a typeface' },
+  { label: 'Architecture & design', src: '../assets/media/about-09-arch.webp', alt: 'Carved stone arches repeating down a corridor' },
+  { label: 'Museums & galleries', src: '../assets/media/about-05-museum.webp', alt: 'Manasvi looking at a blue painting in a gallery' },
+  { label: 'Open skies & meadows', src: '../assets/media/about-08-meadows.webp', alt: 'A green meadow under a wide blue sky with hills behind' },
+  { label: 'Travel & treks', src: '../assets/media/about-03-nature.webp', alt: 'Green hills rolling down to a lake under a cloudy sky' },
+  { label: 'Flowers, always', src: '../assets/media/about-04-sunflower.webp', alt: 'A single sunflower in a garden at dusk' },
+  { label: 'Gym girl', src: '../assets/media/about-06-lifting-b.webp', alt: 'Manasvi at the gym' },
+  { label: 'And cats, obviously', src: '../assets/media/about-07-cat.webp', alt: 'A sleepy tabby cat' }
+];
+const LIKES = REEL.map((r) => r.label);
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { ci: 0, cAnim: true };
+  }
+  componentDidMount() {
+    this._credit = setInterval(() => {
+      if ((this.props.motion ?? true) === false) return;
+      const next = this.state.ci + 1;
+      this.setState({ ci: next, cAnim: true });
+      if (next >= LIKES.length) {
+        this._creditReset = setTimeout(() => this.setState({ ci: 0, cAnim: false }), 900);
+      }
+    }, 2400);
+    if (typeof IntersectionObserver === 'undefined') return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.remove('pre'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('[data-reveal]').forEach((el) => {
+      if (el.getBoundingClientRect().top > window.innerHeight) { el.classList.add('pre'); io.observe(el); }
+    });
+    this._io = io;
+  }
+  componentWillUnmount() {
+    clearInterval(this._credit);
+    clearTimeout(this._creditReset);
+    if (this._io) this._io.disconnect();
+  }
+  renderVals() {
+    return {
+      credits: LIKES.concat(LIKES).map((label, k) => ({ label, key: k, cls: k === this.state.ci ? 'on' : '' })),
+      photos: REEL.map((p, k) => {
+        const on = k === (this.state.ci % REEL.length);
+        return { key: k, src: p.src, bg: 'transparent', has: !!p.src, none: !p.src, op: on ? 1 : 0, cls: on ? 'on' : '' };
+      }),
+      photoAlt: REEL[this.state.ci % REEL.length].alt,
+      credY: (this.state.ci * 2.6) + 'em',
+      credCls: this.state.cAnim ? '' : 'jump',
+      credT: this.state.cAnim ? 'transform 0.8s cubic-bezier(.65,0,.35,1)' : 'none'
+    };
+  }
+}
+DC.mount(Component);
+</script>
+</body>
+</html>
