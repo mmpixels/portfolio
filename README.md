@@ -17,13 +17,13 @@ assets/og.jpg           Preview image for link shares
 
 ## Run it locally
 
+Double-click `index.html`. Every link is relative, so it works straight from the folder.
+
+Or run a local server and open http://localhost:8000:
+
 ```
 python3 -m http.server 8000
 ```
-Or just double-click index.html; every link is relative, so it works straight from the folder too.
-```
-```
-then open http://localhost:8000
 
 ## Deploy on Vercel (free)
 
