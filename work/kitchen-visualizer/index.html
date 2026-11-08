@@ -254,6 +254,47 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
 @media (prefers-reduced-motion:reduce){.stick{transition:none}}
 
 /* ---------- kitchen visualizer additions ---------- */
+.cs .title{line-height:1.12}
+.kvcover{position:relative;aspect-ratio:16/8.4;margin-top:clamp(44px,5vw,72px)}
+.kvcover img{position:absolute;display:block;height:auto;border-radius:8px;box-shadow:0 30px 60px -26px rgba(31,42,34,.4),0 2px 8px rgba(31,42,34,.08)}
+.kvcover .c1{left:5%;top:9%;width:70%}
+.kvcover .c2{right:6%;left:auto;top:13%;height:80%;width:auto;border-radius:10px;box-shadow:0 36px 70px -24px rgba(31,42,34,.45),0 2px 10px rgba(31,42,34,.1)}
+.frame.bleed{padding:clamp(18px,2.6vw,36px) 0 clamp(18px,2.6vw,36px) clamp(18px,2.6vw,36px)}
+.frame.bleed .screen{border-radius:6px 0 0 6px}
+.minor{margin:0;font-size:clamp(19px,1.55vw,23px);line-height:1.3}
+.brief{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:16px clamp(24px,3vw,48px);margin-top:clamp(40px,4.4vw,64px);padding-top:clamp(22px,2.4vw,30px);border-top:1px solid rgba(31,42,34,.14)}
+.brief p{margin:0}
+.decide{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,3.6fr);gap:clamp(28px,3.6vw,56px);align-items:start;margin-top:clamp(8px,1vw,16px)}
+.dgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,3vw,44px) clamp(24px,3vw,44px)}
+.dec{padding-top:18px;border-top:1px solid rgba(31,42,34,.18)}
+.dec .minor{margin-top:10px}
+.dec p{margin:10px 0 0}
+.split.mid{align-items:center}
+.chain{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chain li{display:flex;align-items:center;gap:8px}
+.chain li{padding:8px 14px;border:1px solid rgba(31,42,34,.18);border-radius:999px;background:rgba(255,255,255,.5)}
+.chain li + li{position:relative;margin-left:22px}
+.chain li + li::after{content:"→";position:absolute;left:-22px;width:22px;text-align:center;letter-spacing:0;color:rgba(31,42,34,.6)}
+.ways{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,3.6vw,56px);margin-top:clamp(48px,5vw,72px);align-items:start}
+.way > .minor{margin-top:10px}
+.way > .txt{margin:12px 0 0}
+.way figure{margin-top:clamp(20px,2.2vw,28px)}
+.way .zoom.pad{padding:clamp(14px,1.8vw,24px)}
+.learned{margin-top:clamp(56px,6vw,88px);padding-top:clamp(28px,3vw,40px);border-top:1px solid rgba(31,42,34,.14)}
+.learned .bigline{margin-top:14px}
+.learned .txt{margin:18px 0 0}
+.closing .minor + .points{margin-top:16px}
+@media (max-width:900px){
+  .decide,.ways{grid-template-columns:minmax(0,1fr)}
+  .decide figure{max-width:420px}
+  .brief{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:600px){
+  .dgrid{grid-template-columns:minmax(0,1fr)}
+  .kvcover{aspect-ratio:4/3}
+  .kvcover .c1{left:4%;top:8%;width:80%}
+  .kvcover .c2{right:4%;top:30%;height:64%}
+}
 .frame.stone-t{background:radial-gradient(70% 80% at 25% 20%,#F4F0E8 0%,rgba(244,240,232,0) 70%),linear-gradient(160deg,#E9E3D8 0%,#DDD5C7 100%)}
 .cover .photo{border-radius:8px}
 .roles.three{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(36px,4vw,56px)}
@@ -266,8 +307,8 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
 .dt{width:100%;border-collapse:collapse;margin-top:clamp(28px,3vw,40px)}
 .dt th{text-align:left;font-weight:400;padding:0 0 12px;border-bottom:1px solid rgba(31,42,34,.24)}
 .dt th .sub{display:block;margin-top:4px;letter-spacing:.08em;opacity:.8}
-.dt td{padding:18px 24px 18px 0;border-bottom:1px solid rgba(31,42,34,.14);vertical-align:baseline}
-.dt td.big{font-size:clamp(26px,2.4vw,36px);line-height:1.1;white-space:nowrap;width:28%;color:#141A16}
+.dt td{padding:20px 24px 20px 0;border-bottom:1px solid rgba(31,42,34,.14);vertical-align:top}
+.dt td.big{font-size:clamp(26px,2.4vw,36px);line-height:1;white-space:nowrap;width:28%;color:#141A16}
 .dt.sys th,.dt.sys td{width:50%}
 .dt.sys th:first-child,.dt.sys td:first-child{padding-right:32px}
 .labelled b{font-weight:700}
@@ -331,8 +372,9 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
         <div><dt class="mono tiny muted">Status</dt><dd class="txt">Live, 2026<br><span class="muted">New entry points recommended for A/B testing</span></dd></div>
       </dl>
 
-      <div class="cover" data-reveal="1">
-        <button class="zoom frame" data-full="../../assets/media/kitchen-01-cover.webp" data-alt="Before and after" onClick="{{openImg}}" aria-label="Enlarge: kitchen before and after"><img class="flat photo" src="../../assets/media/kitchen-01-cover.webp" alt="A kitchen shown half before and half after new cabinet doors, split by a slider" loading="lazy"></button>
+      <div class="cover kvcover frame stone-t" data-reveal="1">
+        <img class="c1" src="../../assets/media/kitchen-04-result.webp" alt="Kitchen Visualizer showing a customer's kitchen before and after, with the order and price in a side panel" loading="lazy">
+        <img class="c2" src="../../assets/media/kitchen-05-explore.webp" alt="Visualizer side panel while exploring a new colour, with the original order and a Use this in my order form button" loading="lazy">
       </div>
     </div>
   </header>
@@ -346,7 +388,7 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
         <a href="#decisions" data-guide="decisions"><span class="bar"></span>Design decisions</a>
         <a href="#systems" data-guide="systems"><span class="bar"></span>Two systems</a>
         <a href="#launch" data-guide="launch"><span class="bar"></span>Launch</a>
-        <a href="#reach" data-guide="reach"><span class="bar"></span>Ways in</a>
+        <a href="#reach" data-guide="reach"><span class="bar"></span>Two ways in</a>
         <a href="#reflection" data-guide="reflection"><span class="bar"></span>Reflection</a>
       </nav>
 
@@ -360,13 +402,6 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
             <div class="role"><span class="mono tiny muted">What I did</span><p class="txt">I led the design of a Kitchen Visualizer that shows a customer's exact order on a photo of their own kitchen. I shaped the strategy, designed the experience, and built a working front-end prototype that our developer connected to the store's checkout.</p></div>
             <div class="role"><span class="mono tiny muted">Where it is now</span><p class="txt">Live for every customer who creates a cart. Using funnel data, I designed two more ways in, on product pages and inside the order form, and recommended an A/B test to find where it helps most.</p></div>
           </div>
-          <ol class="covers txt" data-reveal="1">
-            <li><span class="mono small muted">01</span><span>Why carts were stalling right before payment.</span></li>
-            <li><span class="mono small muted">02</span><span>The insight that changed the brief.</span></li>
-            <li><span class="mono small muted">03</span><span>Four design decisions for someone who isn't sure yet.</span></li>
-            <li><span class="mono small muted">04</span><span>Keeping two systems in step behind one order.</span></li>
-            <li><span class="mono small muted">05</span><span>Launch, and two more ways in, chosen from funnel data.</span></li>
-          </ol>
         </section>
 
         <section id="problem" class="sec" data-sec="problem">
@@ -378,7 +413,7 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
               <p class="txt" style="margin: 16px 0 0">A typical order runs to dozens of lines and thousands of dollars. Because each piece is made for one kitchen, nothing can be returned. That makes the moment of paying feel very final.</p>
             </div>
             <figure data-reveal="1">
-                <button class="zoom frame paper-t pad" data-full="../../assets/media/kitchen-02-measure.webp" data-alt="The measurements step of the order form" onClick="{{openImg}}" aria-label="Enlarge: The measurements step of the order form"><img class="screen" src="../../assets/media/kitchen-02-measure.webp" alt="The measurements step of the order form, where each door is entered one at a time with width, height and options" loading="lazy"></button>
+                <button class="zoom frame paper-t bleed " data-full="../../assets/media/kitchen-02-measure.webp" data-alt="The measurements step of the order form" onClick="{{openImg}}" aria-label="Enlarge: The measurements step of the order form"><img class="screen" src="../../assets/media/kitchen-02-measure.webp" alt="The measurements step of the order form, where each door is entered one at a time with width, height and options" loading="lazy"></button>
                 <figcaption class="txt"><span>The measurements step of the order form. Customers enter every door one at a time.</span></figcaption>
               </figure>
           </div>
@@ -400,14 +435,11 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
         </section>
 
         <section id="insight" class="sec" data-sec="insight">
-          <h2 class="h2 head">The Insight</h2>
-          <p class="bigline head quote" data-reveal="1">This wasn't a choice problem. It was a confidence problem: will this actually look right in my kitchen?</p>
-          <div class="scope" data-reveal="1">
-            <p class="thesis head">The brief changed, so the job changed.</p>
-            <div>
-              <p class="txt" style="margin: 0">The visualizer was first scoped for customers confirming a quote with the sales team: a final “yes, that's right.”</p>
-              <p class="txt" style="margin: 16px 0 0">When the client moved it to people who had built a cart but not paid, I argued this was a different job. A hesitating buyer needs space to doubt, try something else, and still be able to buy.</p>
-            </div>
+          <h2 class="h2 head">This Wasn't a Choice Problem. It Was a Confidence Problem.</h2>
+          <p class="lead measure" style="margin: 0">The question every hesitant shopper was really asking: will this actually look right in my kitchen?</p>
+          <div class="brief" data-reveal="1">
+            <h3 class="minor head">The brief changed, so the job changed</h3>
+            <p class="txt">The visualizer was first scoped for customers confirming a quote with the sales team: a final “yes, that's right.” When the client moved it to people who had built a cart but not paid, I argued this was a different job. A hesitating buyer needs space to doubt, try something else, and still be able to buy.</p>
           </div>
           <h3 class="subhead head">The principles I designed to</h3>
           <ol class="pains" data-reveal="1">
@@ -435,38 +467,18 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
 
         <section id="decisions" class="sec" data-sec="decisions">
           <h2 class="h2 head">Designed for Someone Who Isn't Sure Yet</h2>
-
-          <article class="chap">
-            <div class="chead"><span class="cnum mono">01</span><h3 class="h3 head">A Workspace, Not a Wizard</h3></div>
-            <p class="lead measure" style="margin: clamp(22px, 2.4vw, 30px) 0 0">My first version was a four-step flow. But big decisions aren't linear; people go back and forth.</p>
-            <p class="txt measure" style="margin: 14px 0 0">I moved to one workspace: the kitchen in the centre, options beside it, every preview kept in a tray to compare.</p>
-          </article>
-
-          <article class="chap">
-            <div class="chead"><span class="cnum mono">02</span><h3 class="h3 head">A Price That Feels Final</h3></div>
-            <p class="lead measure" style="margin: clamp(22px, 2.4vw, 30px) 0 0">The tool began inside a quote system, with expiry dates and “starting from” prices. To a hesitant buyer, that says the price might change.</p>
-            <p class="txt measure" style="margin: 14px 0 0">I removed all of it. The price shown is the price paid.</p>
-          </article>
-
-          <article class="chap">
-            <div class="chead"><span class="cnum mono">03</span><h3 class="h3 head">Explore, Then Buy What You Explored</h3></div>
-            <div class="split narrowfig">
-              <div>
-                <p class="lead" style="margin: 0">Trying another colour never touches the order by accident.</p>
-                <p class="txt" style="margin: 14px 0 0">The header says the order is unchanged, and one clear button moves the new look into the order when the customer is ready.</p>
-              </div>
-              <figure data-reveal="1">
-                <button class="zoom frame sage-t pad" data-full="../../assets/media/kitchen-05-explore.webp" data-alt="Visualizer side panel while exploring a new colour" onClick="{{openImg}}" aria-label="Enlarge: Visualizer side panel while exploring a new colour"><img class="screen" src="../../assets/media/kitchen-05-explore.webp" alt="Visualizer side panel while exploring a new colour, showing the original order, the new price and a Use this in my order form button" loading="lazy"></button>
-                <figcaption class="txt"><span>Exploring a new colour: the original order stays visible, and the customer chooses when to switch.</span></figcaption>
-              </figure>
+          <div class="decide">
+            <div class="dgrid">
+              <div class="dec" data-reveal="1"><span class="mono small muted">01</span><h3 class="minor head">A workspace, not a wizard</h3><p class="txt">My first version was a four-step flow. But big decisions aren't linear; people go back and forth. I moved to one workspace: the kitchen in the centre, options beside it, every preview kept in a tray to compare.</p></div>
+              <div class="dec" data-reveal="1"><span class="mono small muted">02</span><h3 class="minor head">A price that feels final</h3><p class="txt">The tool began inside a quote system, with expiry dates and “starting from” prices. To a hesitant buyer, that says the price might change. I removed all of it. The price shown is the price paid.</p></div>
+              <div class="dec" data-reveal="1"><span class="mono small muted">03</span><h3 class="minor head">Explore, then buy what you explored</h3><p class="txt">Trying another colour never touches the order by accident. The header says the order is unchanged, and one clear button moves the new look into the order when the customer is ready.</p></div>
+              <div class="dec" data-reveal="1"><span class="mono small muted">04</span><h3 class="minor head">No dead ends</h3><p class="txt">Orders mixing two door styles were going to be blocked. I proposed previewing the main style with a short note instead, so every customer gets to see their kitchen.</p></div>
             </div>
-          </article>
-
-          <article class="chap">
-            <div class="chead"><span class="cnum mono">04</span><h3 class="h3 head">No Dead Ends</h3></div>
-            <p class="lead measure" style="margin: clamp(22px, 2.4vw, 30px) 0 0">Orders mixing two door styles were going to be blocked.</p>
-            <p class="txt measure" style="margin: 14px 0 0">I proposed previewing the main style with a short note instead, so every customer gets to see their kitchen.</p>
-          </article>
+            <figure data-reveal="1">
+                <button class="zoom frame sage-t pad" data-full="../../assets/media/kitchen-05-explore.webp" data-alt="Visualizer side panel while exploring a new colour" onClick="{{openImg}}" aria-label="Enlarge: Visualizer side panel while exploring a new colour"><img class="screen" src="../../assets/media/kitchen-05-explore.webp" alt="Visualizer side panel while exploring a new colour, showing the original order, the new price and a Use this in my order form button" loading="lazy"></button>
+                <figcaption class="txt"><span>Exploring a new colour (decision 03): the original order stays visible, and the customer chooses when to switch.</span></figcaption>
+              </figure>
+          </div>
         </section>
 
         <section id="systems" class="sec" data-sec="systems">
@@ -492,11 +504,15 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
 
         <section id="launch" class="sec" data-sec="launch">
           <h2 class="h2 head">Live Today: Meet People at the Moment of Doubt</h2>
-          <div class="split narrowfig">
+          <div class="split narrowfig mid">
             <div>
               <p class="lead" style="margin: 0">We launched where the data said hesitation peaks. When a customer creates a cart, they get an email inviting them to see their order in their own kitchen, with their doors already selected.</p>
               <p class="txt" style="margin: 16px 0 0">Since launch, a growing number of customers are opening the visualizer and trying it with photos of their own kitchens.</p>
-              <p class="txt" style="margin: 16px 0 0">Each journey is now tracked from email, to visualizer, to cart, to payment, so every change from here is measured against the number we started with.</p>
+              <h3 class="minor head" style="margin-top: clamp(32px, 3.4vw, 44px)">Every journey is tracked</h3>
+              <ol class="chain mono small" aria-label="Tracked journey">
+                <li>Email</li><li>Visualizer</li><li>Cart</li><li>Payment</li>
+              </ol>
+              <p class="txt" style="margin: 16px 0 0">So every change from here is measured against the number we started with: 1 in 3.</p>
             </div>
             <figure data-reveal="1">
                 <button class="zoom frame butter-t pad" data-full="../../assets/media/kitchen-06-email.webp" data-alt="The invite email: See the doors you picked in your own kitchen" onClick="{{openImg}}" aria-label="Enlarge: The invite email: See the doors you picked in your own kitchen"><img class="screen" src="../../assets/media/kitchen-06-email.webp" alt="The invite email: See the doors you picked in your own kitchen, with a sample kitchen and a See your kitchen button" loading="lazy"></button>
@@ -519,40 +535,30 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
           </table>
           <p class="lead measure" style="margin: clamp(24px, 2.6vw, 32px) 0 0">That pointed to two different moments: curious shoppers on product pages, and committed buyers at the end of the form.</p>
 
-          <article class="chap" style="margin-top: clamp(72px, 8vw, 120px)">
-            <div class="chead"><span class="cnum mono">A</span><h3 class="h3 head">On the Product Page, for Curious Shoppers</h3></div>
-            <p class="lead measure" style="margin: clamp(22px, 2.4vw, 30px) 0 0">Shoppers preview a style on their kitchen before ordering anything, then start an order with that style already picked. It meets people where the traffic is, and builds the missing bridge from product to order.</p>
-            <div class="pair wide top">
+          <div class="ways">
+            <div class="way">
+              <span class="mono small muted">A · Product page</span>
+              <h3 class="minor head">For curious shoppers</h3>
+              <p class="txt">Shoppers preview a style on their kitchen before ordering anything, then start an order with that style already picked. It meets people where the traffic is, and builds the missing bridge from product to order.</p>
               <figure data-reveal="1">
                 <button class="zoom frame paper-t pad" data-full="../../assets/media/kitchen-07-pdp.webp" data-alt="Product page for a Shaker door" onClick="{{openImg}}" aria-label="Enlarge: Product page for a Shaker door"><img class="screen" src="../../assets/media/kitchen-07-pdp.webp" alt="Product page for a Shaker door, with a Picture this in your own kitchen panel and a Try it in my kitchen button" loading="lazy"></button>
                 <figcaption class="txt"><span>The product page with a “try it in your kitchen” panel.</span></figcaption>
               </figure>
               <figure data-reveal="1">
                 <button class="zoom frame paper-t pad" data-full="../../assets/media/kitchen-08-pdp-result.webp" data-alt="The product page try-on showing a kitchen before and after" onClick="{{openImg}}" aria-label="Enlarge: The product page try-on showing a kitchen before and after"><img class="screen" src="../../assets/media/kitchen-08-pdp-result.webp" alt="The product page try-on showing a kitchen before and after, with a project estimate and a Build your order with this product button" loading="lazy"></button>
-                <figcaption class="txt"><span>The try-on it opens, with a project estimate and a way to start an order.</span></figcaption>
+                <figcaption class="txt"><span>The try-on it opens, with an estimate and a way to start an order.</span></figcaption>
               </figure>
             </div>
-          </article>
-
-          <article class="chap">
-            <div class="chead"><span class="cnum mono">B</span><h3 class="h3 head">In the Order Form, for Committed Buyers</h3></div>
-            <div class="stack">
-              <figure data-reveal="1">
-                <button class="zoom frame paper-t pad" data-full="../../assets/media/kitchen-09-steps.webp" data-alt="Order form progress bar: step 3 of 4" onClick="{{openImg}}" aria-label="Enlarge: Order form progress bar: step 3 of 4"><img class="screen" src="../../assets/media/kitchen-09-steps.webp" alt="Order form progress bar: step 3 of 4, Accessories, tagged Kitchen preview, before Review and checkout" loading="lazy"></button>
-                <figcaption class="txt"><span>The kitchen preview is tagged on step 3 of 4, Accessories, the last step before review and payment.</span></figcaption>
-              </figure>
-            </div>
-            <div class="split narrowfig">
-              <div>
-                <p class="lead" style="margin: 0">At the end of Accessories, with every door sized and priced, customers are invited to see their order in their kitchen.</p>
-                <p class="txt" style="margin: 16px 0 0">It sits directly above “Review and check out”, the point where 2 in 3 carts currently stop. Their order stays exactly as it is unless they choose to change it.</p>
-              </div>
+            <div class="way">
+              <span class="mono small muted">B · Order form</span>
+              <h3 class="minor head">For committed buyers</h3>
+              <p class="txt">At the end of Accessories, step 3 of 4, with every door sized and priced, customers are invited to see their order in their kitchen. It sits directly above “Review and check out”, the point where 2 in 3 carts currently stop. Their order stays exactly as it is unless they choose to change it.</p>
               <figure data-reveal="1">
                 <button class="zoom frame stone-t pad" data-full="../../assets/media/kitchen-10-preview-card.webp" data-alt="The kitchen preview card at the end of Accessories" onClick="{{openImg}}" aria-label="Enlarge: The kitchen preview card at the end of Accessories"><img class="screen" src="../../assets/media/kitchen-10-preview-card.webp" alt="The kitchen preview card at the end of Accessories, directly above the Review and check out button" loading="lazy"></button>
                 <figcaption class="txt"><span>The kitchen preview card, directly above “Review and check out”.</span></figcaption>
               </figure>
             </div>
-          </article>
+          </div>
 
           <div class="callout" data-reveal="1">
             <span class="mono tiny muted">Recommendation</span>
@@ -562,9 +568,9 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
 
         <section id="reflection" class="sec" data-sec="reflection">
           <h2 class="h2 head">Measured Against the Number We Started With: 1 in 3</h2>
-          <div class="closing three" data-reveal="1">
+          <div class="closing" data-reveal="1">
             <div>
-              <h3 class="h3 head small-h">What I'm tracking</h3>
+              <h3 class="minor head">What I'm tracking</h3>
               <ul class="points txt">
                 <li>Carts that reach checkout</li>
                 <li>Customers opening the visualizer</li>
@@ -575,18 +581,18 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
               </ul>
             </div>
             <div>
-              <h3 class="h3 head small-h">What I'd do next</h3>
+              <h3 class="minor head">What I'd do next</h3>
               <ul class="points txt">
                 <li>Start with the product page, where most shoppers are, and let results guide the rest.</li>
                 <li>Make the order form's first screen show value before asking for contact details.</li>
                 <li>Let customers share a preview, because kitchen decisions are rarely made alone.</li>
               </ul>
             </div>
-            <div>
-              <h3 class="h3 head small-h">What I learned</h3>
-              <p class="txt">Naming the real job mattered more than any screen. Once I saw this as a confidence problem, the design followed.</p>
-              <p class="txt">And designing the experience is only half the work. The other half is making sure people find it at the moment they need it.</p>
-            </div>
+          </div>
+          <div class="learned" data-reveal="1">
+            <span class="mono tiny muted">What I learned</span>
+            <p class="bigline head">Naming the real job mattered more than any screen. Once I saw this as a confidence problem, the design followed.</p>
+            <p class="txt measure">And designing the experience is only half the work. The other half is making sure people find it at the moment they need it.</p>
           </div>
         </section>
 
