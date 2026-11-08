@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Designing a Kitchen Visualizer for Confident Orders · Manasvi Modi</title>
+<meta name="description" content="Manasvi Modi, UX and product designer. Case studies in ecommerce, B2B and SaaS product design.">
+<meta property="og:title" content="Designing a Kitchen Visualizer for Confident Orders · Manasvi Modi">
+<meta property="og:description" content="Manasvi Modi, UX and product designer. Case studies in ecommerce, B2B and SaaS product design.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.manasvimodi.work/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.manasvimodi.work/work/kitchen-visualizer/">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Encode+Sans:wdth,wght@75..125,100..900&amp;family=Inconsolata:wght@400;500&amp;family=News+Cycle:wght@400;700&amp;display=swap">
+<style>
+body{margin:0;background:#F4F3EC}
+a{color:#1F2A22}a:hover{color:#3E5F33}
+
+/* ---------- system ---------- */
+.cs{background:#F4F3EC;color:#1F2A22;font-family:"News Cycle","Arial Narrow",sans-serif;overflow:hidden;overflow:clip}
+.wrap{position:relative;max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+.head{font-family:"Encode Sans","Arial Narrow",sans-serif;font-weight:300;font-stretch:84%;color:#141A16}
+.mono{font-family:Inconsolata,ui-monospace,monospace;letter-spacing:0.15em}
+.muted{color:rgba(31,42,34,.68)}
+.rule{border:0;border-top:1px solid rgba(31,42,34,.16);margin:0}
+.lead{font-size:clamp(17px,1.35vw,20.5px);line-height:1.65}
+.txt{font-size:clamp(15px,1.213vw,18.5px);line-height:1.7}
+.small{font-size:clamp(12.7px,1.04vw,15px)}
+.tiny{font-size:clamp(11.5px,0.92vw,13.5px)}
+
+/* ---------- header ---------- */
+.nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:32px}
+.nav .brand{font-size:clamp(20px,1.6vw,24px);text-decoration:none;letter-spacing:.01em}
+.nav .links{display:flex;flex-wrap:wrap;gap:clamp(20px,2.6vw,40px)}
+.nav .links a{text-decoration:none;padding:12px 0;display:inline-flex;align-items:center;gap:.3em}
+
+/* ---------- opening ---------- */
+.top{position:relative;padding-bottom:clamp(56px,6vw,88px)}
+.sky{position:absolute;left:0;right:0;top:0;height:clamp(620px,62vw,860px);pointer-events:none;
+  background:radial-gradient(60% 70% at 12% 0%,rgba(140,184,220,.75),rgba(140,184,220,0) 70%),
+    radial-gradient(50% 60% at 88% 8%,rgba(191,220,240,.9),rgba(191,220,240,0) 70%),
+    radial-gradient(70% 40% at 70% 62%,rgba(250,245,228,.9),rgba(250,245,228,0) 70%),
+    linear-gradient(180deg,#B6D3E8 0%,#CFE1EA 34%,#E6ECE6 62%,#F4F3EC 100%)}
+.back{display:inline-flex;align-items:center;gap:.5em;text-decoration:none;margin-top:clamp(56px,9vh,110px);padding:8px 0}
+.back svg{transition:translate .5s cubic-bezier(.2,.7,.2,1)}
+.back:hover svg{translate:-4px 0}
+.kicker{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:clamp(22px,2.4vw,32px)}
+.title{margin:clamp(14px,1.6vw,22px) 0 0;font-size:clamp(42px,5.6vw,88px);line-height:1.02;letter-spacing:-0.012em;max-width:13em}
+.summary{margin:clamp(24px,2.6vw,36px) 0 0;max-width:36em}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:24px 32px;margin-top:clamp(44px,5vw,72px);padding-top:clamp(22px,2.2vw,30px);border-top:1px solid rgba(31,42,34,.16)}
+.meta dt{margin:0 0 10px}
+.meta dd{margin:0}
+.cover{margin-top:clamp(44px,5vw,72px)}
+
+/* ---------- framed media ---------- */
+.zoom{-webkit-appearance:none;appearance:none;background:none;border:0;margin:0;padding:0;font:inherit;color:inherit;text-align:inherit;display:block;width:100%;cursor:zoom-in}
+.frame{position:relative;border-radius:8px;overflow:hidden;isolation:isolate}
+.frame.sky-t{background:radial-gradient(70% 80% at 25% 20%,#E9F1F6 0%,rgba(233,241,246,0) 70%),linear-gradient(160deg,#DCE7EF 0%,#CFDDE8 100%)}
+.frame.sage-t{background:radial-gradient(70% 80% at 75% 20%,#EEF0E4 0%,rgba(238,240,228,0) 70%),linear-gradient(160deg,#E2E7D6 0%,#D2DAC2 100%)}
+.frame.butter-t{background:radial-gradient(70% 80% at 30% 20%,#FBF7E6 0%,rgba(251,247,230,0) 70%),linear-gradient(160deg,#F1ECD3 0%,#E6DFBF 100%)}
+.frame.paper-t{background:#FBFAF6;border:1px solid rgba(31,42,34,.1)}
+.pad{padding:clamp(18px,4vw,64px)}
+.screen{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 28px 56px -24px rgba(31,42,34,.35),0 2px 8px rgba(31,42,34,.07)}
+.flat{display:block;width:100%;height:auto;border-radius:4px}
+.zoom:focus-visible{outline:2px solid #1F2A22;outline-offset:4px}
+.zoom img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.zoom:hover img{transform:translateY(-4px)}
+figcaption{margin-top:14px;display:flex;gap:12px;align-items:baseline}
+figcaption .n{flex:none}
+figure{margin:0}
+
+/* ---------- body layout with sticky guide ---------- */
+.body{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:clamp(32px,4vw,72px);padding-top:clamp(72px,8vw,128px)}
+.guide{position:sticky;top:32px;align-self:start;display:flex;flex-direction:column;gap:2px}
+.guide a{display:flex;gap:12px;align-items:baseline;text-decoration:none;padding:8px 0;color:rgba(31,42,34,.5);transition:color .4s}
+.guide a .bar{display:inline-block;width:14px;height:1px;background:currentColor;transform:translateY(-3px);transition:width .5s cubic-bezier(.2,.7,.2,1)}
+.guide a.on,.guide a:hover{color:#1F2A22}
+.guide a.on .bar{width:32px}
+.main{min-width:0}
+.sec{scroll-margin-top:24px}
+.sec + .sec{margin-top:clamp(96px,10vw,160px)}
+.h2{margin:0 0 clamp(22px,2.4vw,32px);font-size:clamp(32px,3.3vw,50px);line-height:1.06;letter-spacing:-0.008em}
+.h3{margin:0;font-size:clamp(26px,2.5vw,38px);line-height:1.1}
+.measure{max-width:38em}
+
+/* overview */
+.bigline{margin:0;font-size:clamp(24px,2.3vw,34px);line-height:1.3;max-width:22em}
+.covers{list-style:none;margin:clamp(36px,4vw,56px) 0 0;padding:0;counter-reset:c}
+.covers li{display:grid;grid-template-columns:3.2em 1fr;gap:16px;padding:16px 0;border-top:1px solid rgba(31,42,34,.14)}
+.covers li:last-child{border-bottom:1px solid rgba(31,42,34,.14)}
+
+/* role */
+.roles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.6vw,22px)}
+.role{background:rgba(255,255,255,.55);border:1px solid rgba(31,42,34,.08);border-radius:8px;padding:clamp(20px,2vw,28px)}
+.role p{margin:12px 0 0}
+
+/* business */
+.biz{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,4vw,64px);align-items:center}
+.collage{position:relative;padding-bottom:12%}
+.collage video{display:block;width:100%;height:auto;border-radius:8px;box-shadow:0 28px 56px -24px rgba(31,42,34,.35)}
+.collage .inset{position:absolute;left:-6%;bottom:0;width:38%;border-radius:6px;border:6px solid #F4F3EC;box-shadow:0 20px 40px -18px rgba(31,42,34,.35)}
+
+/* problem */
+.pains{list-style:none;margin:clamp(28px,3vw,40px) 0 0;padding:0}
+.pains li{display:grid;grid-template-columns:3.2em 1fr;gap:16px;align-items:baseline;padding:clamp(18px,2vw,26px) 0;border-top:1px solid rgba(31,42,34,.14)}
+.pains li:last-child{border-bottom:1px solid rgba(31,42,34,.14)}
+.pains .p{font-size:clamp(22px,2vw,30px);line-height:1.3}
+.scope{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,3vw,48px);margin-top:clamp(56px,6vw,88px);align-items:start}
+.stat{font-size:clamp(72px,8vw,128px);line-height:.9;letter-spacing:-0.02em}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.chips li{padding:9px 14px;border:1px solid rgba(31,42,34,.18);border-radius:999px;background:rgba(255,255,255,.45)}
+
+/* interventions */
+.chap + .chap{margin-top:clamp(88px,9vw,140px)}
+.chead{display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,2vw,28px);align-items:baseline}
+.cnum{font-size:clamp(48px,5vw,76px);line-height:.9;color:rgba(31,42,34,.28)}
+.points{list-style:none;margin:clamp(22px,2.4vw,30px) 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.points li{position:relative;padding-left:26px}
+.points li::before{content:"";position:absolute;left:0;top:.8em;width:12px;height:1px;background:#1F2A22}
+.split{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(28px,4vw,64px);align-items:start;margin-top:clamp(32px,3.4vw,48px)}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,28px);margin-top:clamp(20px,2.4vw,32px)}
+.pair .zoom{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+.stack{display:flex;flex-direction:column;gap:clamp(20px,2.4vw,32px);margin-top:clamp(32px,3.4vw,48px)}
+.labelled{list-style:none;margin:clamp(22px,2.4vw,30px) 0 0;padding:0}
+.labelled li{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:16px;padding:14px 0;border-top:1px solid rgba(31,42,34,.14)}
+.labelled li:last-child{border-bottom:1px solid rgba(31,42,34,.14)}
+
+/* results */
+.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:clamp(14px,1.6vw,22px);margin-top:clamp(28px,3vw,40px)}
+.res{border-radius:8px;padding:clamp(22px,2.2vw,30px);display:flex;flex-direction:column;gap:14px}
+.res .q{font-size:clamp(19px,1.6vw,24px);line-height:1.35}
+.closing{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,64px)}
+.closing p{margin:16px 0 0}
+
+/* next */
+.next{padding:clamp(96px,10vw,160px) 0 clamp(80px,8vw,120px)}
+.ngrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,40px);margin-top:clamp(28px,3vw,40px)}
+.ncard{display:block;text-decoration:none;color:#1F2A22}
+.ncard .frame{aspect-ratio:16/10}
+.ncard img{position:absolute;left:8%;top:50%;width:84%;translate:0 -50%;border-radius:5px;box-shadow:0 24px 48px -20px rgba(31,42,34,.35);transition:transform 1.2s cubic-bezier(.22,.61,.24,1)}
+.ncard:hover img{transform:scale(1.04)}
+.ncard .nt{margin-top:18px;font-size:clamp(22px,2vw,30px);line-height:1.15}
+.ncard .go{display:inline-flex;align-items:center;gap:.5em;margin-top:12px}
+.ncard .go svg{transition:translate .5s cubic-bezier(.2,.7,.2,1)}
+.ncard:hover .go svg{translate:4px 0}
+
+/* footer */
+.frow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px 40px;border-top:1px solid rgba(31,42,34,.16);padding:clamp(40px,4.4vw,64px) 0 clamp(36px,4vw,56px)}
+.fsig{display:flex;flex-direction:column;gap:6px}
+.mark{font-size:clamp(48px,4.6vw,68px);line-height:.9;text-decoration:none}
+.flinks{display:flex;flex-wrap:wrap;gap:8px clamp(28px,4.4vw,72px)}
+.flinks a,.fmail{text-decoration:none;padding:10px 0}
+.fmail{display:inline-flex;align-items:center;gap:.45em}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,56px);background:rgba(244,243,236,.94);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);cursor:zoom-out;animation:fade .35s ease both}
+.lb img{max-width:100%;max-height:100%;border-radius:6px;box-shadow:0 30px 70px -30px rgba(31,42,34,.45)}
+.lb button{-webkit-appearance:none;appearance:none;background:none;border:0;color:#1F2A22;position:absolute;top:18px;right:22px;padding:10px 12px;cursor:pointer}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/* reveal */
+[data-reveal].pre{opacity:0;transform:translateY(28px)}
+[data-reveal]{transition:opacity 1.1s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1)}
+
+@media (max-width:1024px){
+  .body{grid-template-columns:minmax(0,1fr)}
+  .guide{display:none}
+}
+@media (max-width:820px){
+  .biz,.split,.scope,.closing,.ngrid{grid-template-columns:minmax(0,1fr)}
+  .pair,.roles{grid-template-columns:minmax(0,1fr)}
+  .labelled li{grid-template-columns:minmax(0,1fr);gap:6px}
+  .collage .inset{left:auto;right:-2%}
+}
+@media (prefers-reduced-motion:reduce){[data-reveal].pre{opacity:1;transform:none}}
+
+/* consistent captions and equal frames */
+figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spacing:normal;color:#1F2A22}
+.pair{grid-template-rows:auto auto}
+.pair figure{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:0}
+.pair .zoom{height:100%}
+
+/* chapter number: heading sits on the vertical centre of the number */
+.chead{align-items:center}
+.cnum{line-height:1;display:block}
+.chead .h3{margin:0}
+
+/* read more: text only */
+.ncard{border-top:1px solid rgba(31,42,34,.16);padding-top:clamp(20px,2vw,28px)}
+.ncard .nt{margin-top:0;transition:color .4s}
+.ncard:hover .nt{color:#3E5F33}
+.ncard .go{margin-top:18px}
+
+/* tablet and phone: tighter opening so the content starts sooner */
+@media (max-width:900px){
+  .back{margin-top:32px}
+  .kicker{margin-top:16px}
+  .meta{margin-top:36px}
+  .cover{margin-top:36px}
+  .body{padding-top:64px}
+  .sky{height:560px}
+}
+@media (max-width:600px){
+  .nav{padding-top:22px}
+  .back{margin-top:20px}
+  .kicker{margin-top:12px;gap:6px 14px}
+  .title{margin-top:10px;font-size:38px}
+  .summary{margin-top:16px}
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 20px;margin-top:28px;padding-top:18px}
+  .cover{margin-top:28px}
+  .top{padding-bottom:40px}
+  .body{padding-top:48px}
+  .sec + .sec{margin-top:80px}
+  .sky{height:460px}
+}
+
+/* ---------- scopeguard additions ---------- */
+.frame.olive-t{background:radial-gradient(70% 80% at 25% 20%,#F1F0E2 0%,rgba(241,240,226,0) 70%),linear-gradient(160deg,#E4E3CD 0%,#D6D5B6 100%)}
+.live{display:inline-flex;align-items:center;gap:.5em;margin-top:clamp(20px,2vw,28px);padding:10px 0;text-decoration:none;position:relative}
+.live::after{content:"";position:absolute;left:0;bottom:4px;height:1px;width:100%;background:currentColor;transform:scaleX(.18);transform-origin:left;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.live:hover::after{transform:scaleX(1)}
+.meta a{text-decoration:none;border-bottom:1px solid rgba(31,42,34,.3)}
+.modal{display:block;width:100%;height:auto;border-radius:10px;box-shadow:0 28px 56px -24px rgba(31,42,34,.35),0 2px 8px rgba(31,42,34,.07)}
+.thesis{margin:0;font-size:clamp(28px,2.8vw,42px);line-height:1.15;max-width:11em}
+.subhead{margin:clamp(56px,6vw,88px) 0 0;font-size:clamp(22px,2vw,30px);line-height:1.2}
+.chips.not li{background:transparent;border-style:dashed}
+.ledger{margin-top:clamp(28px,3vw,40px)}
+.lgroup + .lgroup{margin-top:clamp(40px,4vw,56px)}
+.lgroup h3{margin:0 0 6px;font-size:clamp(22px,2vw,30px);line-height:1.2}
+.lrows{list-style:none;margin:0;padding:0}
+.lrows li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:16px 32px;padding:16px 0;border-top:1px solid rgba(31,42,34,.14)}
+.lrows li:last-child{border-bottom:1px solid rgba(31,42,34,.14)}
+.lrows .what{font-size:clamp(17px,1.35vw,20.5px);line-height:1.45}
+.lgroup.cut .what{text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:rgba(31,42,34,.45)}
+.ngrid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pair.wide .zoom{aspect-ratio:auto;padding:clamp(10px,1.4vw,20px)}
+.split .zoom.pad{padding:clamp(16px,2.6vw,40px)}
+@media (max-width:820px){
+  .lrows li{grid-template-columns:minmax(0,1fr);gap:6px}
+  .ngrid.three{grid-template-columns:minmax(0,1fr)}
+}
+
+/* header returns when scrolling up */
+.stick{position:fixed;left:0;right:0;top:0;z-index:40;background:rgba(244,243,236,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid rgba(31,42,34,.1);transform:translateY(-101%);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.stick.on{transform:none}
+.stick .nav{padding-top:12px;padding-bottom:12px}
+.stick .nav .links a{padding:8px 0}
+.guide{transition:top .45s cubic-bezier(.2,.7,.2,1)}
+.cs.navon .guide{top:96px}
+@media (prefers-reduced-motion:reduce){.stick{transition:none}}
+
+/* ---------- kitchen visualizer additions ---------- */
+.frame.stone-t{background:radial-gradient(70% 80% at 25% 20%,#F4F0E8 0%,rgba(244,240,232,0) 70%),linear-gradient(160deg,#E9E3D8 0%,#DDD5C7 100%)}
+.cover .photo{border-radius:8px}
+.roles.three{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(36px,4vw,56px)}
+.role p{margin:12px 0 0}
+.quote{font-size:clamp(28px,2.9vw,44px);line-height:1.2;max-width:20em}
+.bars{margin-top:clamp(24px,2.6vw,36px);display:flex;flex-direction:column;gap:12px}
+.brow{display:grid;grid-template-columns:minmax(0,11em) minmax(0,1fr);align-items:center;gap:16px}
+.brow b{box-sizing:border-box;display:flex;align-items:center;height:clamp(44px,4vw,56px);padding-left:16px;border-radius:6px;background:#2F5D57;color:#F4F3EC;font-weight:300;font-size:clamp(22px,2vw,30px)}
+.brow.alt b{background:#A97F55}
+.dt{width:100%;border-collapse:collapse;margin-top:clamp(28px,3vw,40px)}
+.dt th{text-align:left;font-weight:400;padding:0 0 12px;border-bottom:1px solid rgba(31,42,34,.24)}
+.dt th .sub{display:block;margin-top:4px;letter-spacing:.08em;opacity:.8}
+.dt td{padding:18px 24px 18px 0;border-bottom:1px solid rgba(31,42,34,.14);vertical-align:baseline}
+.dt td.big{font-size:clamp(26px,2.4vw,36px);line-height:1.1;white-space:nowrap;width:28%;color:#141A16}
+.dt.sys th,.dt.sys td{width:50%}
+.dt.sys th:first-child,.dt.sys td:first-child{padding-right:32px}
+.labelled b{font-weight:700}
+.split.narrowfig{grid-template-columns:minmax(0,7fr) minmax(0,4fr)}
+.split.narrowfig .zoom.pad,.pair.wide .zoom.pad{padding:clamp(14px,2vw,28px)}
+.pair.top{align-items:start}
+.callout{margin-top:clamp(56px,6vw,88px);padding:clamp(22px,2.4vw,32px);border-radius:8px;background:rgba(255,255,255,.55);border:1px solid rgba(31,42,34,.1)}
+.callout p{margin:10px 0 0}
+.closing.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.small-h{font-size:clamp(22px,2vw,30px)}
+.closing .points{margin-top:16px}
+@media (max-width:900px){
+  .roles.three,.closing.three{grid-template-columns:minmax(0,1fr)}
+  .split.narrowfig{grid-template-columns:minmax(0,1fr)}
+  .split.narrowfig figure{max-width:440px}
+}
+@media (max-width:600px){
+  .brow{grid-template-columns:minmax(0,1fr);gap:6px}
+  .dt td.big{white-space:normal;width:38%;font-size:22px}
+  .dt td{padding-right:14px}
+}
+</style>
+</head>
+<body>
+<div data-dc-root data-dc-cloak>
+<div class="cs">
+  <div class="stick" inert=""><div class="wrap"><nav class="nav" aria-label="Primary, sticky">
+        <a href="../../index.html" class="brand head">Manasvi Modi</a>
+        <div class="links mono small">
+          <a href="../../index.html#work">Work</a>
+          <a href="../../about/index.html">About</a>
+          <a href="../../resume.pdf" data-resume="">Resume<svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.5v8"></path><path d="M4.8 7.6 8 10.8l3.2-3.2"></path><path d="M3 13.5h10"></path></svg></a>
+          <a href="mailto:manasvimodi.mm@gmail.com?subject=UX%20and%20Product%20Opportunity">Contact</a>
+        </div>
+      </nav></div></div>
+  <header class="top">
+    <div class="sky" aria-hidden="true"></div>
+    <div class="wrap">
+      <nav class="nav" aria-label="Primary">
+        <a href="../../index.html" class="brand head">Manasvi Modi</a>
+        <div class="links mono small">
+          <a href="../../index.html#work">Work</a>
+          <a href="../../about/index.html">About</a>
+          <a href="../../resume.pdf" data-resume="">Resume<svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.5v8"></path><path d="M4.8 7.6 8 10.8l3.2-3.2"></path><path d="M3 13.5h10"></path></svg></a>
+          <a href="mailto:manasvimodi.mm@gmail.com?subject=UX%20and%20Product%20Opportunity">Contact</a>
+        </div>
+      </nav>
+
+      <a href="../../index.html" class="back mono small"><svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 8H3"></path><path d="M6.8 4.2 3 8l3.8 3.8"></path></svg>All work</a>
+
+      <div class="kicker mono tiny muted">
+        <span>Ecommerce</span><span>Product Strategy</span><span>UX Research</span><span>UX/UI Design</span><span>Front-end Prototype</span>
+      </div>
+      <h1 class="title head">Designing a Kitchen Visualizer for Confident Orders</h1>
+      <p class="summary lead">How I helped shoppers see a made-to-measure, non-returnable cabinet order in their own kitchen before paying, and planned how to bring the tool to more of them.</p>
+
+      <dl class="meta">
+        <div><dt class="mono tiny muted">Role</dt><dd class="txt">Product Designer<br><span class="muted">Strategy, research, UX/UI and front-end prototype</span></dd></div>
+        <div><dt class="mono tiny muted">Team</dt><dd class="txt">Project manager, CTO, developer<br><span class="muted">Client stakeholders</span></dd></div>
+        <div><dt class="mono tiny muted">Platform</dt><dd class="txt">Adobe Commerce store<br><span class="muted">Visualizer on its own infrastructure, connected to checkout</span></dd></div>
+        <div><dt class="mono tiny muted">Status</dt><dd class="txt">Live, 2026<br><span class="muted">New entry points recommended for A/B testing</span></dd></div>
+      </dl>
+
+      <div class="cover" data-reveal="1">
+        <button class="zoom frame" data-full="../../assets/media/kitchen-01-cover.webp" data-alt="Before and after" onClick="{{openImg}}" aria-label="Enlarge: kitchen before and after"><img class="flat photo" src="../../assets/media/kitchen-01-cover.webp" alt="A kitchen shown half before and half after new cabinet doors, split by a slider" loading="lazy"></button>
+      </div>
+    </div>
+  </header>
+  <div class="wrap">
+    <div class="body">
+      <nav class="guide mono small" aria-label="Case study sections">
+        <a href="#overview" data-guide="overview"><span class="bar"></span>Overview</a>
+        <a href="#problem" data-guide="problem"><span class="bar"></span>The problem</a>
+        <a href="#insight" data-guide="insight"><span class="bar"></span>The insight</a>
+        <a href="#tool" data-guide="tool"><span class="bar"></span>The tool</a>
+        <a href="#decisions" data-guide="decisions"><span class="bar"></span>Design decisions</a>
+        <a href="#systems" data-guide="systems"><span class="bar"></span>Two systems</a>
+        <a href="#launch" data-guide="launch"><span class="bar"></span>Launch</a>
+        <a href="#reach" data-guide="reach"><span class="bar"></span>Ways in</a>
+        <a href="#reflection" data-guide="reflection"><span class="bar"></span>Reflection</a>
+      </nav>
+
+      <main class="main">
+
+        <section id="overview" class="sec" data-sec="overview">
+          <h2 class="h2 head">Case Study Overview</h2>
+          <p class="bigline head" data-reveal="1">A tool that answers the one question standing between a full cart and a paid order.</p>
+          <div class="roles three" data-reveal="1">
+            <div class="role"><span class="mono tiny muted">The challenge</span><p class="txt">An online brand sells made-to-measure cabinet doors that can't be returned. Shoppers were building complete, priced orders and then stopping at payment. Only 1 in 3 carts reached checkout.</p></div>
+            <div class="role"><span class="mono tiny muted">What I did</span><p class="txt">I led the design of a Kitchen Visualizer that shows a customer's exact order on a photo of their own kitchen. I shaped the strategy, designed the experience, and built a working front-end prototype that our developer connected to the store's checkout.</p></div>
+            <div class="role"><span class="mono tiny muted">Where it is now</span><p class="txt">Live for every customer who creates a cart. Using funnel data, I designed two more ways in, on product pages and inside the order form, and recommended an A/B test to find where it helps most.</p></div>
+          </div>
+          <ol class="covers txt" data-reveal="1">
+            <li><span class="mono small muted">01</span><span>Why carts were stalling right before payment.</span></li>
+            <li><span class="mono small muted">02</span><span>The insight that changed the brief.</span></li>
+            <li><span class="mono small muted">03</span><span>Four design decisions for someone who isn't sure yet.</span></li>
+            <li><span class="mono small muted">04</span><span>Keeping two systems in step behind one order.</span></li>
+            <li><span class="mono small muted">05</span><span>Launch, and two more ways in, chosen from funnel data.</span></li>
+          </ol>
+        </section>
+
+        <section id="problem" class="sec" data-sec="problem">
+          <h2 class="h2 head">The Problem</h2>
+          <div class="split">
+            <div>
+              <h3 class="subhead head" style="margin-top: 0">A kitchen order isn't one product. It's dozens.</h3>
+              <p class="lead" style="margin: clamp(16px, 1.8vw, 24px) 0 0">Customers keep their cabinet boxes and replace the doors. Every door and drawer front is ordered to its exact size, with options like hinge holes and corner cabinets.</p>
+              <p class="txt" style="margin: 16px 0 0">A typical order runs to dozens of lines and thousands of dollars. Because each piece is made for one kitchen, nothing can be returned. That makes the moment of paying feel very final.</p>
+            </div>
+            <figure data-reveal="1">
+                <button class="zoom frame paper-t pad" data-full="../../assets/media/kitchen-02-measure.webp" data-alt="The measurements step of the order form" onClick="{{openImg}}" aria-label="Enlarge: The measurements step of the order form"><img class="screen" src="../../assets/media/kitchen-02-measure.webp" alt="The measurements step of the order form, where each door is entered one at a time with width, height and options" loading="lazy"></button>
+                <figcaption class="txt"><span>The measurements step of the order form. Customers enter every door one at a time.</span></figcaption>
+              </figure>
+          </div>
+
+          <h3 class="subhead head">People were doing all the work, then stopping right before paying</h3>
+          <div class="bars" data-reveal="1" role="img" aria-label="Of everyone who built a priced cart, 32% went on to checkout">
+            <div class="brow"><span class="mono tiny muted">Built a priced cart</span><b class="head" style="width: 100%">100%</b></div>
+            <div class="brow alt"><span class="mono tiny muted">Went on to checkout</span><b class="head" style="width: 32%">32%</b></div>
+          </div>
+          <table class="dt txt" data-reveal="1">
+            <thead><tr><th class="mono tiny muted" scope="col">Signal</th><th class="mono tiny muted" scope="col">What it told us</th></tr></thead>
+            <tbody>
+              <tr><td class="head big">1 in 3</td><td>Only 1 in 3 people who built a cart went on to checkout (32%). Two in three had sized and priced their whole order, then stopped at the last step.</td></tr>
+              <tr><td class="head big">14.5% vs 8.1%</td><td>Returning visitors finished the order form almost twice as often as first-time visitors. One visit wasn't enough to feel sure.</td></tr>
+              <tr><td class="head big">Most clicked</td><td>“View Specs &amp; Dimensions” was the most-clicked element on the whole site. Shoppers were actively looking for reassurance.</td></tr>
+            </tbody>
+          </table>
+          <p class="mono tiny muted" style="margin: 16px 0 0; letter-spacing: 0.08em">Source: GA4, Hotjar and Zuko form analytics, over a 90-day window before launch.</p>
+        </section>
+
+        <section id="insight" class="sec" data-sec="insight">
+          <h2 class="h2 head">The Insight</h2>
+          <p class="bigline head quote" data-reveal="1">This wasn't a choice problem. It was a confidence problem: will this actually look right in my kitchen?</p>
+          <div class="scope" data-reveal="1">
+            <p class="thesis head">The brief changed, so the job changed.</p>
+            <div>
+              <p class="txt" style="margin: 0">The visualizer was first scoped for customers confirming a quote with the sales team: a final “yes, that's right.”</p>
+              <p class="txt" style="margin: 16px 0 0">When the client moved it to people who had built a cart but not paid, I argued this was a different job. A hesitating buyer needs space to doubt, try something else, and still be able to buy.</p>
+            </div>
+          </div>
+          <h3 class="subhead head">The principles I designed to</h3>
+          <ol class="pains" data-reveal="1">
+            <li><span class="mono small muted">01</span><span class="p head">Show their real order, not a sample.</span></li>
+            <li><span class="mono small muted">02</span><span class="p head">Show a price they can trust.</span></li>
+            <li><span class="mono small muted">03</span><span class="p head">Let them change their mind without starting over.</span></li>
+            <li><span class="mono small muted">04</span><span class="p head">Never leave anyone without a preview.</span></li>
+          </ol>
+        </section>
+
+        <section id="tool" class="sec" data-sec="tool">
+          <h2 class="h2 head">The Tool: Their Order, in Their Kitchen</h2>
+          <p class="lead measure" style="margin: 0">Customers arrive with their order already loaded. They add up to three photos and, in about 30 seconds, see their doors fitted to their own cabinets, with a slider to compare before and after.</p>
+          <div class="stack">
+            <figure data-reveal="1">
+                <button class="zoom frame stone-t pad" data-full="../../assets/media/kitchen-03-entry.webp" data-alt="Visualizer arrival screen showing the customer's order and a button to add kitchen photos" onClick="{{openImg}}" aria-label="Enlarge: Visualizer arrival screen showing the customer's order and a button to add kitchen photos"><img class="screen" src="../../assets/media/kitchen-03-entry.webp" alt="Visualizer arrival screen showing the customer's order and a button to add kitchen photos" loading="lazy"></button>
+                <figcaption class="txt"><span>Arrival. The order is already there, so the only job is adding a photo.</span></figcaption>
+              </figure>
+            <figure data-reveal="1">
+                <button class="zoom frame stone-t pad" data-full="../../assets/media/kitchen-04-result.webp" data-alt="Visualizer result showing the customer's kitchen before and after" onClick="{{openImg}}" aria-label="Enlarge: Visualizer result showing the customer's kitchen before and after"><img class="screen" src="../../assets/media/kitchen-04-result.webp" alt="Visualizer result showing the customer's kitchen before and after, with the order and price in a side panel" loading="lazy"></button>
+                <figcaption class="txt"><span>Result. Before and after on their own kitchen, with the order and price alongside.</span></figcaption>
+              </figure>
+          </div>
+        </section>
+
+        <section id="decisions" class="sec" data-sec="decisions">
+          <h2 class="h2 head">Designed for Someone Who Isn't Sure Yet</h2>
+
+          <article class="chap">
+            <div class="chead"><span class="cnum mono">01</span><h3 class="h3 head">A Workspace, Not a Wizard</h3></div>
+            <p class="lead measure" style="margin: clamp(22px, 2.4vw, 30px) 0 0">My first version was a four-step flow. But big decisions aren't linear; people go back and forth.</p>
+            <p class="txt measure" style="margin: 14px 0 0">I moved to one workspace: the kitchen in the centre, options beside it, every preview kept in a tray to compare.</p>
+          </article>
+
+          <article class="chap">
+            <div class="chead"><span class="cnum mono">02</span><h3 class="h3 head">A Price That Feels Final</h3></div>
+            <p class="lead measure" style="margin: clamp(22px, 2.4vw, 30px) 0 0">The tool began inside a quote system, with expiry dates and “starting from” prices. To a hesitant buyer, that says the price might change.</p>
+            <p class="txt measure" style="margin: 14px 0 0">I removed all of it. The price shown is the price paid.</p>
+          </article>
+
+          <article class="chap">
+            <div class="chead"><span class="cnum mono">03</span><h3 class="h3 head">Explore, Then Buy What You Explored</h3></div>
+            <div class="split narrowfig">
+              <div>
+                <p class="lead" style="margin: 0">Trying another colour never touches the order by accident.</p>
+                <p class="txt" style="margin: 14px 0 0">The header says the order is unchanged, and one clear button moves the new look into the order when the customer is ready.</p>
+              </div>
+              <figure data-reveal="1">
+                <button class="zoom frame sage-t pad" data-full="../../assets/media/kitchen-05-explore.webp" data-alt="Visualizer side panel while exploring a new colour" onClick="{{openImg}}" aria-label="Enlarge: Visualizer side panel while exploring a new colour"><img class="screen" src="../../assets/media/kitchen-05-explore.webp" alt="Visualizer side panel while exploring a new colour, showing the original order, the new price and a Use this in my order form button" loading="lazy"></button>
+                <figcaption class="txt"><span>Exploring a new colour: the original order stays visible, and the customer chooses when to switch.</span></figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chap">
+            <div class="chead"><span class="cnum mono">04</span><h3 class="h3 head">No Dead Ends</h3></div>
+            <p class="lead measure" style="margin: clamp(22px, 2.4vw, 30px) 0 0">Orders mixing two door styles were going to be blocked.</p>
+            <p class="txt measure" style="margin: 14px 0 0">I proposed previewing the main style with a short note instead, so every customer gets to see their kitchen.</p>
+          </article>
+        </section>
+
+        <section id="systems" class="sec" data-sec="systems">
+          <h2 class="h2 head">Two Systems, One Order, Kept in Step at Every Click</h2>
+          <p class="lead measure" style="margin: 0">The store holds the order, prices and checkout. The visualizer lives outside it. Previewing a cart would have been simple, but exploring means every new style or colour changes dozens of priced lines at once.</p>
+          <table class="dt sys txt" data-reveal="1">
+            <thead><tr><th class="mono tiny muted" scope="col">The store <span class="sub">Adobe Commerce</span></th><th class="mono tiny muted" scope="col">The visualizer <span class="sub">Its own infrastructure</span></th></tr></thead>
+            <tbody>
+              <tr><td>The customer's order</td><td>Kitchen photos</td></tr>
+              <tr><td>Every door, size and count</td><td>Renders</td></tr>
+              <tr><td>Prices</td><td>Styles and colours to explore</td></tr>
+              <tr><td>Cart and checkout</td><td>Saved previews</td></tr>
+            </tbody>
+          </table>
+          <h3 class="subhead head">How they stay in sync</h3>
+          <ul class="labelled txt" data-reveal="1">
+            <li><span class="mono small">01 · Store → visualizer</span><span><b>The order comes in.</b> The visualizer loads the full order: style, colour, every size.</span></li>
+            <li><span class="mono small">02 · Store → visualizer</span><span><b>Prices always come from the store.</b> Each new look shows a real price, never an estimate.</span></li>
+            <li><span class="mono small">03 · Visualizer → store</span><span><b>The chosen look goes back.</b> At checkout, the cart is rewritten to match.</span></li>
+          </ul>
+          <p class="txt measure" style="margin: clamp(24px, 2.6vw, 32px) 0 0">I worked with the CTO and developer to agree this model before build: one shared vocabulary (an “order”, not a “quote”), prices only from the store, and rules for edge cases. I then built a working front-end prototype on that model, which gave our developer a ready front end to connect to the store's checkout.</p>
+        </section>
+
+        <section id="launch" class="sec" data-sec="launch">
+          <h2 class="h2 head">Live Today: Meet People at the Moment of Doubt</h2>
+          <div class="split narrowfig">
+            <div>
+              <p class="lead" style="margin: 0">We launched where the data said hesitation peaks. When a customer creates a cart, they get an email inviting them to see their order in their own kitchen, with their doors already selected.</p>
+              <p class="txt" style="margin: 16px 0 0">Since launch, a growing number of customers are opening the visualizer and trying it with photos of their own kitchens.</p>
+              <p class="txt" style="margin: 16px 0 0">Each journey is now tracked from email, to visualizer, to cart, to payment, so every change from here is measured against the number we started with.</p>
+            </div>
+            <figure data-reveal="1">
+                <button class="zoom frame butter-t pad" data-full="../../assets/media/kitchen-06-email.webp" data-alt="The invite email: See the doors you picked in your own kitchen" onClick="{{openImg}}" aria-label="Enlarge: The invite email: See the doors you picked in your own kitchen"><img class="screen" src="../../assets/media/kitchen-06-email.webp" alt="The invite email: See the doors you picked in your own kitchen, with a sample kitchen and a See your kitchen button" loading="lazy"></button>
+                <figcaption class="txt"><span>The invite email, sent when a customer creates a cart.</span></figcaption>
+              </figure>
+          </div>
+        </section>
+
+        <section id="reach" class="sec" data-sec="reach">
+          <h2 class="h2 head">A Great Tool Doesn't Help Anyone Who Never Finds It</h2>
+          <p class="lead measure" style="margin: 0">The email only reaches people who already built a cart. To decide where the visualizer should appear next, I went back to the data and looked at where people actually leave.</p>
+          <table class="dt txt" data-reveal="1">
+            <thead><tr><th class="mono tiny muted" scope="col">Signal</th><th class="mono tiny muted" scope="col">Where people leave</th></tr></thead>
+            <tbody>
+              <tr><td class="head big">7 in 10</td><td>order form visits end on the first screen, which asks for contact details before showing anything visual.</td></tr>
+              <tr><td class="head big">About 19×</td><td>more people reach product pages than the order form.</td></tr>
+              <tr><td class="head big">Under 5%</td><td>of people who started an order had looked at a product page first. The path from product to order barely exists.</td></tr>
+              <tr><td class="head big">Nearly all</td><td>who start entering sizes finish the form. They're committed; the doubt that remains is about paying.</td></tr>
+            </tbody>
+          </table>
+          <p class="lead measure" style="margin: clamp(24px, 2.6vw, 32px) 0 0">That pointed to two different moments: curious shoppers on product pages, and committed buyers at the end of the form.</p>
+
+          <article class="chap" style="margin-top: clamp(72px, 8vw, 120px)">
+            <div class="chead"><span class="cnum mono">A</span><h3 class="h3 head">On the Product Page, for Curious Shoppers</h3></div>
+            <p class="lead measure" style="margin: clamp(22px, 2.4vw, 30px) 0 0">Shoppers preview a style on their kitchen before ordering anything, then start an order with that style already picked. It meets people where the traffic is, and builds the missing bridge from product to order.</p>
+            <div class="pair wide top">
+              <figure data-reveal="1">
+                <button class="zoom frame paper-t pad" data-full="../../assets/media/kitchen-07-pdp.webp" data-alt="Product page for a Shaker door" onClick="{{openImg}}" aria-label="Enlarge: Product page for a Shaker door"><img class="screen" src="../../assets/media/kitchen-07-pdp.webp" alt="Product page for a Shaker door, with a Picture this in your own kitchen panel and a Try it in my kitchen button" loading="lazy"></button>
+                <figcaption class="txt"><span>The product page with a “try it in your kitchen” panel.</span></figcaption>
+              </figure>
+              <figure data-reveal="1">
+                <button class="zoom frame paper-t pad" data-full="../../assets/media/kitchen-08-pdp-result.webp" data-alt="The product page try-on showing a kitchen before and after" onClick="{{openImg}}" aria-label="Enlarge: The product page try-on showing a kitchen before and after"><img class="screen" src="../../assets/media/kitchen-08-pdp-result.webp" alt="The product page try-on showing a kitchen before and after, with a project estimate and a Build your order with this product button" loading="lazy"></button>
+                <figcaption class="txt"><span>The try-on it opens, with a project estimate and a way to start an order.</span></figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chap">
+            <div class="chead"><span class="cnum mono">B</span><h3 class="h3 head">In the Order Form, for Committed Buyers</h3></div>
+            <div class="stack">
+              <figure data-reveal="1">
+                <button class="zoom frame paper-t pad" data-full="../../assets/media/kitchen-09-steps.webp" data-alt="Order form progress bar: step 3 of 4" onClick="{{openImg}}" aria-label="Enlarge: Order form progress bar: step 3 of 4"><img class="screen" src="../../assets/media/kitchen-09-steps.webp" alt="Order form progress bar: step 3 of 4, Accessories, tagged Kitchen preview, before Review and checkout" loading="lazy"></button>
+                <figcaption class="txt"><span>The kitchen preview is tagged on step 3 of 4, Accessories, the last step before review and payment.</span></figcaption>
+              </figure>
+            </div>
+            <div class="split narrowfig">
+              <div>
+                <p class="lead" style="margin: 0">At the end of Accessories, with every door sized and priced, customers are invited to see their order in their kitchen.</p>
+                <p class="txt" style="margin: 16px 0 0">It sits directly above “Review and check out”, the point where 2 in 3 carts currently stop. Their order stays exactly as it is unless they choose to change it.</p>
+              </div>
+              <figure data-reveal="1">
+                <button class="zoom frame stone-t pad" data-full="../../assets/media/kitchen-10-preview-card.webp" data-alt="The kitchen preview card at the end of Accessories" onClick="{{openImg}}" aria-label="Enlarge: The kitchen preview card at the end of Accessories"><img class="screen" src="../../assets/media/kitchen-10-preview-card.webp" alt="The kitchen preview card at the end of Accessories, directly above the Review and check out button" loading="lazy"></button>
+                <figcaption class="txt"><span>The kitchen preview card, directly above “Review and check out”.</span></figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <div class="callout" data-reveal="1">
+            <span class="mono tiny muted">Recommendation</span>
+            <p class="lead">A/B test both against today's email-only setup, measured on how many shoppers start an order and how many carts reach checkout. Both are designed and prototyped on desktop and mobile.</p>
+          </div>
+        </section>
+
+        <section id="reflection" class="sec" data-sec="reflection">
+          <h2 class="h2 head">Measured Against the Number We Started With: 1 in 3</h2>
+          <div class="closing three" data-reveal="1">
+            <div>
+              <h3 class="h3 head small-h">What I'm tracking</h3>
+              <ul class="points txt">
+                <li>Carts that reach checkout</li>
+                <li>Customers opening the visualizer</li>
+                <li>Photos uploaded and previews seen</li>
+                <li>Customers who try another look</li>
+                <li>Checkouts and orders from the visualizer</li>
+                <li>With the A/B test: orders started from product pages</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="h3 head small-h">What I'd do next</h3>
+              <ul class="points txt">
+                <li>Start with the product page, where most shoppers are, and let results guide the rest.</li>
+                <li>Make the order form's first screen show value before asking for contact details.</li>
+                <li>Let customers share a preview, because kitchen decisions are rarely made alone.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="h3 head small-h">What I learned</h3>
+              <p class="txt">Naming the real job mattered more than any screen. Once I saw this as a confidence problem, the design followed.</p>
+              <p class="txt">And designing the experience is only half the work. The other half is making sure people find it at the moment they need it.</p>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <section class="next" aria-labelledby="next-title">
+    <div class="wrap">
+      <hr class="rule">
+      <h2 id="next-title" class="h2 head" style="margin-top: clamp(40px, 4vw, 56px)">Read More Case Studies</h2>
+      <div class="ngrid">
+        <a class="ncard" href="../../work/entripy/index.html" data-reveal="1">
+          <div class="nt head">Redesigning B2B Bulk Ordering Experience</div>
+          <span class="go mono small">View case study<svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10.5"></path><path d="M9.2 4.2 13 8l-3.8 3.8"></path></svg></span>
+        </a>
+        <a class="ncard" href="../../work/duplin/index.html" data-reveal="1">
+          <div class="nt head">Designing a Modern Winery Experience</div>
+          <span class="go mono small">View case study<svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10.5"></path><path d="M9.2 4.2 13 8l-3.8 3.8"></path></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="wrap">
+      <div class="frow">
+        <div class="fsig">
+          <a href="../../index.html" class="mark head" aria-label="Home">mm</a>
+          <span class="mono tiny muted">Manasvi Modi 2026</span>
+        </div>
+        <nav class="flinks mono small" aria-label="Footer">
+          <a href="../../index.html">Home</a>
+          <a href="../../about/index.html">About</a>
+          <a href="../../resume.pdf" data-resume="">Resume</a>
+          <a href="https://www.linkedin.com/in/manasvi-modi-5937931a4/" target="_blank" rel="noopener">LinkedIn</a>
+        </nav>
+        <a class="fmail txt" href="mailto:manasvimodi.mm@gmail.com"><svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="2.6"></circle><path d="M10.6 8v1.1a1.7 1.7 0 0 0 3.4 0V8a6 6 0 1 0-2.4 4.8"></path></svg>manasvimodi.mm@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <sc-if value="{{lbOpen}}" hint-placeholder-val="{{ false }}">
+    <div class="lb" role="dialog" aria-modal="true" aria-label="{{lbAlt}}" onClick="{{closeImg}}">
+      <img data-dc-src="{{lbSrc}}" alt="{{lbAlt}}">
+      <button class="mono small" aria-label="Close" onClick="{{closeImg}}">Close</button>
+    </div>
+  </sc-if>
+</div>
+</div>
+<script src="../../assets/js/dc-lite.js"></script>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { lbSrc: '', lbAlt: '' };
+  }
+  componentDidMount() {
+    const stick = document.querySelector('.stick');
+    const cs = document.querySelector('.cs');
+    if (stick && cs) {
+      let lastY = window.scrollY;
+      const show = (v) => {
+        stick.classList.toggle('on', v);
+        cs.classList.toggle('navon', v);
+        if (v) stick.removeAttribute('inert'); else stick.setAttribute('inert', '');
+      };
+      this._onScroll = () => {
+        const y = window.scrollY;
+        if (y < 240) { show(false); lastY = y; return; }
+        if (y < lastY - 4) { show(true); lastY = y; }
+        else if (y > lastY + 4) { show(false); lastY = y; }
+      };
+      window.addEventListener('scroll', this._onScroll, { passive: true });
+    }
+    document.querySelectorAll('video').forEach((v) => {
+      v.muted = true;
+      const p = v.play && v.play();
+      if (p && p.catch) p.catch(() => {});
+    });
+    if (typeof IntersectionObserver === 'undefined') return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.remove('pre'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('[data-reveal]').forEach((el) => {
+      if (el.getBoundingClientRect().top > window.innerHeight) { el.classList.add('pre'); io.observe(el); }
+    });
+    const links = Array.from(document.querySelectorAll('[data-guide]'));
+    const so = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        const id = en.target.getAttribute('data-sec');
+        links.forEach((a) => a.classList.toggle('on', a.getAttribute('data-guide') === id));
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    document.querySelectorAll('[data-sec]').forEach((s) => so.observe(s));
+    this._io = io; this._so = so;
+  }
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+    if (this._io) this._io.disconnect();
+    if (this._so) this._so.disconnect();
+  }
+  renderVals() {
+    return {
+      lbOpen: !!this.state.lbSrc,
+      lbSrc: this.state.lbSrc,
+      lbAlt: this.state.lbAlt,
+      openImg: (e) => {
+        const t = e.currentTarget;
+        this.setState({ lbSrc: t.getAttribute('data-full'), lbAlt: t.getAttribute('data-alt') || '' });
+      },
+      closeImg: (e) => { if (e) e.stopPropagation(); this.setState({ lbSrc: '', lbAlt: '' }); }
+    };
+  }
+}
+DC.mount(Component);
+</script>
+</body>
+</html>

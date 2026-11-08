@@ -2,6 +2,26 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "headers": [
-    { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }] }
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/work/rennai",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/work/rennai/",
+      "destination": "/",
+      "permanent": false
+    }
   ]
 }
