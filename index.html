@@ -78,20 +78,6 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
 .tlink{color:inherit;text-decoration:none;transition:color .4s}
 .tlink:hover,.tlink:focus-visible{color:#3E5F33}
 .case:has(.media:hover) .tlink{color:#3E5F33}
-/* card 01: interactive before / after */
-.baw{--x:56%;position:absolute;left:5%;right:5%;top:7%;bottom:7%;border-radius:8px;overflow:hidden;cursor:ew-resize;touch-action:pan-y;box-shadow:0 30px 60px -28px rgba(31,42,34,.45),0 2px 8px rgba(31,42,34,.08);user-select:none;-webkit-user-select:none}
-.baw .bimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:100% 60%;display:block;pointer-events:none}
-.baw .aft{position:absolute;inset:0;clip-path:inset(0 0 0 var(--x));transition:clip-path .7s cubic-bezier(.22,.61,.24,1)}
-.baw .bh{position:absolute;top:0;bottom:0;left:var(--x);width:2px;margin-left:-1px;background:#fff;box-shadow:0 0 12px rgba(0,0,0,.25);transition:left .7s cubic-bezier(.22,.61,.24,1)}
-.baw .bh i{position:absolute;top:50%;left:50%;width:clamp(30px,3vw,40px);height:clamp(30px,3vw,40px);margin:calc(clamp(30px,3vw,40px) / -2) 0 0 calc(clamp(30px,3vw,40px) / -2);border-radius:50%;background:#1F2A22;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(0,0,0,.3);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
-.baw .bh svg{width:55%;height:55%}
-.baw.live .aft,.baw.live .bh{transition:none}
-.baw.live .bh i{transform:scale(1.08)}
-.baw .btag{position:absolute;top:clamp(10px,1.2vw,16px);padding:.45em .9em;border-radius:4px;font-size:clamp(9px,.78vw,11.5px);letter-spacing:.1em;color:#fff;background:rgba(20,26,22,.62);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
-.baw .btag.l{left:clamp(10px,1.2vw,16px)}
-.baw .btag.r{right:clamp(10px,1.2vw,16px);background:rgba(47,93,87,.85)}
-.baw .bhint{position:absolute;left:50%;bottom:clamp(12px,1.4vw,18px);transform:translateX(-50%);padding:.5em 1em;border-radius:999px;background:rgba(255,255,255,.9);color:#1F2A22;font-size:clamp(9px,.78vw,11.5px);letter-spacing:.1em;white-space:nowrap;transition:opacity .5s}
-.baw.used .bhint{opacity:0}
 .lay > *{position:absolute;display:block;transition:transform .9s cubic-bezier(.22,.61,.24,1)}
 .lay img{height:auto}
 .lay .desk{border-radius:8px;box-shadow:0 30px 60px -26px rgba(31,42,34,.4),0 2px 8px rgba(31,42,34,.08)}
@@ -305,7 +291,7 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
     </header>
       <article class="case" data-reveal="1">
         <a class="media tint-mist" href="work/kitchen-visualizer/index.html" aria-label="Turning Hesitant Carts into Confident Orders, view case study">
-          <span class="baw" data-ba="1"><img class="bimg" src="assets/media/ba-before.webp" alt="A kitchen with wood-finish cabinet doors, before" loading="lazy" draggable="false"><span class="aft"><img class="bimg" src="assets/media/ba-after.webp" alt="The same kitchen with white Shaker doors, as previewed in the Kitchen Visualizer" loading="lazy" draggable="false"></span><span class="bh"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7 4 12l5 5M15 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span><span class="btag l mono">Before</span><span class="btag r mono">Classic Shaker · Alabaster</span><span class="bhint mono">Move to compare</span></span>
+          <span class="shotwrap lay kv" data-k="para"><img class="desk" src="assets/media/kitchen-04-result.webp" alt="Kitchen Visualizer showing a kitchen before and after new cabinet doors, with the order and price in a side panel" loading="lazy"><img class="card kvcard" src="assets/media/kitchen-t-card.webp" alt="Kitchen preview card: see your order in your own kitchen, with an upload button" loading="lazy"></span>
         </a>
         <div class="copy">
           <span class="idx mono">01</span>
@@ -391,20 +377,6 @@ class Component extends DCLogic {
     this._next = null;
   }
   componentDidMount() {
-    this._ba = [];
-    document.querySelectorAll('[data-ba]').forEach((el) => {
-      const media = el.closest('.media') || el;
-      const set = (e) => {
-        const r = el.getBoundingClientRect();
-        const x = Math.min(97, Math.max(3, ((e.clientX - r.left) / r.width) * 100));
-        el.style.setProperty('--x', x + '%');
-        el.classList.add('live', 'used');
-      };
-      const reset = () => { el.classList.remove('live'); el.style.setProperty('--x', '56%'); };
-      media.addEventListener('pointermove', set);
-      media.addEventListener('pointerleave', reset);
-      this._ba.push(() => { media.removeEventListener('pointermove', set); media.removeEventListener('pointerleave', reset); });
-    });
     if (typeof IntersectionObserver !== 'undefined') {
       const io = new IntersectionObserver((entries) => {
         entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.remove('pre'); io.unobserve(en.target); } });
@@ -597,7 +569,6 @@ class Component extends DCLogic {
     this._loop = requestAnimationFrame(tick);
   }
   componentWillUnmount() {
-    if (this._ba) this._ba.forEach((f) => f());
     if (this._io) this._io.disconnect();
     clearTimeout(this._type);
     clearInterval(this._credit);
