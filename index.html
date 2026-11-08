@@ -145,12 +145,12 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
 /* phone: everything centred and pulled up, no full-screen hero */
 @media (max-width:700px){
   .hero{min-height:0}
-  .heroblock{margin-top:44px !important;align-items:center;text-align:center}
+  .heroblock{margin-top:36px !important;align-items:center;text-align:center}
   .heroblock .eyebrow{margin-left:0 !important}
   .heroblock h1{font-size:44px !important}
-  .row{align-items:center !important;margin-top:56px !important}
+  .row{align-items:center !important;margin-top:68px !important}
   .row > div:first-child{display:flex;flex-direction:column;align-items:center}
-  .hello{left:0 !important;right:0;top:-2.6em !important;margin:0 auto;width:fit-content}
+  .hello{left:0 !important;right:0;top:auto !important;bottom:calc(100% + 12px) !important;margin:0 auto;width:fit-content}
   .intro{width:auto !important;max-width:21em !important;text-align:center}
   .credits{margin-top:28px !important;margin-bottom:0 !important}
   .credits li{text-align:center !important}
@@ -254,12 +254,12 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
         <a href="mailto:manasvimodi.mm@gmail.com?subject=UX%20and%20Product%20Opportunity" style="text-decoration: none; padding: 12px 0">Contact</a>
       </div>
     </nav>
-    <div class="heroblock" style="width: fit-content; max-width: 100%; align-self: center; display: flex; flex-direction: column; margin-top: clamp(56px, 14vh, 150px); position: relative">
+    <div class="heroblock" style="width: fit-content; max-width: 100%; align-self: center; display: flex; flex-direction: column; margin-top: clamp(44px, 11vh, 128px); position: relative">
       <p class="mono rise r1 eyebrow" style="margin: 0 0 clamp(12px, 1.35vw, 20px) 0.4em; font-size: clamp(12.6px, 1.1vw, 16.2px); color: #1F2A22">UX / Product Designer</p>
       <h1 class="head rise r2" style="margin: 0; font-size: clamp(44px, 6.27vw, 101px); line-height: 1.05; letter-spacing: -0.01em; color: #141A16; text-wrap: balance">Making sense through design.</h1>
-      <div class="row rise r3" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-top: clamp(44px, 3.24vw, 50.4px)">
+      <div class="row rise r3" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-top: clamp(64px, 5.2vw, 80px)">
         <div style="position: relative">
-          <span class="hello mono" aria-hidden="true" style="left: -1px; top: -2.75em"><span>{{helloShown}}</span><span class="caret"></span><span style="visibility: hidden">{{helloRest}}</span></span>
+          <span class="hello mono" aria-hidden="true" style="left: -1px; top: auto; bottom: calc(100% + 14px)"><span>{{helloShown}}</span><span class="caret"></span><span style="visibility: hidden">{{helloRest}}</span></span>
           <p class="body intro" style="margin: 0; max-width: 12.5em; font-size: clamp(15px, 1.213vw, 18.5px); line-height: 1.65; color: #1F2A22; width: 227px">I am Manasvi and I work across design, product, and engineering to turn requirements into intuitive digital experiences. I believe good design is about asking the right questions and finding patterns in complexity.</p>
         </div>
         <div class="credits tags" aria-label="How I work" style="margin-bottom: -0.47em">
