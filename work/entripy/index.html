@@ -226,6 +226,53 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
 .guide{transition:top .45s cubic-bezier(.2,.7,.2,1)}
 .cs.navon .guide{top:96px}
 @media (prefers-reduced-motion:reduce){.stick{transition:none}}
+
+
+/* ---------- animated hero ---------- */
+.ahero{position:relative;aspect-ratio:16/10;margin-top:clamp(44px,5vw,72px)}
+.ah{position:absolute;inset:0;display:block}
+.ah .win{position:absolute;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 34px 70px -30px rgba(31,42,34,.42),0 2px 8px rgba(31,42,34,.08)}
+.ah .chrome{display:flex;align-items:center;gap:6px;height:clamp(16px,1.9vw,26px);padding:0 2.4%;background:#F3F2EE;border-bottom:1px solid rgba(31,42,34,.08)}
+.ah .chrome i{width:clamp(5px,.5vw,7px);height:clamp(5px,.5vw,7px);border-radius:50%;background:rgba(31,42,34,.18)}
+.ah .chrome b{margin:0 auto;padding:2px 14px;border-radius:999px;background:#fff;font-weight:400;font-size:clamp(7px,.62vw,9.5px);letter-spacing:.12em;color:rgba(31,42,34,.6)}
+.ah .scr{position:relative;display:block;overflow:hidden;background:#fff}
+.ah .sc{position:absolute;inset:0;opacity:0}
+.ah .mv{position:absolute;left:0;top:0;width:100%}
+.ah .mv img{display:block;width:100%;height:auto}
+.ah .ring{position:absolute;border:2px solid #2F5D57;border-radius:6px;box-shadow:0 0 0 4px rgba(47,93,87,.15);opacity:0}
+.ah .chip{position:absolute;z-index:6;left:5%;bottom:5%;padding:.55em 1.1em;border-radius:999px;background:#1F2A22;color:#F4F3EC;font-size:clamp(8px,.85vw,12.5px);letter-spacing:.08em;white-space:nowrap;opacity:0;box-shadow:0 10px 24px -10px rgba(31,42,34,.5)}
+.ah .rip{position:absolute;width:9%;aspect-ratio:1;margin:-4.5% 0 0 -4.5%;border-radius:50%;background:rgba(47,93,87,.35);opacity:0}
+.ah .cur{position:absolute;z-index:5;width:2.6%;min-width:12px;opacity:0;filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
+.ah .cur svg{display:block;width:100%;height:auto}
+.ah .ov{position:absolute;z-index:4;overflow:hidden;background:#fff;box-shadow:0 40px 80px -28px rgba(31,42,34,.5),0 2px 10px rgba(31,42,34,.12)}
+.ah .ov img{display:block;width:100%;height:100%}
+.ah .ov.phone{border:5px solid #1d1f1e;border-radius:26px}
+.ah .ov.card{border-radius:12px}
+@media (prefers-reduced-motion:reduce){.ah *{animation:none !important}}
+@media (max-width:600px){.ahero{aspect-ratio:4/3.3}}
+
+.ah-en .win{left:11%;top:6%;width:78%}
+.ah-en .scr{aspect-ratio:1.6}
+@media (prefers-reduced-motion:reduce){.ah-en .sc:nth-child(1){opacity:1}}
+@keyframes en-s0r0{0%{opacity:0}5.5%{opacity:0}8%{opacity:1}18%{opacity:1}20.5%{opacity:0}100%{opacity:0}}
+@keyframes en-s0r1{0%{opacity:0}18.5%{opacity:0}21%{opacity:1}32%{opacity:1}34.5%{opacity:0}100%{opacity:0}}
+@keyframes en-sc0{0%{opacity:1}36%{opacity:1}38.5%{opacity:0}93.5%{opacity:0}96%{opacity:1}100%{opacity:1}}
+@keyframes en-s1r0{0%{opacity:0}37.5%{opacity:0}40%{opacity:1}46%{opacity:1}48.5%{opacity:0}100%{opacity:0}}
+@keyframes en-s1r1{0%{opacity:0}44.5%{opacity:0}47%{opacity:1}53%{opacity:1}55.5%{opacity:0}100%{opacity:0}}
+@keyframes en-s1r2{0%{opacity:0}51.5%{opacity:0}54%{opacity:1}62%{opacity:1}64.5%{opacity:0}100%{opacity:0}}
+@keyframes en-sc1{0%{opacity:0}33.5%{opacity:0}36%{opacity:1}66%{opacity:1}68.5%{opacity:0}100%{opacity:0}}
+@keyframes en-s2r0{0%{opacity:0}67.5%{opacity:0}70%{opacity:1}78%{opacity:1}80.5%{opacity:0}100%{opacity:0}}
+@keyframes en-s2r1{0%{opacity:0}83.5%{opacity:0}86%{opacity:1}93%{opacity:1}95.5%{opacity:0}100%{opacity:0}}
+@keyframes en-mv2{0%{transform:translateY(0%)}78%{transform:translateY(0%)}86%{transform:translateY(-27%)}100%{transform:translateY(-27%)}}
+@keyframes en-sc2{0%{opacity:0}63.5%{opacity:0}66%{opacity:1}96%{opacity:1}98.5%{opacity:0}100%{opacity:0}}
+@keyframes en-cur{0%{left:72%;top:90%;opacity:0;transform:scale(1)}2%{left:72%;top:90%;opacity:0;transform:scale(1)}4%{left:72%;top:90%;opacity:1;transform:scale(1)}7%{left:46.5%;top:59.5%;opacity:1;transform:scale(1)}7.5%{left:46.5%;top:59.5%;opacity:1;transform:scale(0.8)}8.1%{left:46.5%;top:59.5%;opacity:1;transform:scale(1)}19%{left:46.5%;top:59.5%;opacity:1;transform:scale(1)}23%{left:88%;top:95%;opacity:1;transform:scale(1)}32%{left:88%;top:95%;opacity:1;transform:scale(1)}34%{left:88%;top:95%;opacity:0;transform:scale(1)}67%{left:70%;top:60%;opacity:0;transform:scale(1)}69%{left:70%;top:60%;opacity:1;transform:scale(1)}72%{left:59%;top:36.5%;opacity:1;transform:scale(1)}77%{left:59%;top:36.5%;opacity:1;transform:scale(1)}79%{left:59%;top:36.5%;opacity:0;transform:scale(1)}100%{left:59%;top:36.5%;opacity:0;transform:scale(1)}}
+@keyframes en-rip0{0%,7%{opacity:0;transform:scale(.3)}7.5%{opacity:1;transform:scale(.3)}12.5%,100%{opacity:0;transform:scale(1.5)}}
+@keyframes en-ch0{0%{opacity:0}5.5%{opacity:0}8%{opacity:1}18%{opacity:1}20.5%{opacity:0}100%{opacity:0}}
+@keyframes en-ch1{0%{opacity:0}18.5%{opacity:0}21%{opacity:1}32%{opacity:1}34.5%{opacity:0}100%{opacity:0}}
+@keyframes en-ch2{0%{opacity:0}37.5%{opacity:0}40%{opacity:1}62%{opacity:1}64.5%{opacity:0}100%{opacity:0}}
+@keyframes en-ch3{0%{opacity:0}67.5%{opacity:0}70%{opacity:1}79%{opacity:1}81.5%{opacity:0}100%{opacity:0}}
+@keyframes en-ch4{0%{opacity:0}83.5%{opacity:0}86%{opacity:1}93%{opacity:1}95.5%{opacity:0}100%{opacity:0}}
+/* end animated hero */
 </style>
 </head>
 <body>
@@ -268,210 +315,7 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
         <div><dt class="mono tiny muted">Team</dt><dd class="txt">Project Managers, Developers, QA, and Clients</dd></div>
       </dl>
 
-      <div class="cover frame sky-t pad" data-reveal="1">
-        <video class="screen" src="../../assets/media/entripy-entripy-brand.mp4" poster="../../assets/media/entripy-entripy-brand-poster.jpg" autoplay="" muted="" loop="" playsinline="" aria-label="Scrolling through the redesigned Entripy homepage"></video>
-      </div>
-    </div>
-  </header>
-  <div class="wrap">
-    <div class="body">
-      <nav class="guide mono small" aria-label="Case study sections">
-        <a href="#overview" data-guide="overview"><span class="bar"></span>Overview</a>
-        <a href="#role" data-guide="role"><span class="bar"></span>My role</a>
-        <a href="#business" data-guide="business"><span class="bar"></span>The business</a>
-        <a href="#problem" data-guide="problem"><span class="bar"></span>The problem</a>
-        <a href="#interventions" data-guide="interventions"><span class="bar"></span>UX interventions</a>
-        <a href="#results" data-guide="results"><span class="bar"></span>Results</a>
-        <a href="#learnings" data-guide="learnings"><span class="bar"></span>Conclusion</a>
-      </nav>
-
-      <main class="main">
-
-        <section id="overview" class="sec" data-sec="overview">
-          <h2 class="h2 head">Case Study Overview</h2>
-          <p class="bigline head" data-reveal="1">This case study explores the redesign of a B2B custom apparel ordering experience, where customers struggled to place complex orders without support.</p>
-          <p class="txt measure" style="margin: 24px 0 0">As the sole UX-UI designer, I led the project end-to-end to improve clarity, confidence, and self-service adoption across the ordering experience.</p>
-          <ol class="covers txt" data-reveal="1">
-            <li><span class="mono small muted">01</span><span>End-to-end ownership of research, strategy, interaction design, and visual execution.</span></li>
-            <li><span class="mono small muted">02</span><span>The business context of a B2B custom apparel ordering platform.</span></li>
-            <li><span class="mono small muted">03</span><span>Key usability issues that pushed customers to rely on phone orders.</span></li>
-            <li><span class="mono small muted">04</span><span>UX improvements across the quote &amp; order flow, cart, account experience, and visual system.</span></li>
-            <li><span class="mono small muted">05</span><span>Results, key learnings, and reflections from designing for complex B2B orders.</span></li>
-          </ol>
-        </section>
-
-        <section id="role" class="sec" data-sec="role">
-          <h2 class="h2 head">My Role &amp; Involvement</h2>
-          <div class="roles" data-reveal="1">
-            <div class="role"><span class="mono tiny muted">Client</span><p class="txt">Acted as the primary design point of contact for the client, presenting strategy, wireframes, and design iterations and incorporating feedback throughout.</p></div>
-            <div class="role"><span class="mono tiny muted">Developers</span><p class="txt">Collaborated closely with front-end and back-end developers to validate design feasibility and clarify functional logic, especially for complex order flows.</p></div>
-            <div class="role"><span class="mono tiny muted">QA</span><p class="txt">Worked with QA engineers during pre-launch testing to review visual fidelity and interaction behavior, ensuring the final implementation matched design intent.</p></div>
-            <div class="role"><span class="mono tiny muted">PM &amp; internal teams</span><p class="txt">Partnered with the PM and internal teams to align timelines, priorities, and business goals.</p></div>
-          </div>
-        </section>
-
-        <section id="business" class="sec" data-sec="business">
-          <div class="biz">
-            <div>
-              <h2 class="h2 head">About the Business</h2>
-              <p class="txt measure" style="margin: 0">This case study focuses on a Canada-based custom apparel printing company that primarily serves small businesses, schools, and corporate teams placing bulk orders.</p>
-              <p class="txt measure" style="margin: 18px 0 0">While the company had a working website, most customers avoided it, preferring to call customer service instead.</p>
-            </div>
-            <div class="collage" data-reveal="1">
-              <video src="../../assets/media/entripy-entripy-studio.mp4" poster="../../assets/media/entripy-entripy-studio-poster.jpg" autoplay="" muted="" loop="" playsinline="" aria-label="Entripy design studio, adding text to a t-shirt"></video>
-              <img class="inset" src="../../assets/media/entripy-print-shop.webp" alt="Screen printing yellow ink onto fabric" loading="lazy">
-            </div>
-          </div>
-        </section>
-
-        <section id="problem" class="sec" data-sec="problem">
-          <h2 class="h2 head">The Problem</h2>
-          <p class="lead measure" style="margin: 0">Entripy's website wasn't working the way it should:</p>
-          <ol class="pains" data-reveal="1">
-            <li><span class="mono small muted">01</span><span class="p head">Customers were unsure about pricing, product options, and timelines.</span></li>
-            <li><span class="mono small muted">02</span><span class="p head">The order form asked for the wrong information at the wrong time.</span></li>
-            <li><span class="mono small muted">03</span><span class="p head">Errors weren't clearly flagged, leading to incomplete checkouts.</span></li>
-            <li><span class="mono small muted">04</span><span class="p head">Support teams spent hours walking users through processes that should take minutes.</span></li>
-          </ol>
-          <div class="scope" data-reveal="1">
-            <div>
-              <div class="stat head">50+</div>
-              <p class="txt" style="margin: 12px 0 0">The redesign covered over 50 pages across key user flows.</p>
-            </div>
-            <ul class="chips mono tiny">
-              <li>Homepage</li><li>Product listing</li><li>Product detail</li><li>Brand listing</li><li>Category listing</li><li>Order form</li><li>Sample ordering</li><li>Cart</li><li>Checkout</li><li>Customer account</li><li>Blog</li><li>Content Pages</li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="interventions" class="sec" data-sec="interventions">
-          <h2 class="h2 head">Strategic UX Interventions</h2>
-          <article class="chap">
-            <div class="chead"><span class="cnum mono">01</span><h3 class="h3 head">A Smarter Quote &amp; Order Flow</h3></div>
-            <div class="split">
-              <div>
-                <p class="lead" style="margin: 0">Redesigned the order process to give users clarity, control, and confidence while building complex team orders:</p>
-                <ul class="points txt">
-                  <li>Introduced a quote builder showing dynamic pricing by product, quantity, and print location.</li>
-                  <li>Structured the order form into clear sections: product basics, customization, personalization.</li>
-                  <li>Created two flows: one for first-time artwork uploads and one for reusing saved settings.</li>
-                  <li>Added disabled CTAs and inline error messages to prevent incomplete orders.</li>
-                </ul>
-              </div>
-              <figure data-reveal="1">
-                <button class="zoom frame paper-t pad" data-full="../../assets/media/entripy-flow-quote-order.webp" data-alt="Quote and order user flow" onClick="{{openImg}}" aria-label="Enlarge: quote and order user flow"><img class="flat" src="../../assets/media/entripy-flow-quote-order.webp" alt="Quote and order user flow" loading="lazy"></button>
-                <figcaption class="txt"><span>Quote and order flow.</span></figcaption>
-              </figure>
-            </div>
-            <div class="pair">
-              <figure data-reveal="1">
-                <button class="zoom frame butter-t pad" data-full="../../assets/media/entripy-order-form-sizes.webp" data-alt="Order form with size and quantity inputs" onClick="{{openImg}}" aria-label="Enlarge: order form sizes and quantities"><img class="screen" src="../../assets/media/entripy-order-form-sizes.webp" alt="Order form with size and quantity inputs, dynamic pricing and an inventory message" loading="lazy"></button>
-                <figcaption class="txt"><span>Dynamic pricing (individual and total) updates based on quantity added, with out of stock and inventory message handling.</span></figcaption>
-              </figure>
-              <figure data-reveal="1">
-                <button class="zoom frame butter-t pad" data-full="../../assets/media/entripy-order-form-sections.webp" data-alt="Order form divided into sections" onClick="{{openImg}}" aria-label="Enlarge: order form sections"><img class="screen" src="../../assets/media/entripy-order-form-sections.webp" alt="Order form divided into select item, customize and personalize sections" loading="lazy"></button>
-                <figcaption class="txt"><span>Order flow divided into 3 parts: Select Item, Customize and Personalize.</span></figcaption>
-              </figure>
-            </div>
-          </article>
-          <article class="chap">
-            <div class="chead"><span class="cnum mono">02</span><h3 class="h3 head">Simplified Cart Experience</h3></div>
-            <p class="lead measure" style="margin: clamp(22px, 2.4vw, 30px) 0 0">Redesigned the cart to make bulk order management easier; clear grouping, inline editing, and visible progress toward checkout.</p>
-            <ul class="points txt measure">
-              <li>Reorganized cart into visual groups with cleaner blocks and spacing.</li>
-              <li>Moved all personalization (names, numbers, fonts, colors) to the order form, keeping the cart for overview and quick edits.</li>
-              <li>Designed inline editing that customers could open the order form from the cart, with prefilled details, instead of starting over.</li>
-              <li>Added clear error markers at group level so users could fix issues quickly.</li>
-              <li>Built trust with a timeline and “next steps” summary at checkout, explaining Entripy's unique proofing and payment flow.</li>
-            </ul>
-            <div class="stack">
-              <figure data-reveal="1">
-                <button class="zoom frame paper-t pad" data-full="../../assets/media/entripy-flow-checkout.webp" data-alt="Checkout experience user flow" onClick="{{openImg}}" aria-label="Enlarge: checkout experience user flow"><img class="flat" src="../../assets/media/entripy-flow-checkout.webp" alt="Checkout experience user flow" loading="lazy"></button>
-                <figcaption class="txt"><span>Checkout experience flow.</span></figcaption>
-              </figure>
-              <figure data-reveal="1">
-                <button class="zoom frame sky-t pad" data-full="../../assets/media/entripy-cart.webp" data-alt="Redesigned cart" onClick="{{openImg}}" aria-label="Enlarge: redesigned cart"><img class="screen" src="../../assets/media/entripy-cart.webp" alt="Redesigned cart with grouped items, order summary, shipping date and next steps" loading="lazy"></button>
-                <figcaption class="txt"><span>Order details and personalization can be edited directly from the cart. Shipping details and next steps are surfaced near checkout for better clarity.</span></figcaption>
-              </figure>
-            </div>
-          </article>
-          <article class="chap">
-            <div class="chead"><span class="cnum mono">03</span><h3 class="h3 head">My Account Experience</h3></div>
-            <p class="lead measure" style="margin: clamp(22px, 2.4vw, 30px) 0 0">Designed an order history and proof approval system that gives users clear visibility into order status, approvals, and delivery timelines:</p>
-            <ul class="labelled txt">
-              <li><span class="mono small">Status Overview</span><span>Users can see all pending, approved, and completed orders at a glance.</span></li>
-              <li><span class="mono small">Proof Approval</span><span>Approve or reject design proofs directly from the account.</span></li>
-              <li><span class="mono small">Timeline Tracking</span><span>Clear visibility into production and delivery stages.</span></li>
-            </ul>
-            <div class="pair">
-              <figure data-reveal="1">
-                <button class="zoom frame sage-t pad" data-full="../../assets/media/entripy-pending-orders.webp" data-alt="Pending orders list" onClick="{{openImg}}" aria-label="Enlarge: pending orders"><img class="screen" src="../../assets/media/entripy-pending-orders.webp" alt="Pending orders list with order and proof status and approve proof actions" loading="lazy"></button>
-                <figcaption class="txt"><span>Order history showing pending, approved, and completed orders with clear status labels.</span></figcaption>
-              </figure>
-              <figure data-reveal="1">
-                <button class="zoom frame sage-t pad" data-full="../../assets/media/entripy-order-detail.webp" data-alt="Order detail with proof approval" onClick="{{openImg}}" aria-label="Enlarge: order detail with proof approval"><img class="screen" src="../../assets/media/entripy-order-detail.webp" alt="Order detail page prompting the customer to review and approve the proof" loading="lazy"></button>
-                <figcaption class="txt"><span>Post-purchase flexibility: Orders remain editable and proofs reviewable until final approval.</span></figcaption>
-              </figure>
-            </div>
-          </article>
-          <article class="chap">
-            <div class="chead"><span class="cnum mono">04</span><h3 class="h3 head">Unified Brand Visuals</h3></div>
-            <p class="lead measure" style="margin: clamp(22px, 2.4vw, 30px) 0 0">As part of Entripy's 25th anniversary, the redesign extended beyond usability; aligning the digital experience with their refreshed brand identity and marketing goals.</p>
-            <p class="txt measure" style="margin: 16px 0 0">In addition to applying the new visual language, I created a lightweight design guide to ensure consistency in typography, color, grid, and UI components across the redesigned website.</p>
-            <ul class="labelled txt">
-              <li><span class="mono small">25th Anniversary Rebrand</span><span>Integrated updated color palette, typography, and visual tone for consistency across all touchpoints.</span></li>
-              <li><span class="mono small">Marketing Flexibility</span><span>Added dynamic announcement and campaign sections for the internal marketing team.</span></li>
-              <li><span class="mono small">Personalized Homepage</span><span>Designed post-login variations to highlight offers and products based on user type.</span></li>
-            </ul>
-            <div class="stack">
-              <figure data-reveal="1">
-                <button class="zoom frame paper-t pad" data-full="../../assets/media/entripy-design-guide.webp" data-alt="Entripy design guide" onClick="{{openImg}}" aria-label="Enlarge: design guide"><img class="flat" src="../../assets/media/entripy-design-guide.webp" alt="Design guide covering typeface, colors, buttons and icons, layout grid and component library" loading="lazy"></button>
-                <figcaption class="txt"><span>Lightweight design guide for consistent typography, color, layout, and components across the redesign.</span></figcaption>
-              </figure>
-            </div>
-          </article>
-        </section>
-
-        <section id="results" class="sec" data-sec="results">
-          <h2 class="h2 head">Results</h2>
-          <p class="lead measure" style="margin: 0">Full post-launch metrics are still being tracked, but early feedback showed:</p>
-          <div class="results" data-reveal="1">
-            <div class="res frame sky-t"><span class="mono tiny muted">Reduced basic support calls</span><p class="q head" style="margin: 0">Customer service teams saw fewer inquiries about pricing and quote steps during beta testing.</p></div>
-            <div class="res frame sage-t"><span class="mono tiny muted">Smoother internal workflows</span><p class="q head" style="margin: 0">Sales staff reported a more consistent, predictable quote and order flow.</p></div>
-            <div class="res frame butter-t"><span class="mono tiny muted">Better customer experience</span><p class="q head" style="margin: 0">Frequent B2B buyers described the new upload process as “much easier” and “less stressful.”</p></div>
-          </div>
-        </section>
-
-        <section id="learnings" class="sec" data-sec="learnings">
-          <div class="closing" data-reveal="1">
-            <div>
-              <h2 class="h2 head" style="margin: 0">Conclusion</h2>
-              <p class="txt">This redesign helped the business take a big step toward becoming a self-serve digital platform for custom apparel orders. By focusing on transparency, clarity, and reassurance, the new experience empowered customers to order with confidence while freeing up internal teams from repetitive support tasks.</p>
-            </div>
-            <div>
-              <h2 class="h2 head" style="margin: 0">Key Learnings</h2>
-              <p class="txt">This project strengthened my ability to lead end-to-end design on a complex product. I worked closely with clients and cross-functional teams to align design decisions with technical feasibility, business constraints, and user needs; navigating feedback, trade-offs, and iteration throughout the process.</p>
-            </div>
-          </div>
-        </section>
-
-      </main>
-    </div>
-  </div>
-  <section class="next" aria-labelledby="next-title">
-    <div class="wrap">
-      <hr class="rule">
-      <h2 id="next-title" class="h2 head" style="margin-top: clamp(40px, 4vw, 56px)">Read More Case Studies</h2>
-      <div class="ngrid">
-        <a class="ncard" href="../../work/duplin/index.html" data-reveal="1">
-          <div class="nt head">Designing a Modern Winery Experience</div>
-          <span class="go mono small">View case study<svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10.5"></path><path d="M9.2 4.2 13 8l-3.8 3.8"></path></svg></span>
-        </a>
-        <a class="ncard" href="../../work/kitchen-visualizer/index.html" data-reveal="1">
-          <div class="nt head">Designing a Kitchen Visualizer for Confident Orders</div>
-          <span class="go mono small">View case study<svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10.5"></path><path d="M9.2 4.2 13 8l-3.8 3.8"></path></svg></span>
-        </a>
-      </div>
+      <div class="cover ahero frame sky-t" data-reveal="1" role="img" aria-label="The redesigned order form in use: entering sizes and quantities, the three-step order sections, and the cart"><span class="ah ah-en"><span class="win"><span class="chrome"><i></i><i></i><i></i><b class="mono">order form</b></span><span class="scr"><span class="sc" style="animation:en-sc0 18s ease infinite"><span class="mv"><img src="../../assets/media/entripy-order-form-sizes.webp" alt="Order form with size and quantity inputs, an inventory message and dynamic pricing" loading="lazy"><span class="ring" style="left:40.5%;top:55%;width:12.8%;height:10.5%;animation:en-s0r0 18s ease infinite"></span><span class="ring" style="left:75.5%;top:92%;width:21.5%;height:7.5%;animation:en-s0r1 18s ease infinite"></span></span></span><span class="sc" style="animation:en-sc1 18s ease infinite"><span class="mv"><img src="../../assets/media/entripy-order-form-sections.webp" alt="Order form divided into select item, customize and personalize sections" loading="lazy"><span class="ring" style="left:2.5%;top:14.3%;width:95%;height:11.4%;animation:en-s1r0 18s ease infinite"></span><span class="ring" style="left:2.5%;top:47.6%;width:95%;height:8%;animation:en-s1r1 18s ease infinite"></span><span class="ring" style="left:2.5%;top:74.4%;width:95%;height:8%;animation:en-s1r2 18s ease infinite"></span></span></span><span class="sc" style="animation:en-sc2 18s ease infinite"><span class="mv" style="animation:en-mv2 18s cubic-bezier(.45,0,.25,1) infinite;transform:translateY(0%)"><img src="../../assets/media/entripy-cart.webp" alt="Redesigned cart with grouped items, order summary and next steps" loading="lazy"><span class="ring" style="left:55%;top:25.3%;width:7.8%;height:3.2%;animation:en-s2r0 18s ease infinite"></span><span class="ring" style="left:67.5%;top:76.5%;width:21.5%;height:9%;animation:en-s2r1 18s ease infinite"></span></span></span><span class="rip" style="left:46.5%;top:59.5%;animation:en-rip0 18s ease-out infinite"></span><span class="cur" style="animation:en-cur 18s cubic-bezier(.45,0,.25,1) infinite"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5 19 13.2l-6.6 1.2 3.7 6.7-2.6 1.4-3.7-6.8L4.9 20Z" fill="#fff" stroke="#1F2A22" stroke-width="1.4" stroke-linejoin="round"/></svg></span></span></span><span class="chip mono" style="animation:en-ch0 18s ease infinite">Stock checked as you type</span><span class="chip mono" style="animation:en-ch1 18s ease infinite">Price updates with every quantity</span><span class="chip mono" style="animation:en-ch2 18s ease infinite">Three clear steps</span><span class="chip mono" style="animation:en-ch3 18s ease infinite">Edit the order from the cart</span><span class="chip mono" style="animation:en-ch4 18s ease infinite">Next steps shown before checkout</span></span></div>
     </div>
   </section>
   <footer>
