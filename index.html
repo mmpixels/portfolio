@@ -118,6 +118,13 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
 .still .kva .s1,.still .kva .cur,.still .kva .rip,.still .kva .chip,.still .kva .ring{opacity:0 !important}
 .still .kva .s2{opacity:1 !important}
 .still .kva .pnl{transform:none !important}
+.kva.still-mock *{animation:none !important}
+.kva.still-mock .s2{opacity:1}
+.kva.still-mock .pnl{transform:none}
+.kva.still-mock .win{width:74%;left:5%;top:8%}
+.kva.still-mock .pnl{right:5%;top:12%;height:72%}
+.media:hover .kva.still-mock .pnl{transform:translateY(-12px)}
+.kva.still-mock .pnl{transition:transform .9s cubic-bezier(.22,.61,.24,1)}
 .lay > *{position:absolute;display:block;transition:transform .9s cubic-bezier(.22,.61,.24,1)}
 .lay img{height:auto}
 .lay .desk{border-radius:8px;box-shadow:0 30px 60px -26px rgba(31,42,34,.4),0 2px 8px rgba(31,42,34,.08)}
@@ -331,7 +338,7 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
     </header>
       <article class="case" data-reveal="1">
         <a class="media tint-mist" href="work/kitchen-visualizer/index.html" aria-label="Turning Hesitant Carts into Confident Orders, view case study">
-          <span class="shotwrap kva" data-k="para"><span class="win"><span class="chrome"><i></i><i></i><i></i><b class="mono">kitchen visualizer</b></span><span class="scr"><span class="zoomer"><img class="s1" src="assets/media/kitchen-03-entry.webp" alt="" loading="lazy"><img class="s2" src="assets/media/kitchen-04-result.webp" alt="Kitchen Visualizer showing a kitchen before and after new cabinet doors, with the order and price alongside" loading="lazy"><span class="ring r1"></span><span class="chip mono c1">Price from the store</span></span><span class="chip mono c0">Order already loaded</span><span class="rip"></span><span class="cur"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5 19 13.2l-6.6 1.2 3.7 6.7-2.6 1.4-3.7-6.8L4.9 20Z" fill="#fff" stroke="#1F2A22" stroke-width="1.4" stroke-linejoin="round"/></svg></span></span></span><span class="pnl"><img src="assets/media/kitchen-05-explore.webp" alt="" loading="lazy"><span class="ring r2"></span></span><span class="chip mono c2">Explore freely. The order stays the same.</span></span>
+          <span class="shotwrap kva still-mock" data-k="para"><span class="win"><span class="chrome"><i></i><i></i><i></i><b class="mono">kitchen visualizer</b></span><span class="scr"><span class="zoomer"><img class="s2" src="assets/media/kitchen-04-result.webp" alt="Kitchen Visualizer showing a kitchen before and after new cabinet doors, with the order and price alongside" loading="lazy"></span></span></span><span class="pnl"><img src="assets/media/kitchen-05-explore.webp" alt="Preview panel while exploring a new colour, with the original order kept visible" loading="lazy"></span></span>
         </a>
         <div class="copy">
           <span class="idx mono">01</span>

@@ -254,11 +254,58 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
 @media (prefers-reduced-motion:reduce){.stick{transition:none}}
 
 /* ---------- kitchen visualizer additions ---------- */
+/* card 01: animated product sequence */
+.kva{--T:16s}
+.kva .win{position:absolute;left:5%;top:6.5%;width:90%;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 34px 70px -30px rgba(31,42,34,.42),0 2px 8px rgba(31,42,34,.08);transition:transform .9s cubic-bezier(.22,.61,.24,1)}
+.kva .chrome{display:flex;align-items:center;gap:6px;height:clamp(16px,1.9vw,26px);padding:0 2.4%;background:#F3F2EE;border-bottom:1px solid rgba(31,42,34,.08)}
+.kva .chrome i{width:clamp(5px,.5vw,7px);height:clamp(5px,.5vw,7px);border-radius:50%;background:rgba(31,42,34,.18)}
+.kva .chrome b{margin:0 auto;padding:2px 14px;border-radius:999px;background:#fff;font-weight:400;font-size:clamp(7px,.62vw,9.5px);letter-spacing:.12em;color:rgba(31,42,34,.6)}
+.kva .scr{position:relative;display:block;aspect-ratio:1.6;overflow:hidden}
+.kva .zoomer{position:absolute;inset:0;transform-origin:62% 52%;animation:kv-zoom var(--T) cubic-bezier(.45,0,.25,1) infinite}
+.kva .scr img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.kva .s1{animation:kv-s1 var(--T) ease infinite}
+.kva .s2{opacity:0;animation:kv-s2 var(--T) ease infinite}
+.kva .ring{position:absolute;border:2px solid #2F5D57;border-radius:6px;box-shadow:0 0 0 4px rgba(47,93,87,.15);opacity:0}
+.kva .r1{left:73.6%;top:49.2%;width:21.2%;height:10.2%;animation:kv-r1 var(--T) ease infinite}
+.kva .chip{position:absolute;z-index:3;padding:.5em 1em;border-radius:999px;background:#1F2A22;color:#F4F3EC;font-size:clamp(7.5px,.7vw,10.5px);letter-spacing:.08em;white-space:nowrap;opacity:0;box-shadow:0 10px 24px -10px rgba(31,42,34,.5)}
+.kva .c0{left:28%;top:23%;animation:kv-c0 var(--T) ease infinite}
+.kva .c1{right:28%;top:51.5%;animation:kv-r1 var(--T) ease infinite}
+.kva .c2{left:7%;bottom:7%;animation:kv-r2 var(--T) ease infinite}
+.kva .rip{position:absolute;left:37.8%;top:65.5%;width:9%;aspect-ratio:1;margin:-4.5% 0 0 -4.5%;border-radius:50%;background:rgba(47,93,87,.35);opacity:0;animation:kv-rip var(--T) ease-out infinite}
+.kva .cur{position:absolute;z-index:4;width:2.6%;min-width:12px;left:80%;top:88%;opacity:0;animation:kv-cur var(--T) cubic-bezier(.45,0,.25,1) infinite;filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
+.kva .cur svg{display:block;width:100%;height:auto}
+.kva .pnl{position:absolute;right:4%;top:9%;height:82%;aspect-ratio:640/1200;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 40px 80px -28px rgba(31,42,34,.5),0 2px 10px rgba(31,42,34,.12);transform:translateX(130%);animation:kv-pnl var(--T) cubic-bezier(.22,.61,.24,1) infinite}
+.kva .pnl img{display:block;width:100%;height:100%}
+.kva .r2{left:4.5%;top:47%;width:90%;height:7%;animation:kv-r2 var(--T) ease infinite}
+@keyframes kv-s1{0%,20%{opacity:1}24%,92%{opacity:0}97%,100%{opacity:1}}
+@keyframes kv-s2{0%,20%{opacity:0}24%,92%{opacity:1}97%,100%{opacity:0}}
+@keyframes kv-zoom{0%,24%{transform:scale(1)}46%,88%{transform:scale(1.035)}97%,100%{transform:scale(1)}}
+@keyframes kv-c0{0%,3%{opacity:0;transform:translateY(6px)}6%,13%{opacity:1;transform:none}16%,100%{opacity:0}}
+@keyframes kv-cur{0%{left:80%;top:88%;opacity:0}4%{opacity:1}13%{left:38.5%;top:66.5%;transform:scale(1)}15%{transform:scale(.8)}16.5%{transform:scale(1)}20%{left:38.5%;top:66.5%;opacity:1}23%,28%{opacity:0;left:60%;top:82%}32%{opacity:1}39%{left:86%;top:56%;opacity:1}47%{opacity:1;left:86%;top:56%}51%,100%{opacity:0;left:86%;top:56%}}
+@keyframes kv-rip{0%,15%{opacity:0;transform:scale(.3)}15.5%{opacity:1;transform:scale(.3)}21%,100%{opacity:0;transform:scale(1.5)}}
+@keyframes kv-r1{0%,37%{opacity:0}41%,55%{opacity:1}59%,100%{opacity:0}}
+@keyframes kv-pnl{0%,57%{transform:translateX(130%)}63%,86%{transform:translateX(0)}92%,100%{transform:translateX(130%)}}
+@keyframes kv-r2{0%,66%{opacity:0}70%,84%{opacity:1}87%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  .kva *{animation:none !important}
+  .kva .s1,.kva .cur,.kva .rip,.kva .chip,.kva .ring{opacity:0 !important}
+  .kva .s2{opacity:1 !important}
+  .kva .pnl{transform:none !important}
+}
+.still .kva *{animation:none !important}
+.still .kva .s1,.still .kva .cur,.still .kva .rip,.still .kva .chip,.still .kva .ring{opacity:0 !important}
+.still .kva .s2{opacity:1 !important}
+.still .kva .pnl{transform:none !important}
+.frame.mist-t{background:radial-gradient(70% 80% at 25% 20%,#F7FAF9 0%,rgba(247,250,249,0) 70%),linear-gradient(160deg,#EBF1EF 0%,#DEE8E5 100%)}
+.kvhero{position:relative;aspect-ratio:16/10;margin-top:clamp(44px,5vw,72px)}
+.kva.hero{position:absolute;inset:0;display:block}
+.kva.hero .win{left:4%;top:7%;width:76%}
+.kva.hero .pnl{right:4%;top:10%;height:80%}
+.kva.hero .chip{font-size:clamp(8px,.85vw,12.5px)}
+.kva.hero .c2{left:6%;bottom:5%}
+@media (max-width:600px){.kvhero{aspect-ratio:4/3.4}.kva.hero .win{width:88%;left:4%}.kva.hero .pnl{height:66%;top:30%}}
+
 .cs .title{line-height:1.12}
-.kvcover{position:relative;aspect-ratio:16/8.4;margin-top:clamp(44px,5vw,72px)}
-.kvcover img{position:absolute;display:block;height:auto;border-radius:8px;box-shadow:0 30px 60px -26px rgba(31,42,34,.4),0 2px 8px rgba(31,42,34,.08)}
-.kvcover .c1{left:5%;top:9%;width:70%}
-.kvcover .c2{right:6%;left:auto;top:13%;height:80%;width:auto;border-radius:10px;box-shadow:0 36px 70px -24px rgba(31,42,34,.45),0 2px 10px rgba(31,42,34,.1)}
 .frame.bleed{padding:clamp(18px,2.6vw,36px) 0 clamp(18px,2.6vw,36px) clamp(18px,2.6vw,36px)}
 .frame.bleed .screen{border-radius:6px 0 0 6px}
 .minor{margin:0;font-size:clamp(19px,1.55vw,23px);line-height:1.3}
@@ -295,9 +342,6 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
   .drows li{grid-template-columns:2.4em minmax(0,1fr)}
   .drows li .txt{grid-column:2}
   .frame.show{padding:24px 16px}
-  .kvcover{aspect-ratio:4/3}
-  .kvcover .c1{left:4%;top:8%;width:80%}
-  .kvcover .c2{right:4%;top:30%;height:64%}
 }
 .frame.stone-t{background:radial-gradient(70% 80% at 25% 20%,#F4F0E8 0%,rgba(244,240,232,0) 70%),linear-gradient(160deg,#E9E3D8 0%,#DDD5C7 100%)}
 .cover .photo{border-radius:8px}
@@ -376,9 +420,8 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
         <div><dt class="mono tiny muted">Status</dt><dd class="txt">Live, 2026<br><span class="muted">New entry points recommended for A/B testing</span></dd></div>
       </dl>
 
-      <div class="cover kvcover frame stone-t" data-reveal="1">
-        <img class="c1" src="../../assets/media/kitchen-04-result.webp" alt="Kitchen Visualizer showing a customer's kitchen before and after, with the order and price in a side panel" loading="lazy">
-        <img class="c2" src="../../assets/media/kitchen-05-explore.webp" alt="Visualizer side panel while exploring a new colour, with the original order and a Use this in my order form button" loading="lazy">
+      <div class="cover kvhero frame mist-t" data-reveal="1" role="img" aria-label="Kitchen Visualizer in use: adding a kitchen photo, seeing the doors fitted, and exploring a new colour without changing the order">
+        <span class="kva hero"><span class="win"><span class="chrome"><i></i><i></i><i></i><b class="mono">kitchen visualizer</b></span><span class="scr"><span class="zoomer"><img class="s1" src="../../assets/media/kitchen-03-entry.webp" alt="" loading="lazy"><img class="s2" src="../../assets/media/kitchen-04-result.webp" alt="Kitchen Visualizer showing a kitchen before and after new cabinet doors, with the order and price alongside" loading="lazy"><span class="ring r1"></span><span class="chip mono c1">Price from the store</span></span><span class="chip mono c0">Order already loaded</span><span class="rip"></span><span class="cur"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5 19 13.2l-6.6 1.2 3.7 6.7-2.6 1.4-3.7-6.8L4.9 20Z" fill="#fff" stroke="#1F2A22" stroke-width="1.4" stroke-linejoin="round"/></svg></span></span></span><span class="pnl"><img src="../../assets/media/kitchen-05-explore.webp" alt="" loading="lazy"><span class="ring r2"></span></span><span class="chip mono c2">Explore freely. The order stays the same.</span></span>
       </div>
     </div>
   </header>
