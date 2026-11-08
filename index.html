@@ -79,7 +79,7 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
 .tlink:hover,.tlink:focus-visible{color:#3E5F33}
 .case:has(.media:hover) .tlink{color:#3E5F33}
 /* card: ScopeGuard demo */
-.demo{position:absolute;left:5%;top:7%;width:90%;height:86%;border-radius:10px;overflow:hidden;background:#F6F5EF;container-type:size;box-shadow:0 30px 60px -28px rgba(31,42,34,.45),0 2px 8px rgba(31,42,34,.08)}
+.demo{position:absolute;left:5%;top:50%;width:90%;aspect-ratio:1913/883;transform:translateY(-50%);border-radius:10px;overflow:hidden;background:#F6F5EF;container-type:size;box-shadow:0 30px 60px -28px rgba(31,42,34,.45),0 2px 8px rgba(31,42,34,.08)}
 .demo .cam{position:absolute;left:0;top:0;width:100%;aspect-ratio:1913/883;transform-origin:0 0;animation:dm-cam 12s cubic-bezier(.65,0,.35,1) infinite;will-change:transform}
 .demo .cam > img{position:absolute;inset:0;width:100%;height:100%;display:block}
 .demo .d2{opacity:0;animation:dm-d2 12s linear infinite}
@@ -93,7 +93,7 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
 .demo .rp1{left:24%;top:17.6%;animation:dm-rp1 12s ease-out infinite}
 .demo .rp2{left:95.6%;top:41.6%;animation:dm-rp2 12s ease-out infinite}
 .demo .rp3{left:65.4%;top:52%;animation:dm-rp3 12s ease-out infinite}
-@keyframes dm-cam{0%{transform:translate(calc(50cqw - 50.00cqw),calc(50cqh - 33.70cqw)) scale(1.46)}20%{transform:translate(calc(50cqw - 50.00cqw),calc(50cqh - 33.70cqw)) scale(1.46)}31%{transform:translate(calc(50cqw - 150.00cqw),calc(50cqh - 38.77cqw)) scale(2.0)}36%{transform:translate(calc(50cqw - 150.00cqw),calc(50cqh - 38.77cqw)) scale(2.0)}45%{transform:translate(calc(50cqw - 83.20cqw),calc(50cqh - 36.93cqw)) scale(1.6)}80%{transform:translate(calc(50cqw - 83.20cqw),calc(50cqh - 36.93cqw)) scale(1.6)}89%{transform:translate(calc(50cqw - 50.00cqw),calc(50cqh - 33.70cqw)) scale(1.46)}100%{transform:translate(calc(50cqw - 50.00cqw),calc(50cqh - 33.70cqw)) scale(1.46)}}
+@keyframes dm-cam{0%{transform:translate(calc(50cqw - 50.00cqw),calc(50cqh - 23.08cqw)) scale(1)}20%{transform:translate(calc(50cqw - 50.00cqw),calc(50cqh - 23.08cqw)) scale(1)}31%{transform:translate(calc(50cqw - 130.00cqw),calc(50cqh - 34.90cqw)) scale(1.8)}36%{transform:translate(calc(50cqw - 130.00cqw),calc(50cqh - 34.90cqw)) scale(1.8)}45%{transform:translate(calc(50cqw - 50.00cqw),calc(50cqh - 23.08cqw)) scale(1)}80%{transform:translate(calc(50cqw - 50.00cqw),calc(50cqh - 23.08cqw)) scale(1)}89%{transform:translate(calc(50cqw - 50.00cqw),calc(50cqh - 23.08cqw)) scale(1)}100%{transform:translate(calc(50cqw - 50.00cqw),calc(50cqh - 23.08cqw)) scale(1)}}
 @keyframes dm-d2{0%{opacity:0}16.3%{opacity:0}19.5%{opacity:1}91%{opacity:1}97%{opacity:0}100%{opacity:0}}
 @keyframes dm-dim{0%{opacity:0}36.5%{opacity:0}40%{opacity:1}80%{opacity:1}84%{opacity:0}100%{opacity:0}}
 @keyframes dm-mdl{0%,36.5%{opacity:0;transform:translateX(-50%) translateY(3%) scale(.97)}41%,80%{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}84%,100%{opacity:0;transform:translateX(-50%) translateY(2%) scale(.98)}}
@@ -102,8 +102,8 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
 @keyframes dm-rp1{0%,15.5%{opacity:0;transform:scale(.3)}16%{opacity:1;transform:scale(.3)}22%,100%{opacity:0;transform:scale(1.6)}}
 @keyframes dm-rp2{0%,35.8%{opacity:0;transform:scale(.3)}36.3%{opacity:1;transform:scale(.3)}42.3%,100%{opacity:0;transform:scale(1.6)}}
 @keyframes dm-rp3{0%,56.3%{opacity:0;transform:scale(.3)}56.8%{opacity:1;transform:scale(.3)}62.8%,100%{opacity:0;transform:scale(1.6)}}
-@media (prefers-reduced-motion:reduce){.demo *{animation:none !important}.demo .cam{transform:translate(calc(50cqw - 50.00cqw),calc(50cqh - 33.70cqw)) scale(1.46)}}
-.still .demo *{animation:none !important}.still .demo .cam{transform:translate(calc(50cqw - 50.00cqw),calc(50cqh - 33.70cqw)) scale(1.46)}
+@media (prefers-reduced-motion:reduce){.demo *{animation:none !important}.demo .cam{transform:translate(calc(50cqw - 50.00cqw),calc(50cqh - 23.08cqw)) scale(1)}}
+.still .demo *{animation:none !important}.still .demo .cam{transform:translate(calc(50cqw - 50.00cqw),calc(50cqh - 23.08cqw)) scale(1)}
 .lay > *{position:absolute;display:block;transition:transform .9s cubic-bezier(.22,.61,.24,1)}
 .lay img{height:auto}
 .lay .desk{border-radius:8px;box-shadow:0 30px 60px -26px rgba(31,42,34,.4),0 2px 8px rgba(31,42,34,.08)}
