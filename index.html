@@ -78,6 +78,31 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
 .tlink{color:inherit;text-decoration:none;transition:color .4s}
 .tlink:hover,.tlink:focus-visible{color:#3E5F33}
 .case:has(.media:hover) .tlink{color:#3E5F33}
+/* card: ScopeGuard demo */
+.demo{position:absolute;left:5%;top:7%;width:90%;height:86%;border-radius:10px;overflow:hidden;background:#F6F5EF;container-type:size;box-shadow:0 30px 60px -28px rgba(31,42,34,.45),0 2px 8px rgba(31,42,34,.08)}
+.demo .cam{position:absolute;left:0;top:0;width:100%;aspect-ratio:1913/883;transform-origin:0 0;animation:dm-cam 20s cubic-bezier(.65,0,.35,1) infinite;will-change:transform}
+.demo .cam > img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.demo .d2{opacity:0;animation:dm-d2 20s ease infinite}
+.demo .d3{opacity:0;animation:dm-d3 20s ease infinite}
+.demo .dim{position:absolute;inset:0;background:rgba(31,42,34,.28);opacity:0;animation:dm-mdl 20s ease infinite}
+.demo .mdl{position:absolute;left:50%;top:10%;height:80%;aspect-ratio:1174/860;transform:translateX(-50%);border-radius:8px;overflow:hidden;box-shadow:0 20px 40px -12px rgba(0,0,0,.4);opacity:0;animation:dm-mdl 20s ease infinite}
+.demo .mdl img{display:block;width:100%;height:100%}
+.demo .mring{position:absolute;left:65.2%;top:49.3%;width:31%;height:6.3%;border:2px solid #2F5D57;border-radius:5px;box-shadow:0 0 0 3px rgba(47,93,87,.18);opacity:0;animation:dm-ring 20s ease infinite}
+.demo .dcur{position:absolute;width:1.5%;min-width:9px;z-index:3;opacity:0;animation:dm-cur 20s cubic-bezier(.65,0,.35,1) infinite;filter:drop-shadow(0 1px 2px rgba(0,0,0,.3))}
+.demo .dcur svg{display:block;width:100%;height:auto}
+.demo .rp{position:absolute;width:5%;aspect-ratio:1;margin:-2.5% 0 0 -2.5%;border-radius:50%;background:rgba(47,93,87,.35);opacity:0}
+.demo .rp1{left:95.6%;top:41.6%;animation:dm-rp1 20s ease-out infinite}
+.demo .rp2{left:65.4%;top:52%;animation:dm-rp2 20s ease-out infinite}
+@keyframes dm-cam{0%{transform:translate(calc(50cqw - 50.01cqw),calc(50cqh - 31.61cqw)) scale(1.37)}8%{transform:translate(calc(50cqw - 50.01cqw),calc(50cqh - 31.61cqw)) scale(1.37)}14%{transform:translate(calc(50cqw - 76.00cqw),calc(50cqh - 55.24cqw)) scale(1.9)}26%{transform:translate(calc(50cqw - 76.00cqw),calc(50cqh - 55.24cqw)) scale(1.9)}31%{transform:translate(calc(50cqw - 50.01cqw),calc(50cqh - 31.61cqw)) scale(1.37)}36%{transform:translate(calc(50cqw - 50.01cqw),calc(50cqh - 31.61cqw)) scale(1.37)}43%{transform:translate(calc(50cqw - 184.80cqw),calc(50cqh - 41.63cqw)) scale(2.2)}49%{transform:translate(calc(50cqw - 184.80cqw),calc(50cqh - 41.63cqw)) scale(2.2)}52%{transform:translate(calc(50cqw - 70.00cqw),calc(50cqh - 32.30cqw)) scale(1.4)}57%{transform:translate(calc(50cqw - 104.50cqw),calc(50cqh - 48.23cqw)) scale(1.9)}68%{transform:translate(calc(50cqw - 104.50cqw),calc(50cqh - 48.23cqw)) scale(1.9)}73%{transform:translate(calc(50cqw - 50.01cqw),calc(50cqh - 31.61cqw)) scale(1.37)}78%{transform:translate(calc(50cqw - 50.01cqw),calc(50cqh - 31.61cqw)) scale(1.37)}85%{transform:translate(calc(50cqw - 148.20cqw),calc(50cqh - 45.60cqw)) scale(1.9)}93%{transform:translate(calc(50cqw - 148.20cqw),calc(50cqh - 45.60cqw)) scale(1.9)}98%{transform:translate(calc(50cqw - 50.01cqw),calc(50cqh - 31.61cqw)) scale(1.37)}100%{transform:translate(calc(50cqw - 50.01cqw),calc(50cqh - 31.61cqw)) scale(1.37)}}
+@keyframes dm-d2{0%{opacity:0}29%{opacity:0}32%{opacity:1}72%{opacity:1}76%{opacity:0}100%{opacity:0}}
+@keyframes dm-d3{0%{opacity:0}73%{opacity:0}76%{opacity:1}96%{opacity:1}99%{opacity:0}100%{opacity:0}}
+@keyframes dm-mdl{0%{opacity:0}48%{opacity:0}51%{opacity:1}69%{opacity:1}72%{opacity:0}100%{opacity:0}}
+@keyframes dm-ring{0%{opacity:0}57%{opacity:0}59%{opacity:1}67%{opacity:1}69%{opacity:0}100%{opacity:0}}
+@keyframes dm-cur{0%{left:70%;top:85%;opacity:0;transform:scale(1)}9%{left:70%;top:85%;opacity:0;transform:scale(1)}11%{left:70%;top:85%;opacity:1;transform:scale(1)}17%{left:34%;top:62%;opacity:1;transform:scale(1)}27%{left:34%;top:62%;opacity:1;transform:scale(1)}30%{left:34%;top:62%;opacity:0;transform:scale(1)}37%{left:62%;top:72%;opacity:0;transform:scale(1)}39%{left:62%;top:72%;opacity:1;transform:scale(1)}45.5%{left:95.6%;top:41.6%;opacity:1;transform:scale(1)}46.5%{left:95.6%;top:41.6%;opacity:1;transform:scale(0.8)}47.3%{left:95.6%;top:41.6%;opacity:1;transform:scale(1)}50%{left:95.6%;top:41.6%;opacity:1;transform:scale(1)}55%{left:65.4%;top:52%;opacity:1;transform:scale(1)}56%{left:65.4%;top:52%;opacity:1;transform:scale(0.8)}56.8%{left:65.4%;top:52%;opacity:1;transform:scale(1)}67%{left:65.4%;top:52%;opacity:1;transform:scale(1)}70%{left:65.4%;top:52%;opacity:0;transform:scale(1)}79%{left:80%;top:80%;opacity:0;transform:scale(1)}81%{left:80%;top:80%;opacity:1;transform:scale(1)}87%{left:86.5%;top:54.5%;opacity:1;transform:scale(1)}94%{left:86.5%;top:54.5%;opacity:1;transform:scale(1)}96%{left:86.5%;top:54.5%;opacity:0;transform:scale(1)}100%{left:86.5%;top:54.5%;opacity:0;transform:scale(1)}}
+@keyframes dm-rp1{0%,46.5%{opacity:0;transform:scale(.3)}47%{opacity:1;transform:scale(.3)}51%,100%{opacity:0;transform:scale(1.6)}}
+@keyframes dm-rp2{0%,55.5%{opacity:0;transform:scale(.3)}56%{opacity:1;transform:scale(.3)}60%,100%{opacity:0;transform:scale(1.6)}}
+@media (prefers-reduced-motion:reduce){.demo *{animation:none !important}.demo .cam{transform:translate(calc(50cqw - 50.01cqw),calc(50cqh - 31.61cqw)) scale(1.37)}}
+.still .demo *{animation:none !important}.still .demo .cam{transform:translate(calc(50cqw - 50.01cqw),calc(50cqh - 31.61cqw)) scale(1.37)}
 .lay > *{position:absolute;display:block;transition:transform .9s cubic-bezier(.22,.61,.24,1)}
 .lay img{height:auto}
 .lay .desk{border-radius:8px;box-shadow:0 30px 60px -26px rgba(31,42,34,.4),0 2px 8px rgba(31,42,34,.08)}
@@ -334,7 +359,7 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
       </header>
       <article class="case flip" data-reveal="1">
         <a class="media tint-olive" href="work/scopeguard/index.html" aria-label="ScopeGuard, a paper trail for scope changes, view case study">
-          <span class="shotwrap lay sg" data-k="para"><img class="desk" src="assets/media/scopeguard-dash.webp" alt="ScopeGuard dashboard with recent project updates and change requests waiting on the client" loading="lazy"><img class="modal" src="assets/media/scopeguard-addfeature.webp" alt="ScopeGuard Add Feature form with six status options and Figma fields" loading="lazy"></span>
+          <span class="demo" role="img" aria-label="ScopeGuard demo: the dashboard of change requests, a project feature table, editing a status, and the automatic change log"><span class="cam"><img class="d1" src="assets/media/scopeguard-dash.webp" alt="" loading="lazy"><img class="d2" src="assets/media/scopeguard-features.webp" alt="" loading="lazy"><img class="d3" src="assets/media/scopeguard-changed.webp" alt="" loading="lazy"><span class="dim"></span><span class="mdl"><img src="assets/media/scopeguard-edit.webp" alt="" loading="lazy"><span class="mring"></span></span><span class="rp rp1"></span><span class="rp rp2"></span><span class="dcur"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5 19 13.2l-6.6 1.2 3.7 6.7-2.6 1.4-3.7-6.8L4.9 20Z" fill="#fff" stroke="#1F2A22" stroke-width="1.4" stroke-linejoin="round"/></svg></span></span></span>
         </a>
         <div class="copy">
           <span class="idx mono">2026</span>
