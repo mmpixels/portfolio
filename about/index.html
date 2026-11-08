@@ -129,13 +129,43 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
   .likes{margin:24px 0 0;align-self:center}
   .connect{padding-top:8px}
 }
+
+/* landscape: drifting clouds above, meadow below */
+.cs{position:relative}
+.sky .clouds{position:absolute;inset:0;width:100%;height:100%}
+.sky .cl{animation:ab-drift 70s ease-in-out infinite alternate}
+.sky .c2{animation-duration:90s;animation-delay:-30s}
+.sky .c3{animation-duration:110s;animation-delay:-60s}
+@keyframes ab-drift{from{transform:translateX(-60px)}to{transform:translateX(90px)}}
+.land{position:relative}
+.land > .wrap{position:relative;z-index:1}
+.meadow{position:absolute;left:0;right:0;bottom:0;height:clamp(360px,40vw,560px);pointer-events:none;overflow:hidden;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 38%,#000 78%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 38%,#000 78%,transparent 100%)}
+.meadow svg{position:absolute;inset:0;width:100%;height:100%}
+.meadow .ly{transform-box:fill-box}
+.meadow .far{animation:ab-sway 46s ease-in-out infinite alternate}
+.meadow .mid{animation:ab-sway 34s ease-in-out infinite alternate-reverse}
+.meadow .near{animation:ab-sway 28s ease-in-out infinite alternate}
+.meadow .glow{animation:ab-swell 22s ease-in-out infinite}
+@keyframes ab-sway{from{transform:translateX(-24px)}to{transform:translateX(24px)}}
+@keyframes ab-swell{0%,100%{opacity:.55}50%{opacity:1}}
+.connect{padding-top:clamp(120px,14vw,220px) !important;padding-bottom:clamp(110px,12vw,180px) !important}
+@media (prefers-reduced-motion:reduce){.sky .cl,.meadow .ly{animation:none}}
 </style>
 </head>
 <body>
 <div data-dc-root data-dc-cloak>
 <div class="cs">
   <header class="top">
-    <div class="sky" aria-hidden="true"></div>
+    <div class="sky" aria-hidden="true">
+      <svg class="clouds" viewBox="0 0 1600 700" preserveAspectRatio="xMidYMin slice">
+        <defs><filter id="ab-cb" x="-60%" y="-200%" width="220%" height="500%"><feGaussianBlur stdDeviation="22"></feGaussianBlur></filter>
+          <g id="ab-cloud"><ellipse cx="0" cy="0" rx="170" ry="38" fill="#fff"></ellipse><ellipse cx="70" cy="-26" rx="110" ry="46" fill="#fff"></ellipse><ellipse cx="-90" cy="-10" rx="90" ry="34" fill="#fff"></ellipse><ellipse cx="160" cy="6" rx="120" ry="26" fill="#fff"></ellipse></g></defs>
+        <g class="cl c1" filter="url(#ab-cb)" opacity=".75"><use href="#ab-cloud" transform="translate(1120 120) scale(1.1)"></use></g>
+        <g class="cl c2" filter="url(#ab-cb)" opacity=".55"><use href="#ab-cloud" transform="translate(260 210) scale(.8)"></use></g>
+        <g class="cl c3" filter="url(#ab-cb)" opacity=".45"><use href="#ab-cloud" transform="translate(760 70) scale(.6)"></use></g>
+      </svg>
+    </div>
     <div class="wrap">
       <nav class="nav" aria-label="Primary">
         <a href="../index.html" class="brand head">Manasvi Modi</a>
@@ -184,11 +214,30 @@ a{color:#1F2A22}a:hover{color:#3E5F33}
       </section>
     </div>
   </header>
+  <div class="land">
+  <div class="meadow" aria-hidden="true">
+    <svg viewBox="0 0 1600 640" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <filter id="ab-b60" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"></feGaussianBlur></filter>
+        <filter id="ab-b34" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="34"></feGaussianBlur></filter>
+        <filter id="ab-b20" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="20"></feGaussianBlur></filter>
+      </defs>
+      <g class="ly far"><path d="M-120 330 C 200 300 520 250 860 262 C 1160 272 1420 236 1720 200 L1720 640 L-120 640Z" fill="#CFDDC9" opacity=".75" filter="url(#ab-b60)"></path></g>
+      <g class="ly glow"><ellipse cx="1180" cy="300" rx="560" ry="70" transform="rotate(-8 1180 300)" fill="#FBF8EA" opacity=".9" filter="url(#ab-b34)"></ellipse></g>
+      <g class="ly mid"><path d="M-120 430 C 180 380 420 360 700 392 C 960 420 1180 396 1720 330 L1720 640 L-120 640Z" fill="#BFCB9C" opacity=".85" filter="url(#ab-b34)"></path>
+        <ellipse cx="1320" cy="430" rx="460" ry="70" transform="rotate(-9 1320 430)" fill="#AEC39E" opacity=".7" filter="url(#ab-b34)"></ellipse></g>
+      <g class="ly near"><ellipse cx="120" cy="620" rx="520" ry="150" fill="#9DB07A" opacity=".85" filter="url(#ab-b34)"></ellipse>
+        <ellipse cx="1500" cy="640" rx="560" ry="140" fill="#93AD84" opacity=".8" filter="url(#ab-b34)"></ellipse>
+        <ellipse cx="820" cy="600" rx="460" ry="90" fill="#E4E7CF" opacity=".55" filter="url(#ab-b20)"></ellipse></g>
+    </svg>
+    <div class="mfade"></div>
+  </div>
   <div class="wrap">
     <div class="connect" data-reveal="1">
       <p class="head">Good work starts with a good conversation. Let's connect.</p>
       <a class="cta mono" href="mailto:manasvimodi.mm@gmail.com?subject=UX%20and%20Product%20Opportunity">Say hello<svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10.5"></path><path d="M9.2 4.2 13 8l-3.8 3.8"></path></svg></a>
     </div>
+  </div>
   </div>
   <footer>
     <div class="wrap">
