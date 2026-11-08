@@ -341,6 +341,284 @@ figcaption,.pcap{font-family:"News Cycle","Arial Narrow",sans-serif;letter-spaci
 
       <div class="cover ahero frame olive-t" data-reveal="1" role="img" aria-label="ScopeGuard in use: the dashboard of change requests, a project's feature table, editing a status, and the automatic change log"><span class="ah ah-sg"><span class="win"><span class="chrome"><i></i><i></i><i></i><b class="mono">scopeguard</b></span><span class="scr"><span class="sc" style="animation:sg-sc0 18s ease infinite"><span class="mv"><img src="../../assets/media/scopeguard-dash.webp" alt="ScopeGuard dashboard with recent updates and change requests waiting on the client" loading="lazy"><span class="ring" style="left:16.3%;top:46.3%;width:81.5%;height:28%;animation:sg-s0r0 18s ease infinite"></span></span></span><span class="sc" style="animation:sg-sc1 18s ease infinite"><span class="mv"><img src="../../assets/media/scopeguard-features.webp" alt="A project's feature table with page, status and notes" loading="lazy"><span class="ring" style="left:16%;top:38.5%;width:82.8%;height:7.5%;animation:sg-s1r0 18s ease infinite"></span></span></span><span class="sc" style="animation:sg-sc2 18s ease infinite"><span class="mv"><img src="../../assets/media/scopeguard-changed.webp" alt="What changed log with each status move and a note" loading="lazy"><span class="ring" style="left:15.8%;top:49.5%;width:82.8%;height:10%;animation:sg-s2r0 18s ease infinite"></span></span></span><span class="rip" style="left:24%;top:17.6%;animation:sg-rip0 18s ease-out infinite"></span><span class="rip" style="left:95.6%;top:41.6%;animation:sg-rip1 18s ease-out infinite"></span><span class="cur" style="animation:sg-cur 18s cubic-bezier(.45,0,.25,1) infinite"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5 19 13.2l-6.6 1.2 3.7 6.7-2.6 1.4-3.7-6.8L4.9 20Z" fill="#fff" stroke="#1F2A22" stroke-width="1.4" stroke-linejoin="round"/></svg></span></span></span><span class="ov card" style="left:50%;top:50%;height:80%;aspect-ratio:1174/860;transform:translate(-50%,-44%) scale(.96);opacity:0;animation:sg-ov0 18s cubic-bezier(.22,.61,.24,1) infinite"><img src="../../assets/media/scopeguard-edit.webp" alt="Edit feature form with six status options" loading="lazy"><span class="ring" style="left:3.5%;top:49%;width:93%;height:13.5%;animation:sg-o0r0 18s ease infinite"></span></span><span class="chip mono" style="animation:sg-ch0 18s ease infinite">Everything waiting on the client</span><span class="chip mono" style="animation:sg-ch1 18s ease infinite">Every change request in one place</span><span class="chip mono" style="animation:sg-ch2 18s ease infinite">One status, from Open to Approved</span><span class="chip mono" style="animation:sg-ch3 18s ease infinite">Every move logged automatically</span></span></div>
     </div>
+  </header>
+  <div class="wrap">
+    <div class="body">
+      <nav class="guide mono small" aria-label="Case study sections">
+        <a href="#overview" data-guide="overview"><span class="bar"></span>Overview</a>
+        <a href="#problem" data-guide="problem"><span class="bar"></span>The problem</a>
+        <a href="#users" data-guide="users"><span class="bar"></span>Who it's for</a>
+        <a href="#decisions" data-guide="decisions"><span class="bar"></span>Product decisions</a>
+        <a href="#changes" data-guide="changes"><span class="bar"></span>Kept, changed, cut</a>
+        <a href="#ai" data-guide="ai"><span class="bar"></span>Building with AI</a>
+        <a href="#reflection" data-guide="reflection"><span class="bar"></span>Reflection</a>
+      </nav>
+
+      <main class="main">
+
+        <section id="overview" class="sec" data-sec="overview">
+          <h2 class="h2 head">Case Study Overview</h2>
+          <p class="bigline head" data-reveal="1">Scope rarely grows through one big decision. It grows through small yeses that nobody writes down.</p>
+          <p class="txt measure" style="margin: 24px 0 0">At the agency, I often sit between the client, the PM and the developers. ScopeGuard started from a pattern I kept running into there, and became a side project to practise designing a workflow tool end to end: deciding what it is, what it isn't, and what to cut.</p>
+          <ol class="covers txt" data-reveal="1">
+            <li><span class="mono small muted">01</span><span>The problem, and who the tool is for.</span></li>
+            <li><span class="mono small muted">02</span><span>What the product deliberately doesn't do.</span></li>
+            <li><span class="mono small muted">03</span><span>Six product decisions, from status design to export.</span></li>
+            <li><span class="mono small muted">04</span><span>What I kept, changed and cut along the way, and why.</span></li>
+            <li><span class="mono small muted">05</span><span>How I used AI to build it, and where I didn't.</span></li>
+          </ol>
+        </section>
+
+        <section id="problem" class="sec" data-sec="problem">
+          <h2 class="h2 head">The Problem</h2>
+          <p class="lead measure" style="margin: 0">On a typical project, scope moves in small steps:</p>
+          <ol class="pains" data-reveal="1">
+            <li><span class="mono small muted">01</span><span class="p head">A feature gets cleared on a call, then turns out to need real engineering halfway through the build.</span></li>
+            <li><span class="mono small muted">02</span><span class="p head">A designer proposes an improvement without anyone saying it's extra scope.</span></li>
+            <li><span class="mono small muted">03</span><span class="p head">Client approvals happen over email and calls, and live in one person's inbox.</span></li>
+            <li><span class="mono small muted">04</span><span class="p head">Task trackers record the work, but not the decision behind it.</span></li>
+          </ol>
+          <div class="scope" data-reveal="1">
+            <p class="thesis head">ScopeGuard tracks change, not work.</p>
+            <div>
+              <p class="txt" style="margin: 0">Task tools answer “who is doing what”. The questions I kept needing answered were different: what did we agree, what has changed since, and who approved it?</p>
+              <p class="txt" style="margin: 16px 0 0">That made the core object a feature with a status and a history, not a ticket with an assignee.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="users" class="sec" data-sec="users">
+          <h2 class="h2 head">Who It's For</h2>
+          <p class="lead measure" style="margin: 0 0 clamp(28px, 3vw, 40px)">Agency design and development teams working on client projects. Each role touches it differently:</p>
+          <div class="roles" data-reveal="1">
+            <div class="role"><span class="mono tiny muted">Designer</span><p class="txt">Logs features as they're scoped, with the Figma link and a screenshot as proof of what was discussed.</p></div>
+            <div class="role"><span class="mono tiny muted">Project manager</span><p class="txt">Raises change requests, records the client's answer after calls, and exports a clean list for sign-off.</p></div>
+            <div class="role"><span class="mono tiny muted">Developer</span><p class="txt">Checks a feature's status before building it, instead of chasing the designer.</p></div>
+            <div class="role"><span class="mono tiny muted">Client</span><p class="txt">Never logs in. Receives the export over email and answers yes or no.</p></div>
+          </div>
+          <p class="txt measure" style="margin: clamp(24px, 2.6vw, 32px) 0 0">I also considered brand managers and copywriters. I dropped them: the fit was loose, and they already have tools that work for them.</p>
+
+          <h3 class="subhead head">What it deliberately doesn't do</h3>
+          <ul class="chips not mono tiny" style="margin-top: clamp(18px, 2vw, 24px)" data-reveal="1">
+            <li>No task management</li><li>No document storage</li><li>No client portal or logins</li><li>No build or QA tracking</li>
+          </ul>
+          <p class="txt measure" style="margin: clamp(20px, 2.2vw, 28px) 0 0">Writing this list early kept the product small. It is also what stops ScopeGuard from turning into a weaker version of tools teams already use.</p>
+        </section>
+
+        <section id="decisions" class="sec" data-sec="decisions">
+          <h2 class="h2 head">Product Decisions</h2>
+
+          <article class="chap">
+            <div class="chead"><span class="cnum mono">01</span><h3 class="h3 head">One Status That Follows the Whole Conversation</h3></div>
+            <div class="split">
+              <div>
+                <p class="lead" style="margin: 0">The first concept gave every feature two sets of tags: a scope status (In scope, Out of scope, Flagged, Changed) and a client approval (Pending, Approved, Rejected, Needs discussion).</p>
+                <ul class="points txt">
+                  <li>Two badges per row meant two things to read and keep in sync, and they described the same journey.</li>
+                  <li>I merged them into one lifecycle: Open, Flagged, Change Request Sent, Approved, Rejected, Deferred.</li>
+                  <li>Deferred is not Rejected. It means “good idea, later phase”, which is how many of these conversations end.</li>
+                  <li>Each status has its own colour, so a long table can be scanned without reading every row.</li>
+                </ul>
+              </div>
+              <figure data-reveal="1">
+                <button class="zoom frame olive-t pad" data-full="../../assets/media/scopeguard-edit.webp" data-alt="Edit feature form" onClick="{{openImg}}" aria-label="Enlarge: edit feature form"><img class="modal" src="../../assets/media/scopeguard-edit.webp" alt="Edit feature form with name, page, notes, six status options and Figma fields" loading="lazy"></button>
+                <figcaption class="txt"><span>Editing a feature. Status is one required choice, not two.</span></figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chap">
+            <div class="chead"><span class="cnum mono">02</span><h3 class="h3 head">A Dashboard That Answers “What Needs Me Today?”</h3></div>
+            <p class="lead measure" style="margin: clamp(22px, 2.4vw, 30px) 0 0">The dashboard took the most iterations. I went through three directions:</p>
+            <ul class="labelled txt">
+              <li><span class="mono small">Project first</span><span>Recent projects and their activity. It repeated the All Projects page, so it had no job of its own.</span></li>
+              <li><span class="mono small">Data heavy</span><span>Change request counts, approval states and progress indicators. More visible, but too much to take in at the start of a day.</span></li>
+              <li><span class="mono small">Focused</span><span>Two things only: the latest entries for each active project, and Needs Attention, every change request still waiting on the client.</span></li>
+            </ul>
+            <p class="txt measure" style="margin: clamp(22px, 2.4vw, 30px) 0 0">The stats row from earlier versions moved out of the header into a quiet strip at the bottom of the page. Totals don't tell you what to do next. A list of open change requests does.</p>
+            <div class="pair wide">
+              <figure data-reveal="1">
+                <button class="zoom frame sage-t pad" data-full="../../assets/media/scopeguard-projects.webp" data-alt="All projects" onClick="{{openImg}}" aria-label="Enlarge: all projects"><img class="screen" src="../../assets/media/scopeguard-projects.webp" alt="All Projects page with four project cards, filters for active and archived, and search" loading="lazy"></button>
+                <figcaption class="txt"><span>All Projects holds the full list, with search and archive, so the dashboard doesn't have to.</span></figcaption>
+              </figure>
+              <figure data-reveal="1">
+                <button class="zoom frame sage-t pad" data-full="../../assets/media/scopeguard-dash-pair.webp" data-alt="Dashboard" onClick="{{openImg}}" aria-label="Enlarge: dashboard"><img class="screen" src="../../assets/media/scopeguard-dash-pair.webp" alt="Dashboard with recent updates per project and the Needs Attention list" loading="lazy"></button>
+                <figcaption class="txt"><span>The dashboard keeps only what needs action: recent updates and change requests waiting on the client.</span></figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chap">
+            <div class="chead"><span class="cnum mono">03</span><h3 class="h3 head">Every Entry Is a Record, Not a To-Do</h3></div>
+            <div class="split">
+              <div>
+                <p class="lead" style="margin: 0">The point of ScopeGuard is proof, so each feature needs enough context to make sense months later.</p>
+                <ul class="points txt">
+                  <li>Feature name and page are required. Notes, Figma link, Figma page, a screenshot and estimated hours are optional, but always in the same form.</li>
+                  <li>Estimated hours let a change request carry its cost, so a “small” request can be discussed in numbers.</li>
+                  <li>Filters by status and page, and bulk status changes for when a whole batch gets approved on one call.</li>
+                  <li>Project links (Figma, Notion, the SOW) sit at the top of every project, one click from the scope.</li>
+                </ul>
+              </div>
+              <figure data-reveal="1">
+                <button class="zoom frame olive-t pad" data-full="../../assets/media/scopeguard-newproj.webp" data-alt="New project form" onClick="{{openImg}}" aria-label="Enlarge: new project form"><img class="modal" src="../../assets/media/scopeguard-newproj.webp" alt="New project form with project name, client, description and project links" loading="lazy"></button>
+                <figcaption class="txt"><span>A new project starts with its client and links to the source documents.</span></figcaption>
+              </figure>
+            </div>
+            <div class="stack">
+              <figure data-reveal="1">
+                <button class="zoom frame sky-t pad" data-full="../../assets/media/scopeguard-features.webp" data-alt="Project features table" onClick="{{openImg}}" aria-label="Enlarge: project features table"><img class="screen" src="../../assets/media/scopeguard-features.webp" alt="Kova Skincare PDP Revamp project with a features table showing page, status and notes for six features" loading="lazy"></button>
+                <figcaption class="txt"><span>A project's features, with the notes, page and status of each change in one table.</span></figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chap">
+            <div class="chead"><span class="cnum mono">04</span><h3 class="h3 head">Two Kinds of History</h3></div>
+            <p class="lead measure" style="margin: clamp(22px, 2.4vw, 30px) 0 0">My original rule was “no manual snapshots”: the change log should update itself in the background. Building it showed me that wasn't enough.</p>
+            <ul class="points txt measure">
+              <li>What changed is automatic. Every status move is logged with its before and after, a date, and a note on why.</li>
+              <li>But a log can't answer “what did we agree at kickoff?” So I added saved versions: named checkpoints, like Initial scope or Pre-launch review, that capture the scope at that moment.</li>
+              <li>Edit history and saved checkpoints first lived in the same flow, and it was never clear which was which. Splitting them gave each one a single job.</li>
+              <li>The tab started as Updates. Once it held both, I renamed it History.</li>
+            </ul>
+            <div class="pair wide">
+              <figure data-reveal="1">
+                <button class="zoom frame butter-t pad" data-full="../../assets/media/scopeguard-changed-2.webp" data-alt="What changed log" onClick="{{openImg}}" aria-label="Enlarge: what changed"><img class="screen" src="../../assets/media/scopeguard-changed-2.webp" alt="What changed list showing status moves such as Open to CR Sent with dates and notes" loading="lazy"></button>
+                <figcaption class="txt"><span>What changed: every status move, with a note on why it moved.</span></figcaption>
+              </figure>
+              <figure data-reveal="1">
+                <button class="zoom frame butter-t pad" data-full="../../assets/media/scopeguard-versions.webp" data-alt="Saved versions" onClick="{{openImg}}" aria-label="Enlarge: saved versions"><img class="screen" src="../../assets/media/scopeguard-versions.webp" alt="Saved versions list with Pre-Launch Review and Initial PDP Scope checkpoints" loading="lazy"></button>
+                <figcaption class="txt"><span>Saved versions: named checkpoints to compare against later.</span></figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chap">
+            <div class="chead"><span class="cnum mono">05</span><h3 class="h3 head">An Export Built for the Client Conversation</h3></div>
+            <p class="lead measure" style="margin: clamp(22px, 2.4vw, 30px) 0 0">The client never logs in, so the export is the part of ScopeGuard they actually see.</p>
+            <ul class="points txt measure">
+              <li>It started as a single flagged items report. It became a filtered export, because different calls need different slices: everything pending this week, or everything on the product page.</li>
+              <li>Filter by status, page and date added, and preview exactly what will go out before exporting.</li>
+              <li>Estimated hours travel with each entry, so the cost sits next to the request.</li>
+              <li>It exports as a CSV, so it fits into whatever the PM already sends.</li>
+            </ul>
+            <div class="stack">
+              <figure data-reveal="1">
+                <button class="zoom frame sky-t pad" data-full="../../assets/media/scopeguard-export.webp" data-alt="Export tab" onClick="{{openImg}}" aria-label="Enlarge: export"><img class="screen" src="../../assets/media/scopeguard-export.webp" alt="Export tab with filters for status, page and date on the left and a preview of entries with hours on the right" loading="lazy"></button>
+                <figcaption class="txt"><span>Filters on the left, a preview of exactly what the client will receive on the right.</span></figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chap">
+            <div class="chead"><span class="cnum mono">06</span><h3 class="h3 head">The Quiet Parts of a Real Product</h3></div>
+            <p class="lead measure" style="margin: clamp(22px, 2.4vw, 30px) 0 0">Settings and help aren't the interesting part, but a tool feels unfinished without them.</p>
+            <ul class="labelled txt">
+              <li><span class="mono small">Settings</span><span>A default status for new features, plus date format and timezone, since exports go to clients in other regions.</span></li>
+              <li><span class="mono small">Help</span><span>Short answers to what a new teammate would ask, starting with what a change request is.</span></li>
+              <li><span class="mono small">Archive</span><span>Finished projects leave the active view without being deleted.</span></li>
+            </ul>
+            <div class="pair wide">
+              <figure data-reveal="1">
+                <button class="zoom frame paper-t pad" data-full="../../assets/media/scopeguard-settings.webp" data-alt="Settings" onClick="{{openImg}}" aria-label="Enlarge: settings"><img class="screen" src="../../assets/media/scopeguard-settings.webp" alt="Settings page with workspace name, date format, timezone, default feature status and theme" loading="lazy"></button>
+                <figcaption class="txt"><span>Workspace settings, including the default status for new features.</span></figcaption>
+              </figure>
+              <figure data-reveal="1">
+                <button class="zoom frame paper-t pad" data-full="../../assets/media/scopeguard-help.webp" data-alt="Help and support" onClick="{{openImg}}" aria-label="Enlarge: help and support"><img class="screen" src="../../assets/media/scopeguard-help.webp" alt="Help and support page with quick start cards and frequently asked questions" loading="lazy"></button>
+                <figcaption class="txt"><span>Help and support, written for someone opening the tool for the first time.</span></figcaption>
+              </figure>
+            </div>
+          </article>
+        </section>
+
+        <section id="changes" class="sec" data-sec="changes">
+          <h2 class="h2 head">What I Kept, Changed and Cut</h2>
+          <p class="lead measure" style="margin: 0">Most of the design work was deciding what not to build. Here's what moved between the first concept and the live app.</p>
+          <div class="ledger" data-reveal="1">
+            <div class="lgroup cut">
+              <h3 class="head">Cut</h3>
+              <ul class="lrows txt">
+                <li><span class="what head">Stats row at the top of the dashboard</span><span class="muted">Totals don't drive action. A quiet summary strip at the bottom does the same job without competing.</span></li>
+                <li><span class="what head">Quick add with just a name</span><span class="muted">A name without context isn't proof. Half-filled records are worse than none.</span></li>
+                <li><span class="what head">Separate client approval tags</span><span class="muted">Merged into one status lifecycle.</span></li>
+                <li><span class="what head">Brand managers and copywriters as users</span><span class="muted">A loose fit, and they already have tools that work.</span></li>
+              </ul>
+            </div>
+            <div class="lgroup">
+              <h3 class="head">Changed</h3>
+              <ul class="lrows txt">
+                <li><span class="what head">Flagged items report</span><span class="muted">Became a filtered export with a preview and hours.</span></li>
+                <li><span class="what head">Updates tab</span><span class="muted">Became History, split into What changed and Saved versions.</span></li>
+                <li><span class="what head">Generated first layouts</span><span class="muted">Rebuilt by hand in Figma once the flows were right.</span></li>
+              </ul>
+            </div>
+            <div class="lgroup">
+              <h3 class="head">Added</h3>
+              <ul class="lrows txt">
+                <li><span class="what head">Saved versions</span><span class="muted">Reversing my own “no snapshots” rule, for the kickoff question.</span></li>
+                <li><span class="what head">Estimated hours</span><span class="muted">So every change request carries its cost.</span></li>
+                <li><span class="what head">Deferred status</span><span class="muted">For good ideas that belong to a later phase.</span></li>
+              </ul>
+            </div>
+            <div class="lgroup">
+              <h3 class="head">Kept</h3>
+              <ul class="lrows txt">
+                <li><span class="what head">No client login</span><span class="muted">The client still only sees the export.</span></li>
+                <li><span class="what head">Horizontal tabs for project pages</span><span class="muted">Features, History and Export sit as tabs on the project, not nested in the sidebar.</span></li>
+                <li><span class="what head">Automatic change log</span><span class="muted">Status moves are still recorded without anyone having to save.</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="ai" class="sec" data-sec="ai">
+          <h2 class="h2 head">Building It With AI</h2>
+          <div class="closing" data-reveal="1">
+            <div>
+              <p class="txt" style="margin: 0">I started by generating layouts with Claude to test flows and structure quickly. The flows were useful. The interface was generic.</p>
+              <p class="txt">So I stepped back and set the hierarchy, type and colour myself in Figma: DM Serif Display for headings, Open Sans for the interface, and an olive palette checked for AA contrast.</p>
+            </div>
+            <div>
+              <p class="txt" style="margin: 0">Then I built it in React with Claude Code. My first approach was to perfect an HTML version and convert it later, which meant doing everything twice. Going straight to React and testing locally was much faster.</p>
+              <p class="txt">AI made it possible for one designer to ship a working product. The decisions about what to leave out were still mine.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="reflection" class="sec" data-sec="reflection">
+          <div class="closing" data-reveal="1">
+            <div>
+              <h2 class="h2 head" style="margin: 0">What's Next</h2>
+              <p class="txt">Real projects ship in phases, so the next step is grouping features into Phase 1, 2 and 3, and showing what moved to a later release. I'd also sort Needs Attention by how long each request has been waiting, so the oldest one rises to the top.</p>
+              <p class="txt">With a team using it, I'd measure how long change requests wait for a client answer, and how many entries have a Figma link or screenshot attached.</p>
+            </div>
+            <div>
+              <h2 class="h2 head" style="margin: 0">What I Learned</h2>
+              <p class="txt">This project moved me from designing screens to designing a workflow. The question stopped being “does this screen look good?” and became “does this help a team make a clear decision faster?”</p>
+              <p class="txt">It also showed me how much of product design is deciding what not to build, and being willing to reverse my own rules when the product needed it.</p>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <section class="next" aria-labelledby="next-title">
+    <div class="wrap">
+      <hr class="rule">
+      <h2 id="next-title" class="h2 head" style="margin-top: clamp(40px, 4vw, 56px)">Read More Case Studies</h2>
+      <div class="ngrid">
+        <a class="ncard" href="../../work/entripy/index.html" data-reveal="1">
+          <div class="nt head">Redesigning B2B Bulk Ordering Experience</div>
+          <span class="go mono small">View case study<svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10.5"></path><path d="M9.2 4.2 13 8l-3.8 3.8"></path></svg></span>
+        </a>
+        <a class="ncard" href="../../work/kitchen-visualizer/index.html" data-reveal="1">
+          <div class="nt head">Designing a Kitchen Visualizer for Confident Orders</div>
+          <span class="go mono small">View case study<svg aria-hidden="true" viewBox="0 0 16 16" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10.5"></path><path d="M9.2 4.2 13 8l-3.8 3.8"></path></svg></span>
+        </a>
+      </div>
+    </div>
   </section>
   <footer>
     <div class="wrap">
