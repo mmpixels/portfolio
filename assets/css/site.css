@@ -5,4 +5,3 @@
 
 /* Resume links stay hidden until resume.pdf is added to the site root.
    To show them: add resume.pdf next to index.html, then delete this rule. */
-a[data-resume]{display:none !important}
